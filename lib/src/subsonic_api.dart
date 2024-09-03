@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 
 import 'apis/api.dart';
 import 'interceptors/auth.interceptor.dart';
+import 'interceptors/error.interceptor.dart';
 import 'interceptors/json.interceptor.dart';
 import 'interceptors/logging.interceptor.dart';
 import 'models/auth/auth.model.dart';
@@ -12,6 +13,7 @@ class SubsonicApi {
     required String baseUrl,
     String apiVersion = '1.16.1',
     String clientId = 'rankki-subsonic-api',
+    bool debug = false,
   }) {
     final dio = Dio(
       BaseOptions(
@@ -23,9 +25,10 @@ class SubsonicApi {
       ),
     )..interceptors.addAll(
         [
-          AuthInterceptor(auth),
+          AuthInterceptor(auth, debug: debug),
           JsonInterceptor(),
-          LoggingInterceptor(),
+          APIErrorInterceptor(),
+          if (debug) LoggingInterceptor(),
         ],
       );
     api = SubsonicApiClient(dio, baseUrl: baseUrl);

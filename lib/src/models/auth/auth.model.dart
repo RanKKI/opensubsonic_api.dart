@@ -19,18 +19,16 @@ class SubsonicAuthModel with _$SubsonicAuthModel, UrlParamsObject {
       _$SubsonicAuthModelFromJson(json);
 
   @override
-  Map<String, String> toUrlParams() {
+  Map<String, String> toUrlParams([bool debug = false]) {
+    if (debug) {
+      return {'u': username, 'p': password};
+    }
     final salt = generateSalt();
     final token = generateToken(
       username: username,
       password: password,
       salt: salt,
     );
-    return {
-      'u': username,
-      'p': password,
-      // 's': salt,
-      // 't': token,
-    };
+    return {'u': username, 's': salt, 't': token};
   }
 }

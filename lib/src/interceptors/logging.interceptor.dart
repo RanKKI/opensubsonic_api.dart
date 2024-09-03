@@ -16,10 +16,4 @@ class LoggingInterceptor extends InterceptorsWrapper {
     );
     return handler.next(response);
   }
-
-  @override
-  void onError(DioError err, ErrorInterceptorHandler handler) {
-    print('[Subsonic API] Error: ${err.message}');
-    return handler.next(err);
-  }
 }
