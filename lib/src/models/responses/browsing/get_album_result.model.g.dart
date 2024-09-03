@@ -9,8 +9,7 @@ part of 'get_album_result.model.dart';
 _$GetAlbumResultModelImpl _$$GetAlbumResultModelImplFromJson(
         Map<String, dynamic> json) =>
     _$GetAlbumResultModelImpl(
-      album: AlbumWithSongsID3Model.fromJson(
-          json['album'] as Map<String, dynamic>),
+      album: AlbumID3Model.fromJson(json['album'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$GetAlbumResultModelImplToJson(

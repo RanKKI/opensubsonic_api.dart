@@ -40,6 +40,7 @@ mixin _$AlbumID3Model {
 
   /// Added in 1.10.1
   String? get genre => throw _privateConstructorUsedError;
+  List<MediaModel> get song => throw _privateConstructorUsedError;
 
   /// Serializes this AlbumID3Model to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -69,7 +70,8 @@ abstract class $AlbumID3ModelCopyWith<$Res> {
       @DateTimeConvertor() DateTime? created,
       @DateTimeConvertor() DateTime? starred,
       int? year,
-      String? genre});
+      String? genre,
+      List<MediaModel> song});
 }
 
 /// @nodoc
@@ -99,6 +101,7 @@ class _$AlbumID3ModelCopyWithImpl<$Res, $Val extends AlbumID3Model>
     Object? starred = freezed,
     Object? year = freezed,
     Object? genre = freezed,
+    Object? song = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -149,6 +152,10 @@ class _$AlbumID3ModelCopyWithImpl<$Res, $Val extends AlbumID3Model>
           ? _value.genre
           : genre // ignore: cast_nullable_to_non_nullable
               as String?,
+      song: null == song
+          ? _value.song
+          : song // ignore: cast_nullable_to_non_nullable
+              as List<MediaModel>,
     ) as $Val);
   }
 }
@@ -173,7 +180,8 @@ abstract class _$$AlbumID3ModelImplCopyWith<$Res>
       @DateTimeConvertor() DateTime? created,
       @DateTimeConvertor() DateTime? starred,
       int? year,
-      String? genre});
+      String? genre,
+      List<MediaModel> song});
 }
 
 /// @nodoc
@@ -201,6 +209,7 @@ class __$$AlbumID3ModelImplCopyWithImpl<$Res>
     Object? starred = freezed,
     Object? year = freezed,
     Object? genre = freezed,
+    Object? song = null,
   }) {
     return _then(_$AlbumID3ModelImpl(
       id: null == id
@@ -251,6 +260,10 @@ class __$$AlbumID3ModelImplCopyWithImpl<$Res>
           ? _value.genre
           : genre // ignore: cast_nullable_to_non_nullable
               as String?,
+      song: null == song
+          ? _value._song
+          : song // ignore: cast_nullable_to_non_nullable
+              as List<MediaModel>,
     ));
   }
 }
@@ -270,7 +283,9 @@ class _$AlbumID3ModelImpl implements _AlbumID3Model {
       @DateTimeConvertor() this.created,
       @DateTimeConvertor() this.starred,
       this.year,
-      this.genre});
+      this.genre,
+      final List<MediaModel> song = const []})
+      : _song = song;
 
   factory _$AlbumID3ModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$AlbumID3ModelImplFromJson(json);
@@ -307,10 +322,18 @@ class _$AlbumID3ModelImpl implements _AlbumID3Model {
   /// Added in 1.10.1
   @override
   final String? genre;
+  final List<MediaModel> _song;
+  @override
+  @JsonKey()
+  List<MediaModel> get song {
+    if (_song is EqualUnmodifiableListView) return _song;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_song);
+  }
 
   @override
   String toString() {
-    return 'AlbumID3Model(id: $id, name: $name, artist: $artist, artistId: $artistId, coverArt: $coverArt, songCount: $songCount, duration: $duration, playCount: $playCount, created: $created, starred: $starred, year: $year, genre: $genre)';
+    return 'AlbumID3Model(id: $id, name: $name, artist: $artist, artistId: $artistId, coverArt: $coverArt, songCount: $songCount, duration: $duration, playCount: $playCount, created: $created, starred: $starred, year: $year, genre: $genre, song: $song)';
   }
 
   @override
@@ -334,13 +357,27 @@ class _$AlbumID3ModelImpl implements _AlbumID3Model {
             (identical(other.created, created) || other.created == created) &&
             (identical(other.starred, starred) || other.starred == starred) &&
             (identical(other.year, year) || other.year == year) &&
-            (identical(other.genre, genre) || other.genre == genre));
+            (identical(other.genre, genre) || other.genre == genre) &&
+            const DeepCollectionEquality().equals(other._song, _song));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, artist, artistId,
-      coverArt, songCount, duration, playCount, created, starred, year, genre);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      artist,
+      artistId,
+      coverArt,
+      songCount,
+      duration,
+      playCount,
+      created,
+      starred,
+      year,
+      genre,
+      const DeepCollectionEquality().hash(_song));
 
   /// Create a copy of AlbumID3Model
   /// with the given fields replaced by the non-null parameter values.
@@ -371,7 +408,8 @@ abstract class _AlbumID3Model implements AlbumID3Model {
       @DateTimeConvertor() final DateTime? created,
       @DateTimeConvertor() final DateTime? starred,
       final int? year,
-      final String? genre}) = _$AlbumID3ModelImpl;
+      final String? genre,
+      final List<MediaModel> song}) = _$AlbumID3ModelImpl;
 
   factory _AlbumID3Model.fromJson(Map<String, dynamic> json) =
       _$AlbumID3ModelImpl.fromJson;
@@ -408,6 +446,8 @@ abstract class _AlbumID3Model implements AlbumID3Model {
   /// Added in 1.10.1
   @override
   String? get genre;
+  @override
+  List<MediaModel> get song;
 
   /// Create a copy of AlbumID3Model
   /// with the given fields replaced by the non-null parameter values.

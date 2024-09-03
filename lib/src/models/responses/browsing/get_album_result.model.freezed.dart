@@ -20,7 +20,7 @@ GetAlbumResultModel _$GetAlbumResultModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GetAlbumResultModel {
-  AlbumWithSongsID3Model get album => throw _privateConstructorUsedError;
+  AlbumID3Model get album => throw _privateConstructorUsedError;
 
   /// Serializes this GetAlbumResultModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,9 +38,9 @@ abstract class $GetAlbumResultModelCopyWith<$Res> {
           GetAlbumResultModel value, $Res Function(GetAlbumResultModel) then) =
       _$GetAlbumResultModelCopyWithImpl<$Res, GetAlbumResultModel>;
   @useResult
-  $Res call({AlbumWithSongsID3Model album});
+  $Res call({AlbumID3Model album});
 
-  $AlbumWithSongsID3ModelCopyWith<$Res> get album;
+  $AlbumID3ModelCopyWith<$Res> get album;
 }
 
 /// @nodoc
@@ -64,7 +64,7 @@ class _$GetAlbumResultModelCopyWithImpl<$Res, $Val extends GetAlbumResultModel>
       album: null == album
           ? _value.album
           : album // ignore: cast_nullable_to_non_nullable
-              as AlbumWithSongsID3Model,
+              as AlbumID3Model,
     ) as $Val);
   }
 
@@ -72,8 +72,8 @@ class _$GetAlbumResultModelCopyWithImpl<$Res, $Val extends GetAlbumResultModel>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $AlbumWithSongsID3ModelCopyWith<$Res> get album {
-    return $AlbumWithSongsID3ModelCopyWith<$Res>(_value.album, (value) {
+  $AlbumID3ModelCopyWith<$Res> get album {
+    return $AlbumID3ModelCopyWith<$Res>(_value.album, (value) {
       return _then(_value.copyWith(album: value) as $Val);
     });
   }
@@ -87,10 +87,10 @@ abstract class _$$GetAlbumResultModelImplCopyWith<$Res>
       __$$GetAlbumResultModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AlbumWithSongsID3Model album});
+  $Res call({AlbumID3Model album});
 
   @override
-  $AlbumWithSongsID3ModelCopyWith<$Res> get album;
+  $AlbumID3ModelCopyWith<$Res> get album;
 }
 
 /// @nodoc
@@ -112,7 +112,7 @@ class __$$GetAlbumResultModelImplCopyWithImpl<$Res>
       album: null == album
           ? _value.album
           : album // ignore: cast_nullable_to_non_nullable
-              as AlbumWithSongsID3Model,
+              as AlbumID3Model,
     ));
   }
 }
@@ -126,7 +126,7 @@ class _$GetAlbumResultModelImpl implements _GetAlbumResultModel {
       _$$GetAlbumResultModelImplFromJson(json);
 
   @override
-  final AlbumWithSongsID3Model album;
+  final AlbumID3Model album;
 
   @override
   String toString() {
@@ -163,15 +163,14 @@ class _$GetAlbumResultModelImpl implements _GetAlbumResultModel {
 }
 
 abstract class _GetAlbumResultModel implements GetAlbumResultModel {
-  const factory _GetAlbumResultModel(
-          {required final AlbumWithSongsID3Model album}) =
+  const factory _GetAlbumResultModel({required final AlbumID3Model album}) =
       _$GetAlbumResultModelImpl;
 
   factory _GetAlbumResultModel.fromJson(Map<String, dynamic> json) =
       _$GetAlbumResultModelImpl.fromJson;
 
   @override
-  AlbumWithSongsID3Model get album;
+  AlbumID3Model get album;
 
   /// Create a copy of GetAlbumResultModel
   /// with the given fields replaced by the non-null parameter values.

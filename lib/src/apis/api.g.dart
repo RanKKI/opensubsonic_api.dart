@@ -243,7 +243,7 @@ class _SubsonicApiClient implements SubsonicApiClient {
   }
 
   @override
-  Future<HttpResponse<void>> _getCoverArt(
+  Future<HttpResponse<void>> getCoverArt(
     String id, {
     int? size,
   }) async {
@@ -260,6 +260,7 @@ class _SubsonicApiClient implements SubsonicApiClient {
       method: 'GET',
       headers: _headers,
       extra: _extra,
+      responseType: ResponseType.bytes,
     )
             .compose(
               _dio.options,

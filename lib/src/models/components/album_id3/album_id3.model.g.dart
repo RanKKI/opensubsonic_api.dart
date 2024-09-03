@@ -22,6 +22,10 @@ _$AlbumID3ModelImpl _$$AlbumID3ModelImplFromJson(Map<String, dynamic> json) =>
           json['starred'], const DateTimeConvertor().fromJson),
       year: (json['year'] as num?)?.toInt(),
       genre: json['genre'] as String?,
+      song: (json['song'] as List<dynamic>?)
+              ?.map((e) => MediaModel.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$AlbumID3ModelImplToJson(_$AlbumID3ModelImpl instance) =>
@@ -40,6 +44,7 @@ Map<String, dynamic> _$$AlbumID3ModelImplToJson(_$AlbumID3ModelImpl instance) =>
           instance.starred, const DateTimeConvertor().toJson),
       'year': instance.year,
       'genre': instance.genre,
+      'song': instance.song,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(
