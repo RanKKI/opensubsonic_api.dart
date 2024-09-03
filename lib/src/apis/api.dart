@@ -87,6 +87,12 @@ abstract class SubsonicApiClient {
   @GET('/rest/getAlbum')
   Future<GetAlbumResultModel> getAlbum(@Query('id') String albumId);
 
+  /// Since 1.0.0
+  ///
+  /// Returns a cover art image.
+  ///
+  /// - [id] The ID of a song, album or artist.
+  /// - [size] If specified, scale image to this size.
   @GET('/rest/getCoverArt')
   @DioResponseType(ResponseType.bytes)
   Future<HttpResponse<void>> getCoverArt(
