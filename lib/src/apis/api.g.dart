@@ -304,6 +304,52 @@ class _SubsonicApiClient implements SubsonicApiClient {
     return httpResponse;
   }
 
+  @override
+  Future<HttpResponse<void>> stream(
+    String id, {
+    int? maxBitRate,
+    String? format,
+    int? timeOffset,
+    String? size,
+    bool estimateContentLength = false,
+    bool converted = false,
+  }) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'id': id,
+      r'maxBitRate': maxBitRate,
+      r'format': format,
+      r'timeOffset': timeOffset,
+      r'size': size,
+      r'estimateContentLength': estimateContentLength,
+      r'converted': converted,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{r'Connection': 'keep-alive'};
+    _headers.removeWhere((k, v) => v == null);
+    final Map<String, dynamic>? _data = null;
+    final _result =
+        await _dio.fetch<void>(_setStreamType<HttpResponse<void>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+      responseType: ResponseType.stream,
+    )
+            .compose(
+              _dio.options,
+              '/rest/stream',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final httpResponse = HttpResponse(null, _result);
+    return httpResponse;
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||
