@@ -21,6 +21,8 @@ SubsonicApiClient setupMockAPI() {
     ('/rest/getAlbum', "getAlbum.json"),
     ('/rest/getArtist', "getArtist.json"),
     ('/rest/getArtists', "getArtists.json"),
+    ('/rest/getAlbumInfo', "getAlbumInfo.json"),
+    ('/rest/getAlbumInfo2', "getAlbumInfo2.json"),
   ];
 
   for (final (path, filename) in staticJsonResponses) {
