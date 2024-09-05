@@ -27,7 +27,15 @@ mixin _$SubsonicResponseData<T> {
   ///
   /// e.g. calling getCoverArt
   String? get version => throw _privateConstructorUsedError;
+
+  /// OpenSubsonic
+  ///
+  /// The server actual name. [Ex: Navidrome or gonic]
   String? get type => throw _privateConstructorUsedError;
+
+  /// OpenSubsonic
+  ///
+  /// The server actual version. [Ex: 1.2.3 (beta)]
   String? get serverVersion => throw _privateConstructorUsedError;
   T? get data => throw _privateConstructorUsedError;
   SubsonicErrorModel? get errors => throw _privateConstructorUsedError;
@@ -219,8 +227,16 @@ class _$SubsonicResponseImpl<T> implements _SubsonicResponse<T> {
   /// e.g. calling getCoverArt
   @override
   final String? version;
+
+  /// OpenSubsonic
+  ///
+  /// The server actual name. [Ex: Navidrome or gonic]
   @override
   final String? type;
+
+  /// OpenSubsonic
+  ///
+  /// The server actual version. [Ex: 1.2.3 (beta)]
   @override
   final String? serverVersion;
   @override
@@ -289,8 +305,16 @@ abstract class _SubsonicResponse<T> implements SubsonicResponseData<T> {
   /// e.g. calling getCoverArt
   @override
   String? get version;
+
+  /// OpenSubsonic
+  ///
+  /// The server actual name. [Ex: Navidrome or gonic]
   @override
   String? get type;
+
+  /// OpenSubsonic
+  ///
+  /// The server actual version. [Ex: 1.2.3 (beta)]
   @override
   String? get serverVersion;
   @override

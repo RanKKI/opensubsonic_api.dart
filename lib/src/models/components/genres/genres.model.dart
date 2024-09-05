@@ -2,8 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../genre/genre.model.dart';
 
-part 'get_genres_result.model.freezed.dart';
-part 'get_genres_result.model.g.dart';
+part 'genres.model.freezed.dart';
+part 'genres.model.g.dart';
 
 @freezed
 class GenresModel with _$GenresModel {

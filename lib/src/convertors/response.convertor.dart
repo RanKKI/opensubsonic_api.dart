@@ -1,9 +1,14 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../subsonic_api.dart';
 import '../extensions/list.extension.dart';
+import '../models/components/album/album_id3.model.dart';
+import '../models/components/album/album_info.model.dart';
+import '../models/components/artist/artist_id3.model.dart';
+import '../models/components/artist/artist_info.model.dart';
+import '../models/components/artists_id3/artists_id3.model.dart';
 import '../models/components/indexes/indexes.model.dart';
 import '../models/components/license/license.model.dart';
+import '../models/components/media/media.model.dart';
 import '../models/components/music_folders/music_folders.model.dart';
 import '../models/responses/subsonic_empty_data.model.dart';
 import '../models/responses/subsonic_response.model.dart';
@@ -20,6 +25,9 @@ class SubsonicResponseConvertor<T>
     'artists': ArtistsID3Model.fromJson,
     'artist': ArtistID3Model.fromJson,
     'song': MediaModel.fromJson,
+    'artistInfo': ArtistInfoModel.fromJson,
+    'artistInfo2': ArtistInfo2Model.fromJson,
+    'albumInfo': AlbumInfoModel.fromJson,
   };
 
   @override

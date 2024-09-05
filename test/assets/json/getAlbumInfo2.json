@@ -1,0 +1,15 @@
+{
+    "subsonic-response": {
+        "status": "ok",
+        "version": "1.16.1",
+        "type": "navidrome",
+        "serverVersion": "0.52.5 (c5560888)",
+        "openSubsonic": true,
+        "albumInfo": {
+            "lastFmUrl": "https://www.last.fm/music/%E5%91%A8%E6%9D%B0%E5%80%AB/Jay",
+            "smallImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFsLTU1NDZhMWE0ZWE3MmE1OTI3M2U2NTk0OGY5YzJiYTczXzVkN2YyZWFlIiwiaXNzIjoiTkQifQ.30L6K_zBvS6MTP6kRmDeW_dBIMGdbkgGoYK85dIdCDQ?size=150",
+            "mediumImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFsLTU1NDZhMWE0ZWE3MmE1OTI3M2U2NTk0OGY5YzJiYTczXzVkN2YyZWFlIiwiaXNzIjoiTkQifQ.30L6K_zBvS6MTP6kRmDeW_dBIMGdbkgGoYK85dIdCDQ?size=300",
+            "largeImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFsLTU1NDZhMWE0ZWE3MmE1OTI3M2U2NTk0OGY5YzJiYTczXzVkN2YyZWFlIiwiaXNzIjoiTkQifQ.30L6K_zBvS6MTP6kRmDeW_dBIMGdbkgGoYK85dIdCDQ?size=600"
+        }
+    }
+}
