@@ -12,7 +12,7 @@ _$SubsonicResponseImpl<T> _$$SubsonicResponseImplFromJson<T>(
 ) =>
     _$SubsonicResponseImpl<T>(
       status: $enumDecode(_$ResponseStatusEnumMap, json['status']),
-      version: json['version'] as String,
+      version: json['version'] as String?,
       type: json['type'] as String?,
       serverVersion: json['serverVersion'] as String?,
       data: _$nullableGenericFromJson(json['data'], fromJsonT) ?? null,

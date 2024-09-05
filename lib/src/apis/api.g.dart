@@ -248,7 +248,7 @@ class _SubsonicApiClient implements SubsonicApiClient {
   }
 
   @override
-  Future<HttpResponse<void>> _getCoverArt(
+  Future<SubsonicResponse<Uint8List?>> getCoverArt(
     String id, {
     int? size,
   }) async {
@@ -260,11 +260,12 @@ class _SubsonicApiClient implements SubsonicApiClient {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<void>(_setStreamType<HttpResponse<void>>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<SubsonicResponse<Uint8List>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
+      responseType: ResponseType.bytes,
     )
             .compose(
               _dio.options,
@@ -277,8 +278,8 @@ class _SubsonicApiClient implements SubsonicApiClient {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final httpResponse = HttpResponse(null, _result);
-    return httpResponse;
+    final value = SubsonicResponse<Uint8List>.fromJson(_result.data!);
+    return value;
   }
 
   @override

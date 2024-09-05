@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
@@ -96,7 +95,8 @@ abstract class SubsonicApiClient {
   );
 
   @GET('/rest/getCoverArt')
-  Future<HttpResponse<void>> _getCoverArt(
+  @DioResponseType(ResponseType.bytes)
+  Future<SubsonicResponse<Uint8List?>> getCoverArt(
     @Query('id') String id, {
     @Query('size') int? size,
   });
@@ -108,20 +108,4 @@ abstract class SubsonicApiClient {
   /// - [username] The user in question.
   @GET('/rest/getAvatar')
   Future<HttpResponse<void>> getAvatar(@Query('username') String username);
-}
-
-extension SubsonicApiExtension on SubsonicApiClient {
-  /// Since 1.0.0
-  ///
-  /// Returns a cover art image.
-  ///
-  /// - [id] The ID of a song, album or artist.
-  /// - [size] If specified, scale image to this size.
-  Future<Uint8List> getCoverArt(
-    String id, {
-    int? size,
-  }) async {
-    final String data = (await _getCoverArt(id, size: size)).response.data;
-    return base64.decode(data);
-  }
 }

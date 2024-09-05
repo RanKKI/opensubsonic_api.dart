@@ -25,15 +25,20 @@ class SubsonicResponseConvertor<T>
     'song': MediaModel.fromJson,
   };
 
-  T fromJsonT(Object? json) {
-    return SubsonicNoData() as T;
-  }
-
   @override
   SubsonicResponseData<T> fromJson(Map<String, dynamic> json) {
     final key = json.keys.firstWhereOrNull(_mapper.containsKey);
-    final fromJson = (_mapper[key] ?? fromJsonT) as T Function(Object? json);
-    return SubsonicResponseData<T>.fromJson(json, fromJson);
+    final fromJson = _mapper[key];
+    final convertedJSON = {...json};
+    if (key != null) {
+      convertedJSON['data'] = json[key];
+    }
+    return SubsonicResponseData<T>.fromJson(convertedJSON, (obj) {
+      if (fromJson != null) {
+        return fromJson(obj as Map<String, dynamic>) as T;
+      }
+      return (obj ?? SubsonicNoData()) as T;
+    });
   }
 
   @override

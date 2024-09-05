@@ -22,7 +22,11 @@ SubsonicResponseData<T> _$SubsonicResponseDataFromJson<T>(
 /// @nodoc
 mixin _$SubsonicResponseData<T> {
   ResponseStatus get status => throw _privateConstructorUsedError;
-  String get version => throw _privateConstructorUsedError;
+
+  /// [version] may be null if requested data is a binary file
+  ///
+  /// e.g. calling getCoverArt
+  String? get version => throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
   String? get serverVersion => throw _privateConstructorUsedError;
   T? get data => throw _privateConstructorUsedError;
@@ -47,7 +51,7 @@ abstract class $SubsonicResponseDataCopyWith<T, $Res> {
   @useResult
   $Res call(
       {ResponseStatus status,
-      String version,
+      String? version,
       String? type,
       String? serverVersion,
       T? data,
@@ -73,7 +77,7 @@ class _$SubsonicResponseDataCopyWithImpl<T, $Res,
   @override
   $Res call({
     Object? status = null,
-    Object? version = null,
+    Object? version = freezed,
     Object? type = freezed,
     Object? serverVersion = freezed,
     Object? data = freezed,
@@ -84,10 +88,10 @@ class _$SubsonicResponseDataCopyWithImpl<T, $Res,
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ResponseStatus,
-      version: null == version
+      version: freezed == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -132,7 +136,7 @@ abstract class _$$SubsonicResponseImplCopyWith<T, $Res>
   @useResult
   $Res call(
       {ResponseStatus status,
-      String version,
+      String? version,
       String? type,
       String? serverVersion,
       T? data,
@@ -157,7 +161,7 @@ class __$$SubsonicResponseImplCopyWithImpl<T, $Res>
   @override
   $Res call({
     Object? status = null,
-    Object? version = null,
+    Object? version = freezed,
     Object? type = freezed,
     Object? serverVersion = freezed,
     Object? data = freezed,
@@ -168,10 +172,10 @@ class __$$SubsonicResponseImplCopyWithImpl<T, $Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ResponseStatus,
-      version: null == version
+      version: freezed == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -197,7 +201,7 @@ class __$$SubsonicResponseImplCopyWithImpl<T, $Res>
 class _$SubsonicResponseImpl<T> implements _SubsonicResponse<T> {
   const _$SubsonicResponseImpl(
       {required this.status,
-      required this.version,
+      this.version,
       this.type,
       this.serverVersion,
       this.data = null,
@@ -209,8 +213,12 @@ class _$SubsonicResponseImpl<T> implements _SubsonicResponse<T> {
 
   @override
   final ResponseStatus status;
+
+  /// [version] may be null if requested data is a binary file
+  ///
+  /// e.g. calling getCoverArt
   @override
-  final String version;
+  final String? version;
   @override
   final String? type;
   @override
@@ -263,7 +271,7 @@ class _$SubsonicResponseImpl<T> implements _SubsonicResponse<T> {
 abstract class _SubsonicResponse<T> implements SubsonicResponseData<T> {
   const factory _SubsonicResponse(
       {required final ResponseStatus status,
-      required final String version,
+      final String? version,
       final String? type,
       final String? serverVersion,
       final T? data,
@@ -275,8 +283,12 @@ abstract class _SubsonicResponse<T> implements SubsonicResponseData<T> {
 
   @override
   ResponseStatus get status;
+
+  /// [version] may be null if requested data is a binary file
+  ///
+  /// e.g. calling getCoverArt
   @override
-  String get version;
+  String? get version;
   @override
   String? get type;
   @override

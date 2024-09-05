@@ -26,13 +26,22 @@ class SubsonicResponse<T> {
         response:
             SubsonicResponseConvertor<T>().fromJson(json['subsonic-response']),
       );
+
+  @override
+  String toString() {
+    return 'SubsonicResponse(status: ${response.status})';
+  }
 }
 
 @Freezed(genericArgumentFactories: true, fromJson: true)
 class SubsonicResponseData<T> with _$SubsonicResponseData<T> {
   const factory SubsonicResponseData({
     required ResponseStatus status,
-    required String version,
+
+    /// [version] may be null if requested data is a binary file
+    ///
+    /// e.g. calling getCoverArt
+    String? version,
     String? type,
     String? serverVersion,
     @Default(null) T? data,

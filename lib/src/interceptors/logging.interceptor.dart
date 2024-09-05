@@ -11,9 +11,9 @@ class LoggingInterceptor extends InterceptorsWrapper {
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
-    print(
-      '[Subsonic API] Response: ${response.statusCode} ${response.realUri.toString()}',
-    );
+    // print(
+    //   '[Subsonic API] Response: ${response.statusCode} ${response.realUri.toString()}',
+    // );
     return handler.next(response);
   }
 }
