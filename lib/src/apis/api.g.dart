@@ -19,13 +19,13 @@ class _SubsonicApiClient implements SubsonicApiClient {
   String? baseUrl;
 
   @override
-  Future<SubsonicPingResultModel> ping() async {
+  Future<SubsonicResponse<SubsonicNoData>> ping() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<SubsonicPingResultModel>(Options(
+        _setStreamType<SubsonicResponse<SubsonicNoData>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -41,18 +41,18 @@ class _SubsonicApiClient implements SubsonicApiClient {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = SubsonicPingResultModel.fromJson(_result.data!);
+    final value = SubsonicResponse<SubsonicNoData>.fromJson(_result.data!);
     return value;
   }
 
   @override
-  Future<SubsonicGetLicenseResultModel> getLicense() async {
+  Future<SubsonicResponse<SubsonicLicenseStatus>> getLicense() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<SubsonicGetLicenseResultModel>(Options(
+        _setStreamType<SubsonicResponse<SubsonicLicenseStatus>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -68,19 +68,21 @@ class _SubsonicApiClient implements SubsonicApiClient {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = SubsonicGetLicenseResultModel.fromJson(_result.data!);
+    final value =
+        SubsonicResponse<SubsonicLicenseStatus>.fromJson(_result.data!);
     return value;
   }
 
   @override
-  Future<GetArtistsResultModel> getArtists({String? musicFolderId}) async {
+  Future<SubsonicResponse<ArtistsID3Model>> getArtists(
+      {String? musicFolderId}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'musicFolderId': musicFolderId};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<GetArtistsResultModel>(Options(
+        _setStreamType<SubsonicResponse<ArtistsID3Model>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -96,12 +98,12 @@ class _SubsonicApiClient implements SubsonicApiClient {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = GetArtistsResultModel.fromJson(_result.data!);
+    final value = SubsonicResponse<ArtistsID3Model>.fromJson(_result.data!);
     return value;
   }
 
   @override
-  Future<GetIndexesResultModel> getIndexes({
+  Future<SubsonicResponse<IndexesModel>> getIndexes({
     String? musicFolderId,
     int? ifModifiedSince,
   }) async {
@@ -114,7 +116,7 @@ class _SubsonicApiClient implements SubsonicApiClient {
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<GetIndexesResultModel>(Options(
+        _setStreamType<SubsonicResponse<IndexesModel>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -130,18 +132,18 @@ class _SubsonicApiClient implements SubsonicApiClient {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = GetIndexesResultModel.fromJson(_result.data!);
+    final value = SubsonicResponse<IndexesModel>.fromJson(_result.data!);
     return value;
   }
 
   @override
-  Future<GetMusicFoldersResultModel> getMusicFolders() async {
+  Future<SubsonicResponse<MusicFoldersModel>> getMusicFolders() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<GetMusicFoldersResultModel>(Options(
+        _setStreamType<SubsonicResponse<MusicFoldersModel>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -157,18 +159,18 @@ class _SubsonicApiClient implements SubsonicApiClient {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = GetMusicFoldersResultModel.fromJson(_result.data!);
+    final value = SubsonicResponse<MusicFoldersModel>.fromJson(_result.data!);
     return value;
   }
 
   @override
-  Future<GetGenresResultModel> getGenres() async {
+  Future<SubsonicResponse<GenresModel>> getGenres() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<GetGenresResultModel>(Options(
+        _setStreamType<SubsonicResponse<GenresModel>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -184,18 +186,19 @@ class _SubsonicApiClient implements SubsonicApiClient {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = GetGenresResultModel.fromJson(_result.data!);
+    final value = SubsonicResponse<GenresModel>.fromJson(_result.data!);
     return value;
   }
 
   @override
-  Future<GetArtistResultModel> getArtist(String artistId) async {
+  Future<SubsonicResponse<ArtistWithAlbumsID3Model>> getArtist(
+      String artistId) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'id': artistId};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<GetArtistResultModel>(Options(
+        _setStreamType<SubsonicResponse<ArtistWithAlbumsID3Model>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -211,18 +214,20 @@ class _SubsonicApiClient implements SubsonicApiClient {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = GetArtistResultModel.fromJson(_result.data!);
+    final value =
+        SubsonicResponse<ArtistWithAlbumsID3Model>.fromJson(_result.data!);
     return value;
   }
 
   @override
-  Future<GetAlbumResultModel> getAlbum(String albumId) async {
+  Future<SubsonicResponse<AlbumWithSongsID3Model>> getAlbum(
+      String albumId) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'id': albumId};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<GetAlbumResultModel>(Options(
+        _setStreamType<SubsonicResponse<AlbumWithSongsID3Model>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -238,7 +243,8 @@ class _SubsonicApiClient implements SubsonicApiClient {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = GetAlbumResultModel.fromJson(_result.data!);
+    final value =
+        SubsonicResponse<AlbumWithSongsID3Model>.fromJson(_result.data!);
     return value;
   }
 

@@ -1,27 +1,37 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'ping_result.model.dart';
+part of 'subsonic_response.model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SubsonicPingResultModelImpl _$$SubsonicPingResultModelImplFromJson(
-        Map<String, dynamic> json) =>
-    _$SubsonicPingResultModelImpl(
+_$SubsonicResponseImpl<T> _$$SubsonicResponseImplFromJson<T>(
+  Map<String, dynamic> json,
+  T Function(Object? json) fromJsonT,
+) =>
+    _$SubsonicResponseImpl<T>(
       status: $enumDecode(_$ResponseStatusEnumMap, json['status']),
       version: json['version'] as String,
       type: json['type'] as String?,
       serverVersion: json['serverVersion'] as String?,
+      data: json['data'] == null ? null : fromJsonT(json['data']),
+      errors: json['errors'] == null
+          ? null
+          : SubsonicErrorModel.fromJson(json['errors'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$SubsonicPingResultModelImplToJson(
-        _$SubsonicPingResultModelImpl instance) =>
+Map<String, dynamic> _$$SubsonicResponseImplToJson<T>(
+  _$SubsonicResponseImpl<T> instance,
+  Object? Function(T value) toJsonT,
+) =>
     <String, dynamic>{
       'status': _$ResponseStatusEnumMap[instance.status]!,
       'version': instance.version,
       'type': instance.type,
       'serverVersion': instance.serverVersion,
+      'data': toJsonT(instance.data),
+      'errors': instance.errors,
     };
 
 const _$ResponseStatusEnumMap = {
