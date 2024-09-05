@@ -1,11 +1,13 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../subsonic_api.dart';
 import '../extensions/list.extension.dart';
+import '../models/components/album_id3/album_id3.model.dart';
 import '../models/components/artist/artist_id3.model.dart';
 import '../models/components/artist/artist_info.model.dart';
+import '../models/components/artists_id3/artists_id3.model.dart';
 import '../models/components/indexes/indexes.model.dart';
 import '../models/components/license/license.model.dart';
+import '../models/components/media/media.model.dart';
 import '../models/components/music_folders/music_folders.model.dart';
 import '../models/responses/subsonic_empty_data.model.dart';
 import '../models/responses/subsonic_response.model.dart';

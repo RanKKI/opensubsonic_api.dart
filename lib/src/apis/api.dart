@@ -4,12 +4,14 @@ import 'package:dio/dio.dart' hide Headers;
 
 import 'package:retrofit/retrofit.dart';
 
-import '../../subsonic_api.dart';
+import '../models/components/album_id3/album_id3.model.dart';
 import '../models/components/artist/artist_info.model.dart';
 import '../models/components/artist_with_albums_id3/artist_with_albums_id3.model.dart';
-import '../models/components/genres/get_genres_result.model.dart';
+import '../models/components/artists_id3/artists_id3.model.dart';
+import '../models/components/genres/genres.model.dart';
 import '../models/components/indexes/indexes.model.dart';
 import '../models/components/license/license.model.dart';
+import '../models/components/media/media.model.dart';
 import '../models/components/music_folders/music_folders.model.dart';
 import '../models/responses/subsonic_empty_data.model.dart';
 import '../models/responses/subsonic_response.model.dart';
