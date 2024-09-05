@@ -150,4 +150,14 @@ abstract class SubsonicApiClient {
     @Query('estimateContentLength') bool estimateContentLength = false,
     @Query('converted') bool converted = false,
   });
+
+  /// Since 1.8.0
+  ///
+  /// Returns details for a song.
+  ///
+  /// - [songId] The song ID.
+  @GET('/rest/getSong')
+  Future<SubsonicResponse<MediaModel>> getSong(
+    @Query('id') String songId,
+  );
 }

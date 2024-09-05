@@ -42,7 +42,15 @@ class SubsonicResponseData<T> with _$SubsonicResponseData<T> {
     ///
     /// e.g. calling getCoverArt
     String? version,
+
+    /// OpenSubsonic
+    ///
+    /// The server actual name. [Ex: Navidrome or gonic]
     String? type,
+
+    /// OpenSubsonic
+    ///
+    /// The server actual version. [Ex: 1.2.3 (beta)]
     String? serverVersion,
     @Default(null) T? data,
     SubsonicErrorModel? errors,
