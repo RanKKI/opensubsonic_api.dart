@@ -17,15 +17,15 @@ jobs:
       - name: Install dependencies
         run: dart pub get
 
-      - run: dart format --output=none --set-exit-if-changed .
-      - run: dart analyze
-
-      - name: Run tests
-        run: dart test
-
       - name: Run build_runner
         run: dart run build_runner build --delete-conflicting-outputs
 
       - name: Check for uncommitted changes
         run: |
           git diff --exit-code
+
+      - run: dart format --output=none --set-exit-if-changed .
+      - run: dart analyze
+
+      - name: Run tests
+        run: dart test
