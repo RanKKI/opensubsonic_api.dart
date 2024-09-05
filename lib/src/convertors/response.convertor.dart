@@ -2,6 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../subsonic_api.dart';
 import '../extensions/list.extension.dart';
+import '../models/components/artist/artist_id3.model.dart';
+import '../models/components/artist/artist_info.model.dart';
 import '../models/components/indexes/indexes.model.dart';
 import '../models/components/license/license.model.dart';
 import '../models/components/music_folders/music_folders.model.dart';
@@ -20,6 +22,8 @@ class SubsonicResponseConvertor<T>
     'artists': ArtistsID3Model.fromJson,
     'artist': ArtistID3Model.fromJson,
     'song': MediaModel.fromJson,
+    'artistInfo': ArtistInfoModel.fromJson,
+    'artistInfo2': ArtistInfo2Model.fromJson,
   };
 
   @override

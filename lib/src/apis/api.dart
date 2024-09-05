@@ -5,6 +5,7 @@ import 'package:dio/dio.dart' hide Headers;
 import 'package:retrofit/retrofit.dart';
 
 import '../../subsonic_api.dart';
+import '../models/components/artist/artist_info.model.dart';
 import '../models/components/artist_with_albums_id3/artist_with_albums_id3.model.dart';
 import '../models/components/genres/get_genres_result.model.dart';
 import '../models/components/indexes/indexes.model.dart';
@@ -160,4 +161,32 @@ abstract class SubsonicApiClient {
   Future<SubsonicResponse<MediaModel>> getSong(
     @Query('id') String songId,
   );
+
+  /// Since 1.11.0
+  ///
+  /// Returns artist info with biography, image URLs and similar artists, using data from last.fm.
+  ///
+  /// - [id] The artist, album or song ID.
+  /// - [count] Max number of similar artists to return.
+  /// - [includeNotPresent] Whether to return artists that are not present in the media library.
+  @GET('/rest/getArtistInfo')
+  Future<SubsonicResponse<ArtistInfoModel>> getArtistInfo(
+    @Query('id') String id, {
+    @Query('count') int count = 20,
+    @Query('includeNotPresent') bool includeNotPresent = false,
+  });
+
+  /// Since 1.11.0
+  ///
+  /// Similar to [getArtistInfo], but organizes music according to ID3 tags.
+  ///
+  /// - [id] The artist, album or song ID.
+  /// - [count] Max number of similar artists to return.
+  /// - [includeNotPresent] Whether to return artists that are not present in the media library.
+  @GET('/rest/getArtistInfo2')
+  Future<SubsonicResponse<ArtistInfo2Model>> getArtistInfo2(
+    @Query('id') String id, {
+    @Query('count') int count = 20,
+    @Query('includeNotPresent') bool includeNotPresent = false,
+  });
 }

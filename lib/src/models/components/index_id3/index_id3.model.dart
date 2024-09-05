@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../artist_id3/artist_id3.model.dart';
+import '../artist/artist_id3.model.dart';
 
 part 'index_id3.model.freezed.dart';
 part 'index_id3.model.g.dart';
