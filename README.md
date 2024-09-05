@@ -1,6 +1,6 @@
-# Subsonic API Wrapper For Dart
+# (Open)Subsonic API Wrapper For Dart
 
-**subsonic_api.dart** is a wrapper for the [Subsonic API](https://www.subsonic.org/) in Dart, with additional support for [OpenSubsonic](https://opensubsonic.netlify.app/).
+**opensubsonic_api.dart** is a wrapper for the [Subsonic API](https://www.subsonic.org/) in Dart, with additional support for [OpenSubsonic](https://opensubsonic.netlify.app/).
 
 ## Goals
 
