@@ -3,8 +3,8 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:http_mock_adapter/http_mock_adapter.dart';
-import 'package:subsonic_api/src/apis/api.dart';
-import 'package:subsonic_api/src/interceptors/json.interceptor.dart';
+import 'package:opensubsonic_api/src/apis/api.dart';
+import 'package:opensubsonic_api/src/interceptors/json.interceptor.dart';
 
 SubsonicApiClient setupMockAPI() {
   final dio = Dio(BaseOptions())

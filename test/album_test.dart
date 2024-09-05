@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:subsonic_api/src/models/components/enums/response_status.enum.dart';
+import 'package:opensubsonic_api/src/models/components/enums/response_status.enum.dart';
 import 'package:test/test.dart';
 
 import 'mock/api.mock.dart';

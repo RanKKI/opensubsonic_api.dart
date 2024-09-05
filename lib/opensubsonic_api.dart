@@ -1,4 +1,4 @@
-library subsonic_api;
+library opensubsonic_api;
 
 export 'src/apis/api.dart';
 export 'src/models/auth/auth.model.dart';
@@ -23,4 +23,4 @@ export 'src/models/components/media/media.model.dart';
 export 'src/models/components/music_folder/music_folder.model.dart';
 export 'src/models/components/music_folders/music_folders.model.dart';
 export 'src/models/responses/subsonic_response.model.dart';
-export 'src/subsonic_api.dart';
+export 'src/opensubsonic_api.dart';
