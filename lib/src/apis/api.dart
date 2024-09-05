@@ -7,12 +7,12 @@ import 'package:retrofit/retrofit.dart';
 import '../models/components/album_with_songs_id3/album_with_songs_id3.model.dart';
 import '../models/components/artist_with_albums_id3/artist_with_albums_id3.model.dart';
 import '../models/components/artists_id3/artists_id3.model.dart';
-import '../models/components/indexes/indexes.model.dart';
-import '../models/components/music_folders/music_folders.model.dart';
 import '../models/components/genres/get_genres_result.model.dart';
-import '../models/responses/common/subsonic_empty_data.model.dart';
-import '../models/responses/common/subsonic_response.model.dart';
-import '../models/responses/system/get_license_result.model.dart';
+import '../models/components/indexes/indexes.model.dart';
+import '../models/components/license/license.model.dart';
+import '../models/components/music_folders/music_folders.model.dart';
+import '../models/responses/subsonic_empty_data.model.dart';
+import '../models/responses/subsonic_response.model.dart';
 
 part 'api.g.dart';
 
@@ -36,7 +36,7 @@ abstract class SubsonicApiClient {
   /// valid license (after a 30-day trial period). To get a license key you must
   /// upgrade to Subsonic Premium.
   @GET('/rest/getLicense')
-  Future<SubsonicResponse<SubsonicLicenseStatus>> getLicense();
+  Future<SubsonicResponse<License>> getLicense();
 
   /// Since 1.8.0
   ///

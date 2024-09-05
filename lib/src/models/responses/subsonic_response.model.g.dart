@@ -15,7 +15,7 @@ _$SubsonicResponseImpl<T> _$$SubsonicResponseImplFromJson<T>(
       version: json['version'] as String,
       type: json['type'] as String?,
       serverVersion: json['serverVersion'] as String?,
-      data: json['data'] == null ? null : fromJsonT(json['data']),
+      data: _$nullableGenericFromJson(json['data'], fromJsonT) ?? null,
       errors: json['errors'] == null
           ? null
           : SubsonicErrorModel.fromJson(json['errors'] as Map<String, dynamic>),
@@ -30,7 +30,7 @@ Map<String, dynamic> _$$SubsonicResponseImplToJson<T>(
       'version': instance.version,
       'type': instance.type,
       'serverVersion': instance.serverVersion,
-      'data': toJsonT(instance.data),
+      'data': _$nullableGenericToJson(instance.data, toJsonT),
       'errors': instance.errors,
     };
 
@@ -38,3 +38,15 @@ const _$ResponseStatusEnumMap = {
   ResponseStatus.ok: 'ok',
   ResponseStatus.failed: 'failed',
 };
+
+T? _$nullableGenericFromJson<T>(
+  Object? input,
+  T Function(Object? json) fromJson,
+) =>
+    input == null ? null : fromJson(input);
+
+Object? _$nullableGenericToJson<T>(
+  T? input,
+  Object? Function(T value) toJson,
+) =>
+    input == null ? null : toJson(input);

@@ -46,13 +46,13 @@ class _SubsonicApiClient implements SubsonicApiClient {
   }
 
   @override
-  Future<SubsonicResponse<SubsonicLicenseStatus>> getLicense() async {
+  Future<SubsonicResponse<License>> getLicense() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<SubsonicResponse<SubsonicLicenseStatus>>(Options(
+        _setStreamType<SubsonicResponse<License>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -68,8 +68,7 @@ class _SubsonicApiClient implements SubsonicApiClient {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value =
-        SubsonicResponse<SubsonicLicenseStatus>.fromJson(_result.data!);
+    final value = SubsonicResponse<License>.fromJson(_result.data!);
     return value;
   }
 

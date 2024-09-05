@@ -5,17 +5,18 @@ import '../models/components/album_with_songs_id3/album_with_songs_id3.model.dar
 import '../models/components/artist_id3/artist_id3.model.dart';
 import '../models/components/artists_id3/artists_id3.model.dart';
 import '../models/components/indexes/indexes.model.dart';
+import '../models/components/license/license.model.dart';
 import '../models/components/media/media.model.dart';
 import '../models/components/music_folders/music_folders.model.dart';
-import '../models/responses/common/subsonic_response.model.dart';
-import '../models/responses/system/get_license_result.model.dart';
+import '../models/responses/subsonic_empty_data.model.dart';
+import '../models/responses/subsonic_response.model.dart';
 
 class SubsonicResponseConvertor<T>
     extends JsonConverter<SubsonicResponseData<T>, Map<String, dynamic>> {
   const SubsonicResponseConvertor();
 
   static const _mapper = {
-    'license': SubsonicLicenseStatus.fromJson,
+    'license': License.fromJson,
     'album': AlbumWithSongsID3Model.fromJson,
     'musicFolders': MusicFoldersModel.fromJson,
     'indexes': IndexesModel.fromJson,
@@ -25,7 +26,7 @@ class SubsonicResponseConvertor<T>
   };
 
   T fromJsonT(Object? json) {
-    throw UnimplementedError();
+    return SubsonicNoData() as T;
   }
 
   @override

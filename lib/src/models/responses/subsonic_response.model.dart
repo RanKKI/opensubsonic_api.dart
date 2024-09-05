@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../convertors/response.convertor.dart';
-import '../../components/enums/response_status.enum.dart';
-import '../../components/error/error.model.dart';
+import '../../convertors/response.convertor.dart';
+import '../components/enums/response_status.enum.dart';
+import '../components/error/error.model.dart';
 
 part 'subsonic_response.model.freezed.dart';
 part 'subsonic_response.model.g.dart';
@@ -35,7 +35,7 @@ class SubsonicResponseData<T> with _$SubsonicResponseData<T> {
     required String version,
     String? type,
     String? serverVersion,
-    @Default(null) T data,
+    @Default(null) T? data,
     SubsonicErrorModel? errors,
   }) = _SubsonicResponse;
 

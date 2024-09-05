@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'get_license_result.model.dart';
+part of 'license.model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,50 +14,46 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-SubsonicLicenseStatus _$SubsonicLicenseStatusFromJson(
-    Map<String, dynamic> json) {
-  return _SubsonicLicenseStatus.fromJson(json);
+License _$LicenseFromJson(Map<String, dynamic> json) {
+  return _License.fromJson(json);
 }
 
 /// @nodoc
-mixin _$SubsonicLicenseStatus {
+mixin _$License {
   bool get valid => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
   @DateTimeConvertor()
   String? get licenseExpires => throw _privateConstructorUsedError;
 
-  /// Serializes this SubsonicLicenseStatus to a JSON map.
+  /// Serializes this License to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of SubsonicLicenseStatus
+  /// Create a copy of License
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $SubsonicLicenseStatusCopyWith<SubsonicLicenseStatus> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LicenseCopyWith<License> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SubsonicLicenseStatusCopyWith<$Res> {
-  factory $SubsonicLicenseStatusCopyWith(SubsonicLicenseStatus value,
-          $Res Function(SubsonicLicenseStatus) then) =
-      _$SubsonicLicenseStatusCopyWithImpl<$Res, SubsonicLicenseStatus>;
+abstract class $LicenseCopyWith<$Res> {
+  factory $LicenseCopyWith(License value, $Res Function(License) then) =
+      _$LicenseCopyWithImpl<$Res, License>;
   @useResult
   $Res call(
       {bool valid, String? email, @DateTimeConvertor() String? licenseExpires});
 }
 
 /// @nodoc
-class _$SubsonicLicenseStatusCopyWithImpl<$Res,
-        $Val extends SubsonicLicenseStatus>
-    implements $SubsonicLicenseStatusCopyWith<$Res> {
-  _$SubsonicLicenseStatusCopyWithImpl(this._value, this._then);
+class _$LicenseCopyWithImpl<$Res, $Val extends License>
+    implements $LicenseCopyWith<$Res> {
+  _$LicenseCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of SubsonicLicenseStatus
+  /// Create a copy of License
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -84,12 +80,10 @@ class _$SubsonicLicenseStatusCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$SubsonicLicenseStatusImplCopyWith<$Res>
-    implements $SubsonicLicenseStatusCopyWith<$Res> {
-  factory _$$SubsonicLicenseStatusImplCopyWith(
-          _$SubsonicLicenseStatusImpl value,
-          $Res Function(_$SubsonicLicenseStatusImpl) then) =
-      __$$SubsonicLicenseStatusImplCopyWithImpl<$Res>;
+abstract class _$$LicenseImplCopyWith<$Res> implements $LicenseCopyWith<$Res> {
+  factory _$$LicenseImplCopyWith(
+          _$LicenseImpl value, $Res Function(_$LicenseImpl) then) =
+      __$$LicenseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -97,15 +91,14 @@ abstract class _$$SubsonicLicenseStatusImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SubsonicLicenseStatusImplCopyWithImpl<$Res>
-    extends _$SubsonicLicenseStatusCopyWithImpl<$Res,
-        _$SubsonicLicenseStatusImpl>
-    implements _$$SubsonicLicenseStatusImplCopyWith<$Res> {
-  __$$SubsonicLicenseStatusImplCopyWithImpl(_$SubsonicLicenseStatusImpl _value,
-      $Res Function(_$SubsonicLicenseStatusImpl) _then)
+class __$$LicenseImplCopyWithImpl<$Res>
+    extends _$LicenseCopyWithImpl<$Res, _$LicenseImpl>
+    implements _$$LicenseImplCopyWith<$Res> {
+  __$$LicenseImplCopyWithImpl(
+      _$LicenseImpl _value, $Res Function(_$LicenseImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of SubsonicLicenseStatus
+  /// Create a copy of License
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -114,7 +107,7 @@ class __$$SubsonicLicenseStatusImplCopyWithImpl<$Res>
     Object? email = freezed,
     Object? licenseExpires = freezed,
   }) {
-    return _then(_$SubsonicLicenseStatusImpl(
+    return _then(_$LicenseImpl(
       valid: null == valid
           ? _value.valid
           : valid // ignore: cast_nullable_to_non_nullable
@@ -133,14 +126,14 @@ class __$$SubsonicLicenseStatusImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SubsonicLicenseStatusImpl implements _SubsonicLicenseStatus {
-  const _$SubsonicLicenseStatusImpl(
+class _$LicenseImpl implements _License {
+  const _$LicenseImpl(
       {required this.valid,
       this.email,
       @DateTimeConvertor() this.licenseExpires});
 
-  factory _$SubsonicLicenseStatusImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SubsonicLicenseStatusImplFromJson(json);
+  factory _$LicenseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LicenseImplFromJson(json);
 
   @override
   final bool valid;
@@ -152,14 +145,14 @@ class _$SubsonicLicenseStatusImpl implements _SubsonicLicenseStatus {
 
   @override
   String toString() {
-    return 'SubsonicLicenseStatus(valid: $valid, email: $email, licenseExpires: $licenseExpires)';
+    return 'License(valid: $valid, email: $email, licenseExpires: $licenseExpires)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SubsonicLicenseStatusImpl &&
+            other is _$LicenseImpl &&
             (identical(other.valid, valid) || other.valid == valid) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.licenseExpires, licenseExpires) ||
@@ -170,32 +163,29 @@ class _$SubsonicLicenseStatusImpl implements _SubsonicLicenseStatus {
   @override
   int get hashCode => Object.hash(runtimeType, valid, email, licenseExpires);
 
-  /// Create a copy of SubsonicLicenseStatus
+  /// Create a copy of License
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SubsonicLicenseStatusImplCopyWith<_$SubsonicLicenseStatusImpl>
-      get copyWith => __$$SubsonicLicenseStatusImplCopyWithImpl<
-          _$SubsonicLicenseStatusImpl>(this, _$identity);
+  _$$LicenseImplCopyWith<_$LicenseImpl> get copyWith =>
+      __$$LicenseImplCopyWithImpl<_$LicenseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SubsonicLicenseStatusImplToJson(
+    return _$$LicenseImplToJson(
       this,
     );
   }
 }
 
-abstract class _SubsonicLicenseStatus implements SubsonicLicenseStatus {
-  const factory _SubsonicLicenseStatus(
-          {required final bool valid,
-          final String? email,
-          @DateTimeConvertor() final String? licenseExpires}) =
-      _$SubsonicLicenseStatusImpl;
+abstract class _License implements License {
+  const factory _License(
+      {required final bool valid,
+      final String? email,
+      @DateTimeConvertor() final String? licenseExpires}) = _$LicenseImpl;
 
-  factory _SubsonicLicenseStatus.fromJson(Map<String, dynamic> json) =
-      _$SubsonicLicenseStatusImpl.fromJson;
+  factory _License.fromJson(Map<String, dynamic> json) = _$LicenseImpl.fromJson;
 
   @override
   bool get valid;
@@ -205,10 +195,10 @@ abstract class _SubsonicLicenseStatus implements SubsonicLicenseStatus {
   @DateTimeConvertor()
   String? get licenseExpires;
 
-  /// Create a copy of SubsonicLicenseStatus
+  /// Create a copy of License
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SubsonicLicenseStatusImplCopyWith<_$SubsonicLicenseStatusImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$LicenseImplCopyWith<_$LicenseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

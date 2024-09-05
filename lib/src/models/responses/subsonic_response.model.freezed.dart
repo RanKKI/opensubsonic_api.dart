@@ -25,7 +25,7 @@ mixin _$SubsonicResponseData<T> {
   String get version => throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
   String? get serverVersion => throw _privateConstructorUsedError;
-  T get data => throw _privateConstructorUsedError;
+  T? get data => throw _privateConstructorUsedError;
   SubsonicErrorModel? get errors => throw _privateConstructorUsedError;
 
   /// Serializes this SubsonicResponseData to a JSON map.
@@ -50,7 +50,7 @@ abstract class $SubsonicResponseDataCopyWith<T, $Res> {
       String version,
       String? type,
       String? serverVersion,
-      T data,
+      T? data,
       SubsonicErrorModel? errors});
 
   $SubsonicErrorModelCopyWith<$Res>? get errors;
@@ -99,7 +99,7 @@ class _$SubsonicResponseDataCopyWithImpl<T, $Res,
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as T,
+              as T?,
       errors: freezed == errors
           ? _value.errors
           : errors // ignore: cast_nullable_to_non_nullable
@@ -135,7 +135,7 @@ abstract class _$$SubsonicResponseImplCopyWith<T, $Res>
       String version,
       String? type,
       String? serverVersion,
-      T data,
+      T? data,
       SubsonicErrorModel? errors});
 
   @override
@@ -183,7 +183,7 @@ class __$$SubsonicResponseImplCopyWithImpl<T, $Res>
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as T,
+              as T?,
       errors: freezed == errors
           ? _value.errors
           : errors // ignore: cast_nullable_to_non_nullable
@@ -217,7 +217,7 @@ class _$SubsonicResponseImpl<T> implements _SubsonicResponse<T> {
   final String? serverVersion;
   @override
   @JsonKey()
-  final T data;
+  final T? data;
   @override
   final SubsonicErrorModel? errors;
 
@@ -266,7 +266,7 @@ abstract class _SubsonicResponse<T> implements SubsonicResponseData<T> {
       required final String version,
       final String? type,
       final String? serverVersion,
-      final T data,
+      final T? data,
       final SubsonicErrorModel? errors}) = _$SubsonicResponseImpl<T>;
 
   factory _SubsonicResponse.fromJson(
@@ -282,7 +282,7 @@ abstract class _SubsonicResponse<T> implements SubsonicResponseData<T> {
   @override
   String? get serverVersion;
   @override
-  T get data;
+  T? get data;
   @override
   SubsonicErrorModel? get errors;
 
