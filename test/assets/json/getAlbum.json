@@ -1,0 +1,442 @@
+{
+    "subsonic-response": {
+        "status": "ok",
+        "version": "1.16.1",
+        "type": "navidrome",
+        "serverVersion": "0.52.5 (c5560888)",
+        "openSubsonic": true,
+        "album": {
+            "id": "5546a1a4ea72a59273e65948f9c2ba73",
+            "name": "JAY",
+            "artist": "周杰倫",
+            "artistId": "05ee3dfc0fd29b7da6edba89ad75a2c4",
+            "coverArt": "al-5546a1a4ea72a59273e65948f9c2ba73_5d7f2eae",
+            "songCount": 10,
+            "duration": 2575,
+            "playCount": 3,
+            "created": "2024-09-01T12:12:25.713853805Z",
+            "year": 2000,
+            "genre": "华语流行音乐",
+            "played": "2024-09-02T02:57:02.764Z",
+            "userRating": 0,
+            "genres": [
+                {
+                    "name": "华语流行音乐"
+                }
+            ],
+            "musicBrainzId": "",
+            "isCompilation": false,
+            "sortName": "",
+            "discTitles": [
+                {
+                    "disc": 1,
+                    "title": ""
+                }
+            ],
+            "originalReleaseDate": {},
+            "releaseDate": {},
+            "song": [
+                {
+                    "id": "faa8f20f58605c04da3bbc980aa2e601",
+                    "parent": "5546a1a4ea72a59273e65948f9c2ba73",
+                    "isDir": false,
+                    "title": "可愛女人",
+                    "album": "JAY",
+                    "artist": "周杰倫",
+                    "track": 1,
+                    "year": 2000,
+                    "genre": "华语流行音乐",
+                    "coverArt": "mf-faa8f20f58605c04da3bbc980aa2e601_5d7e35ea",
+                    "size": 27858398,
+                    "contentType": "audio/flac",
+                    "suffix": "flac",
+                    "duration": 236,
+                    "bitRate": 941,
+                    "path": "周杰倫/JAY/01 - 可愛女人.flac",
+                    "playCount": 1,
+                    "created": "2024-09-01T12:12:25.714087909Z",
+                    "albumId": "5546a1a4ea72a59273e65948f9c2ba73",
+                    "artistId": "05ee3dfc0fd29b7da6edba89ad75a2c4",
+                    "type": "music",
+                    "isVideo": false,
+                    "played": "2024-09-02T02:49:03.745Z",
+                    "bpm": 0,
+                    "comment": "",
+                    "sortName": "",
+                    "mediaType": "song",
+                    "musicBrainzId": "",
+                    "genres": [
+                        {
+                            "name": "华语流行音乐"
+                        }
+                    ],
+                    "replayGain": {
+                        "trackPeak": 1,
+                        "albumPeak": 1
+                    },
+                    "channelCount": 2,
+                    "samplingRate": 44100
+                },
+                {
+                    "id": "d80cea91771949081fef46fb63b552cd",
+                    "parent": "5546a1a4ea72a59273e65948f9c2ba73",
+                    "isDir": false,
+                    "title": "完美主義",
+                    "album": "JAY",
+                    "artist": "周杰倫",
+                    "track": 2,
+                    "year": 2000,
+                    "genre": "华语流行音乐",
+                    "coverArt": "mf-d80cea91771949081fef46fb63b552cd_5d7f2d18",
+                    "size": 28061856,
+                    "contentType": "audio/flac",
+                    "suffix": "flac",
+                    "duration": 241,
+                    "bitRate": 926,
+                    "path": "周杰倫/JAY/02 - 完美主義.flac",
+                    "playCount": 1,
+                    "created": "2024-09-01T12:12:25.71393033Z",
+                    "albumId": "5546a1a4ea72a59273e65948f9c2ba73",
+                    "artistId": "05ee3dfc0fd29b7da6edba89ad75a2c4",
+                    "type": "music",
+                    "isVideo": false,
+                    "played": "2024-09-02T02:53:00.569Z",
+                    "bpm": 0,
+                    "comment": "",
+                    "sortName": "",
+                    "mediaType": "song",
+                    "musicBrainzId": "",
+                    "genres": [
+                        {
+                            "name": "华语流行音乐"
+                        }
+                    ],
+                    "replayGain": {
+                        "trackPeak": 1,
+                        "albumPeak": 1
+                    },
+                    "channelCount": 2,
+                    "samplingRate": 44100
+                },
+                {
+                    "id": "4c9b8847d3309590c05865ea73a66c15",
+                    "parent": "5546a1a4ea72a59273e65948f9c2ba73",
+                    "isDir": false,
+                    "title": "娘子",
+                    "album": "JAY",
+                    "artist": "周杰倫",
+                    "track": 4,
+                    "year": 2000,
+                    "genre": "华语流行音乐",
+                    "coverArt": "mf-4c9b8847d3309590c05865ea73a66c15_5d7f2e5e",
+                    "size": 28136834,
+                    "contentType": "audio/flac",
+                    "suffix": "flac",
+                    "duration": 268,
+                    "bitRate": 837,
+                    "path": "周杰倫/JAY/04 - 娘子.flac",
+                    "playCount": 1,
+                    "created": "2024-09-01T12:12:25.714050582Z",
+                    "albumId": "5546a1a4ea72a59273e65948f9c2ba73",
+                    "artistId": "05ee3dfc0fd29b7da6edba89ad75a2c4",
+                    "type": "music",
+                    "isVideo": false,
+                    "played": "2024-09-02T02:57:02.764Z",
+                    "bpm": 0,
+                    "comment": "",
+                    "sortName": "",
+                    "mediaType": "song",
+                    "musicBrainzId": "",
+                    "genres": [
+                        {
+                            "name": "华语流行音乐"
+                        }
+                    ],
+                    "replayGain": {
+                        "trackPeak": 1,
+                        "albumPeak": 1
+                    },
+                    "channelCount": 2,
+                    "samplingRate": 44100
+                },
+                {
+                    "id": "3ab2fc4ada707dcfabfb072364e74647",
+                    "parent": "5546a1a4ea72a59273e65948f9c2ba73",
+                    "isDir": false,
+                    "title": "印地安老斑鳩",
+                    "album": "JAY",
+                    "artist": "周杰倫",
+                    "track": 8,
+                    "year": 2000,
+                    "genre": "华语流行音乐",
+                    "coverArt": "mf-3ab2fc4ada707dcfabfb072364e74647_5d7e4426",
+                    "size": 34219934,
+                    "contentType": "audio/flac",
+                    "suffix": "flac",
+                    "duration": 301,
+                    "bitRate": 905,
+                    "path": "周杰倫/JAY/08 - 印地安老斑鳩.flac",
+                    "created": "2024-09-01T12:12:25.713985489Z",
+                    "albumId": "5546a1a4ea72a59273e65948f9c2ba73",
+                    "artistId": "05ee3dfc0fd29b7da6edba89ad75a2c4",
+                    "type": "music",
+                    "isVideo": false,
+                    "bpm": 0,
+                    "comment": "",
+                    "sortName": "",
+                    "mediaType": "song",
+                    "musicBrainzId": "",
+                    "genres": [
+                        {
+                            "name": "华语流行音乐"
+                        }
+                    ],
+                    "replayGain": {
+                        "trackPeak": 1,
+                        "albumPeak": 1
+                    },
+                    "channelCount": 2,
+                    "samplingRate": 44100
+                },
+                {
+                    "id": "f7cb0ff7105657d1c3929d7dac55457a",
+                    "parent": "5546a1a4ea72a59273e65948f9c2ba73",
+                    "isDir": false,
+                    "title": "龍卷風",
+                    "album": "JAY",
+                    "artist": "周杰倫",
+                    "track": 9,
+                    "year": 2000,
+                    "genre": "华语流行音乐",
+                    "coverArt": "mf-f7cb0ff7105657d1c3929d7dac55457a_5d7e43f8",
+                    "size": 27894732,
+                    "contentType": "audio/flac",
+                    "suffix": "flac",
+                    "duration": 248,
+                    "bitRate": 897,
+                    "path": "周杰倫/JAY/09 - 龍卷風.flac",
+                    "created": "2024-09-01T12:12:25.713909655Z",
+                    "albumId": "5546a1a4ea72a59273e65948f9c2ba73",
+                    "artistId": "05ee3dfc0fd29b7da6edba89ad75a2c4",
+                    "type": "music",
+                    "isVideo": false,
+                    "bpm": 0,
+                    "comment": "",
+                    "sortName": "",
+                    "mediaType": "song",
+                    "musicBrainzId": "",
+                    "genres": [
+                        {
+                            "name": "华语流行音乐"
+                        }
+                    ],
+                    "replayGain": {
+                        "trackPeak": 1,
+                        "albumPeak": 1
+                    },
+                    "channelCount": 2,
+                    "samplingRate": 44100
+                },
+                {
+                    "id": "d2f6ef689cf36470935428867b8da6a5",
+                    "parent": "5546a1a4ea72a59273e65948f9c2ba73",
+                    "isDir": false,
+                    "title": "反方向的鐘",
+                    "album": "JAY",
+                    "artist": "周杰倫",
+                    "track": 10,
+                    "year": 2000,
+                    "genre": "华语流行音乐",
+                    "coverArt": "mf-d2f6ef689cf36470935428867b8da6a5_5d7f2eae",
+                    "size": 28578300,
+                    "contentType": "audio/flac",
+                    "suffix": "flac",
+                    "duration": 258,
+                    "bitRate": 884,
+                    "path": "周杰倫/JAY/10 - 反方向的鐘.flac",
+                    "created": "2024-09-01T12:12:25.71406925Z",
+                    "albumId": "5546a1a4ea72a59273e65948f9c2ba73",
+                    "artistId": "05ee3dfc0fd29b7da6edba89ad75a2c4",
+                    "type": "music",
+                    "isVideo": false,
+                    "bpm": 0,
+                    "comment": "",
+                    "sortName": "",
+                    "mediaType": "song",
+                    "musicBrainzId": "",
+                    "genres": [
+                        {
+                            "name": "华语流行音乐"
+                        }
+                    ],
+                    "replayGain": {
+                        "trackPeak": 1,
+                        "albumPeak": 1
+                    },
+                    "channelCount": 2,
+                    "samplingRate": 44100
+                },
+                {
+                    "id": "ee553486cf7e3eee291bd45fb671f543",
+                    "parent": "5546a1a4ea72a59273e65948f9c2ba73",
+                    "isDir": false,
+                    "title": "星晴",
+                    "album": "JAY",
+                    "artist": "周杰倫",
+                    "track": 3,
+                    "year": 2000,
+                    "genre": "华语流行音乐",
+                    "coverArt": "mf-ee553486cf7e3eee291bd45fb671f543_5d7f2df2",
+                    "size": 28274822,
+                    "contentType": "audio/flac",
+                    "suffix": "flac",
+                    "duration": 256,
+                    "bitRate": 879,
+                    "path": "周杰倫/JAY/03 - 星晴.flac",
+                    "discNumber": 1,
+                    "created": "2024-09-01T12:12:25.714126226Z",
+                    "albumId": "5546a1a4ea72a59273e65948f9c2ba73",
+                    "artistId": "05ee3dfc0fd29b7da6edba89ad75a2c4",
+                    "type": "music",
+                    "isVideo": false,
+                    "bpm": 0,
+                    "comment": "",
+                    "sortName": "",
+                    "mediaType": "song",
+                    "musicBrainzId": "",
+                    "genres": [
+                        {
+                            "name": "华语流行音乐"
+                        }
+                    ],
+                    "replayGain": {
+                        "trackPeak": 1,
+                        "albumPeak": 1
+                    },
+                    "channelCount": 2,
+                    "samplingRate": 44100
+                },
+                {
+                    "id": "befbe3b6630318daccb11f3e8a4c4a34",
+                    "parent": "5546a1a4ea72a59273e65948f9c2ba73",
+                    "isDir": false,
+                    "title": "斗牛",
+                    "album": "JAY",
+                    "artist": "周杰倫",
+                    "track": 5,
+                    "year": 2000,
+                    "genre": "华语流行音乐",
+                    "coverArt": "mf-befbe3b6630318daccb11f3e8a4c4a34_5d7f2df2",
+                    "size": 30694936,
+                    "contentType": "audio/flac",
+                    "suffix": "flac",
+                    "duration": 276,
+                    "bitRate": 887,
+                    "path": "周杰倫/JAY/05 - 斗牛.flac",
+                    "discNumber": 1,
+                    "created": "2024-09-01T12:12:25.71396457Z",
+                    "albumId": "5546a1a4ea72a59273e65948f9c2ba73",
+                    "artistId": "05ee3dfc0fd29b7da6edba89ad75a2c4",
+                    "type": "music",
+                    "isVideo": false,
+                    "bpm": 0,
+                    "comment": "",
+                    "sortName": "",
+                    "mediaType": "song",
+                    "musicBrainzId": "",
+                    "genres": [
+                        {
+                            "name": "华语流行音乐"
+                        }
+                    ],
+                    "replayGain": {
+                        "trackPeak": 1,
+                        "albumPeak": 1
+                    },
+                    "channelCount": 2,
+                    "samplingRate": 44100
+                },
+                {
+                    "id": "f5ceafb74b669ab88ca219cfb144b43e",
+                    "parent": "5546a1a4ea72a59273e65948f9c2ba73",
+                    "isDir": false,
+                    "title": "黑色幽默",
+                    "album": "JAY",
+                    "artist": "周杰倫",
+                    "track": 6,
+                    "year": 2000,
+                    "genre": "华语流行音乐",
+                    "coverArt": "mf-f5ceafb74b669ab88ca219cfb144b43e_5d7f2d88",
+                    "size": 27842427,
+                    "contentType": "audio/flac",
+                    "suffix": "flac",
+                    "duration": 280,
+                    "bitRate": 792,
+                    "path": "周杰倫/JAY/06 - 黑色幽默.flac",
+                    "discNumber": 1,
+                    "created": "2024-09-01T12:12:25.713853805Z",
+                    "albumId": "5546a1a4ea72a59273e65948f9c2ba73",
+                    "artistId": "05ee3dfc0fd29b7da6edba89ad75a2c4",
+                    "type": "music",
+                    "isVideo": false,
+                    "bpm": 0,
+                    "comment": "",
+                    "sortName": "",
+                    "mediaType": "song",
+                    "musicBrainzId": "",
+                    "genres": [
+                        {
+                            "name": "华语流行音乐"
+                        }
+                    ],
+                    "replayGain": {
+                        "trackPeak": 1,
+                        "albumPeak": 1
+                    },
+                    "channelCount": 2,
+                    "samplingRate": 44100
+                },
+                {
+                    "id": "5fa42a24825ebf2e6450d0a10f96ea4b",
+                    "parent": "5546a1a4ea72a59273e65948f9c2ba73",
+                    "isDir": false,
+                    "title": "伊斯坦堡",
+                    "album": "JAY",
+                    "artist": "周杰倫",
+                    "track": 7,
+                    "year": 2000,
+                    "genre": "华语流行音乐",
+                    "coverArt": "mf-5fa42a24825ebf2e6450d0a10f96ea4b_5d7f2d18",
+                    "size": 22534028,
+                    "contentType": "audio/flac",
+                    "suffix": "flac",
+                    "duration": 206,
+                    "bitRate": 871,
+                    "path": "周杰倫/JAY/07 - 伊斯坦堡.flac",
+                    "discNumber": 1,
+                    "created": "2024-09-01T12:12:25.714029984Z",
+                    "albumId": "5546a1a4ea72a59273e65948f9c2ba73",
+                    "artistId": "05ee3dfc0fd29b7da6edba89ad75a2c4",
+                    "type": "music",
+                    "isVideo": false,
+                    "bpm": 0,
+                    "comment": "",
+                    "sortName": "",
+                    "mediaType": "song",
+                    "musicBrainzId": "",
+                    "genres": [
+                        {
+                            "name": "华语流行音乐"
+                        }
+                    ],
+                    "replayGain": {
+                        "trackPeak": 1,
+                        "albumPeak": 1
+                    },
+                    "channelCount": 2,
+                    "samplingRate": 44100
+                }
+            ]
+        }
+    }
+}

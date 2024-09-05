@@ -141,11 +141,7 @@ abstract class SubsonicApiClient {
   /// cause the converted video to be returned instead of the original.
   @GET('/rest/stream')
   @DioResponseType(ResponseType.stream)
-  @Headers({
-    // keep alive
-    'Connection': 'keep-alive',
-  })
-  Future<HttpResponse<void>> stream(
+  Future<SubsonicResponse<Stream<Uint8List>?>> stream(
     @Query('id') String id, {
     @Query('maxBitRate') int? maxBitRate,
     @Query('format') String? format,

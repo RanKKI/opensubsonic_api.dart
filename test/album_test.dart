@@ -10,7 +10,7 @@ void main() {
   test('getAlbum', () async {
     final result = await api.getAlbum('5546a1a4ea72a59273e65948f9c2ba73');
     expect(result.response.status, ResponseStatus.ok);
-    expect(result.response.data?.song.length, 1);
+    expect(result.response.data?.song.length, 10);
     final song = result.response.data?.song.first;
     expect(song?.title, '可愛女人');
   });

@@ -22,7 +22,6 @@ class JsonInterceptor extends InterceptorsWrapper {
   ) {
     final responseType = response.requestOptions.responseType;
     final contentType = response.headers.value(HttpHeaders.contentTypeHeader);
-    print("onResponse, responseType: $responseType, contentType: $contentType");
     if (responseType == ResponseType.bytes) {
       if (contentType == 'application/json') {
         print(
@@ -39,6 +38,11 @@ class JsonInterceptor extends InterceptorsWrapper {
           "subsonic-response": {"status": "ok", "data": data}
         };
       }
+    } else if (responseType == ResponseType.stream) {
+      final data = response.data;
+      response.data = {
+        "subsonic-response": {"status": "ok", "data": data.stream}
+      };
     }
 
     // Handle coverArt return

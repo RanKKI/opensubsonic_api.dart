@@ -308,7 +308,7 @@ class _SubsonicApiClient implements SubsonicApiClient {
   }
 
   @override
-  Future<HttpResponse<void>> stream(
+  Future<SubsonicResponse<Stream<Uint8List>?>> stream(
     String id, {
     int? maxBitRate,
     String? format,
@@ -328,11 +328,10 @@ class _SubsonicApiClient implements SubsonicApiClient {
       r'converted': converted,
     };
     queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{r'Connection': 'keep-alive'};
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<void>(_setStreamType<HttpResponse<void>>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<SubsonicResponse<Stream<Uint8List>>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -349,8 +348,8 @@ class _SubsonicApiClient implements SubsonicApiClient {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final httpResponse = HttpResponse(null, _result);
-    return httpResponse;
+    final value = SubsonicResponse<Stream<Uint8List>>.fromJson(_result.data!);
+    return value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
