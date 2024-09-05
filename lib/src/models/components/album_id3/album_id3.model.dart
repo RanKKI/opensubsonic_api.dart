@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../convertors/date_time.convertor.dart';
+import '../media/media.model.dart';
 
 part 'album_id3.model.freezed.dart';
 part 'album_id3.model.g.dart';
@@ -26,6 +27,7 @@ class AlbumID3Model with _$AlbumID3Model {
 
     /// Added in 1.10.1
     String? genre,
+    @Default([]) List<MediaModel> song,
   }) = _AlbumID3Model;
 
   factory AlbumID3Model.fromJson(Map<String, dynamic> json) =>

@@ -4,35 +4,41 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:http_mock_adapter/http_mock_adapter.dart';
 import 'package:subsonic_api/src/apis/api.dart';
-
-part 'data.mock.dart';
-part 'album.mock.dart';
+import 'package:subsonic_api/src/interceptors/json.interceptor.dart';
 
 SubsonicApiClient setupMockAPI() {
-  final dio = Dio(BaseOptions());
+  final dio = Dio(BaseOptions())
+    ..interceptors.addAll([
+      JsonInterceptor(),
+    ]);
+
   final dioAdapter = DioAdapter(dio: dio);
 
-  dioAdapter.onGet(
-    '/rest/ping',
-    (server) => server.reply(200, _pingResponse),
-  );
+  // static json response data
+  final staticJsonResponses = [
+    ('/rest/ping', "ping.json"),
+    ('/rest/getLicense', "getLicense.json"),
+    ('/rest/getAlbum', "getAlbum.json"),
+    ('/rest/getArtist', "getArtist.json"),
+    ('/rest/getArtists', "getArtists.json"),
+  ];
 
-  dioAdapter.onGet(
-    '/rest/license',
-    (server) => server.reply(200, _licenseResponse),
-  );
-
-  dioAdapter.onGet(
-    '/rest/getAlbum',
-    (server) => server.reply(200, _getAlbum()),
-  );
+  for (final (path, filename) in staticJsonResponses) {
+    dioAdapter.onGet(
+      path,
+      (server) => server.reply(
+        200,
+        jsonDecode(File('./test/assets/json/$filename').readAsStringSync()),
+      ),
+    );
+  }
 
   dioAdapter.onGet('/rest/getCoverArt', (server) {
     final file = File('./test/assets/album.jpeg');
     final bytes = file.readAsBytesSync();
-    server.reply(200, base64.encode(bytes));
-  }, queryParameters: {
-    "id": "5546a1a4ea72a59273e65948f9c2ba73",
+    server.reply(200, bytes, headers: {
+      HttpHeaders.contentTypeHeader: ['image/jpeg'],
+    });
   });
 
   return SubsonicApiClient(dio);

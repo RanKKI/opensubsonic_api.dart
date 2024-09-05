@@ -22,15 +22,13 @@ class JsonInterceptor extends InterceptorsWrapper {
   ) {
     final responseType = response.requestOptions.responseType;
     final contentType = response.headers.value(HttpHeaders.contentTypeHeader);
-    print("onResponse, responseType: $responseType, contentType: $contentType");
     if (responseType == ResponseType.bytes) {
       if (contentType == 'application/json') {
         print(
             '[Subsonic API] Expected bytes, but got json, thus error occurred, convert it to JSON');
 
         final Uint8List data = response.data;
-        // final bytes = base64.decode(data);
-        final byteString = utf8.decode(data);
+        final byteString = String.fromCharCodes(data);
         final json = jsonDecode(byteString) as Map<String, dynamic>;
 
         response.data = json;
@@ -40,6 +38,11 @@ class JsonInterceptor extends InterceptorsWrapper {
           "subsonic-response": {"status": "ok", "data": data}
         };
       }
+    } else if (responseType == ResponseType.stream) {
+      final data = response.data;
+      response.data = {
+        "subsonic-response": {"status": "ok", "data": data.stream}
+      };
     }
 
     // Handle coverArt return

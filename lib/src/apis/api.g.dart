@@ -219,14 +219,13 @@ class _SubsonicApiClient implements SubsonicApiClient {
   }
 
   @override
-  Future<SubsonicResponse<AlbumWithSongsID3Model>> getAlbum(
-      String albumId) async {
+  Future<SubsonicResponse<AlbumID3Model>> getAlbum(String albumId) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'id': albumId};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<SubsonicResponse<AlbumWithSongsID3Model>>(Options(
+        _setStreamType<SubsonicResponse<AlbumID3Model>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -242,8 +241,7 @@ class _SubsonicApiClient implements SubsonicApiClient {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value =
-        SubsonicResponse<AlbumWithSongsID3Model>.fromJson(_result.data!);
+    final value = SubsonicResponse<AlbumID3Model>.fromJson(_result.data!);
     return value;
   }
 
@@ -283,13 +281,13 @@ class _SubsonicApiClient implements SubsonicApiClient {
   }
 
   @override
-  Future<HttpResponse<void>> getAvatar(String username) async {
+  Future<SubsonicResponse<Uint8List?>> getAvatar(String username) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'username': username};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<void>(_setStreamType<HttpResponse<void>>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<SubsonicResponse<Uint8List>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -305,8 +303,53 @@ class _SubsonicApiClient implements SubsonicApiClient {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final httpResponse = HttpResponse(null, _result);
-    return httpResponse;
+    final value = SubsonicResponse<Uint8List>.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<SubsonicResponse<Stream<Uint8List>?>> stream(
+    String id, {
+    int? maxBitRate,
+    String? format,
+    int? timeOffset,
+    String? size,
+    bool estimateContentLength = false,
+    bool converted = false,
+  }) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'id': id,
+      r'maxBitRate': maxBitRate,
+      r'format': format,
+      r'timeOffset': timeOffset,
+      r'size': size,
+      r'estimateContentLength': estimateContentLength,
+      r'converted': converted,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<SubsonicResponse<Stream<Uint8List>>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+      responseType: ResponseType.stream,
+    )
+            .compose(
+              _dio.options,
+              '/rest/stream',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = SubsonicResponse<Stream<Uint8List>>.fromJson(_result.data!);
+    return value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

@@ -1,0 +1,249 @@
+{
+    "subsonic-response": {
+        "status": "ok",
+        "version": "1.16.1",
+        "type": "navidrome",
+        "serverVersion": "0.52.5 (c5560888)",
+        "openSubsonic": true,
+        "artists": {
+            "index": [
+                {
+                    "name": "#",
+                    "artist": [
+                        {
+                            "id": "49122de0a36069f001e7e3d568f3339e",
+                            "name": "ずっと真夜中でいいのに。",
+                            "albumCount": 1,
+                            "coverArt": "ar-49122de0a36069f001e7e3d568f3339e_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLTQ5MTIyZGUwYTM2MDY5ZjAwMWU3ZTNkNTY4ZjMzMzllXzAiLCJpc3MiOiJORCJ9.JSZh8xfeZTNOdV_IZxGNgTy-hxCtCnQbNHE_bllMgFA?size=600"
+                        },
+                        {
+                            "id": "623a66ec4ebc45d38938ba3a912a6743",
+                            "name": "古巨基",
+                            "albumCount": 1,
+                            "coverArt": "ar-623a66ec4ebc45d38938ba3a912a6743_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLTYyM2E2NmVjNGViYzQ1ZDM4OTM4YmEzYTkxMmE2NzQzXzAiLCJpc3MiOiJORCJ9.emW8eqKWZQnDcGmw38RP1cZQ11hdNJvkcWNHQEFXrH0?size=600"
+                        },
+                        {
+                            "id": "c7f7e4a4a52072947d2e24f380b9c14e",
+                            "name": "合辑",
+                            "albumCount": 13,
+                            "coverArt": "ar-c7f7e4a4a52072947d2e24f380b9c14e_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLWM3ZjdlNGE0YTUyMDcyOTQ3ZDJlMjRmMzgwYjljMTRlXzAiLCJpc3MiOiJORCJ9.pd-Jd9yCU7AfBCIe18jC26c3j7Rf1mNe9UHtNDsiWR4?size=600"
+                        },
+                        {
+                            "id": "fbe09f0defa9ba4facddc65ef8a118d8",
+                            "name": "吳宗憲",
+                            "albumCount": 1,
+                            "coverArt": "ar-fbe09f0defa9ba4facddc65ef8a118d8_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLWZiZTA5ZjBkZWZhOWJhNGZhY2RkYzY1ZWY4YTExOGQ4XzAiLCJpc3MiOiJORCJ9.2xheIIASbqyHFDWOGxhBL331zZoY_uIZITdwoNJNLqs?size=600"
+                        },
+                        {
+                            "id": "7a8941058aaf4df5147042ce104568da",
+                            "name": "周杰伦",
+                            "albumCount": 5,
+                            "coverArt": "ar-7a8941058aaf4df5147042ce104568da_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLTdhODk0MTA1OGFhZjRkZjUxNDcwNDJjZTEwNDU2OGRhXzAiLCJpc3MiOiJORCJ9.5lvmSNAABPkjHJZlSTh_lkQX6_ZdcihVCCg5UmTklOc?size=600"
+                        },
+                        {
+                            "id": "0f4bd4ac871a6274078f330ae8ef49a6",
+                            "name": "周杰伦; 张惠妹",
+                            "albumCount": 1,
+                            "coverArt": "ar-0f4bd4ac871a6274078f330ae8ef49a6_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLTBmNGJkNGFjODcxYTYyNzQwNzhmMzMwYWU4ZWY0OWE2XzAiLCJpc3MiOiJORCJ9.HwCVbZyD1j8ZqLJvyM7t5cFGgUZU3TIVcislXojAT0U?size=600"
+                        },
+                        {
+                            "id": "05ee3dfc0fd29b7da6edba89ad75a2c4",
+                            "name": "周杰倫",
+                            "albumCount": 23,
+                            "starred": "2024-09-02T07:38:40.592626088Z",
+                            "userRating": 5,
+                            "coverArt": "ar-05ee3dfc0fd29b7da6edba89ad75a2c4_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLTA1ZWUzZGZjMGZkMjliN2RhNmVkYmE4OWFkNzVhMmM0XzAiLCJpc3MiOiJORCJ9.tAO823ZaFzbHEIc-3hqfZXw90Gm4LebAJRZGgT3244w?size=600"
+                        },
+                        {
+                            "id": "2a242625e1d64f3a30100f2e81794808",
+                            "name": "夏日入侵企画",
+                            "albumCount": 2,
+                            "coverArt": "ar-2a242625e1d64f3a30100f2e81794808_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLTJhMjQyNjI1ZTFkNjRmM2EzMDEwMGYyZTgxNzk0ODA4XzAiLCJpc3MiOiJORCJ9.4WE1I8N2_Zz0EFNu9B6tM1qLXbemrx4V5fe5Nyrrosc?size=600"
+                        },
+                        {
+                            "id": "aefea3900265d5fceed4293325ead54b",
+                            "name": "姚蘇容",
+                            "albumCount": 1,
+                            "coverArt": "ar-aefea3900265d5fceed4293325ead54b_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLWFlZmVhMzkwMDI2NWQ1ZmNlZWQ0MjkzMzI1ZWFkNTRiXzAiLCJpc3MiOiJORCJ9.feODe8wTuAj2yXfHXoBxHUuoKdZ96RsmK8SUnqf7Fwc?size=600"
+                        },
+                        {
+                            "id": "e05a144f0f5640ce782271000f750cb1",
+                            "name": "孙燕姿",
+                            "albumCount": 23,
+                            "coverArt": "ar-e05a144f0f5640ce782271000f750cb1_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLWUwNWExNDRmMGY1NjQwY2U3ODIyNzEwMDBmNzUwY2IxXzAiLCJpc3MiOiJORCJ9.BexkiW2HzOzXsKROVq4Uq8tnpYrutkZiru4LOANdGhw?size=600"
+                        },
+                        {
+                            "id": "693066f559c6510a87ef83ea9964d8c3",
+                            "name": "孙燕姿 (Feat. 五月天)",
+                            "albumCount": 1,
+                            "coverArt": "ar-693066f559c6510a87ef83ea9964d8c3_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLTY5MzA2NmY1NTljNjUxMGE4N2VmODNlYTk5NjRkOGMzXzAiLCJpc3MiOiJORCJ9.vU81R1X2YF97CFdITbywaVevkLDNWAVz3E9zMOqRMlc?size=600"
+                        },
+                        {
+                            "id": "d2ae57e44cc08cbd0b740da08848c31c",
+                            "name": "孙燕姿 (Feat. 仓木麻衣)",
+                            "albumCount": 2,
+                            "coverArt": "ar-d2ae57e44cc08cbd0b740da08848c31c_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLWQyYWU1N2U0NGNjMDhjYmQwYjc0MGRhMDg4NDhjMzFjXzAiLCJpc3MiOiJORCJ9.CkCN2L_RQCK69k-Xn8SpJ80avN7DrnjUmaZoC9DGyfI?size=600"
+                        },
+                        {
+                            "id": "51e6a146cd606d81f4f78902e92399a8",
+                            "name": "孙燕姿 (Feat. 孙靖)",
+                            "albumCount": 1,
+                            "coverArt": "ar-51e6a146cd606d81f4f78902e92399a8_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLTUxZTZhMTQ2Y2Q2MDZkODFmNGY3ODkwMmU5MjM5OWE4XzAiLCJpc3MiOiJORCJ9.aCxdxdM8f-nh_R9r3jIRVPPslnaqycYb5Tw7EjVm43Y?size=600"
+                        },
+                        {
+                            "id": "972ad0dadfc5af3b40e4731710da69b0",
+                            "name": "孙燕姿 (Feat. 张惠妹)",
+                            "albumCount": 1,
+                            "coverArt": "ar-972ad0dadfc5af3b40e4731710da69b0_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLTk3MmFkMGRhZGZjNWFmM2I0MGU0NzMxNzEwZGE2OWIwXzAiLCJpc3MiOiJORCJ9.tjYrXahkTc4j5WARj1CDywQAO79yZNNGnonSQwse0B0?size=600"
+                        },
+                        {
+                            "id": "a243ae5ac60547dcbb705975e711206d",
+                            "name": "孙燕姿 (Feat. 林俊杰 蔡健雅 阿杜)",
+                            "albumCount": 1,
+                            "coverArt": "ar-a243ae5ac60547dcbb705975e711206d_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLWEyNDNhZTVhYzYwNTQ3ZGNiYjcwNTk3NWU3MTEyMDZkXzAiLCJpc3MiOiJORCJ9.IMgODGH4CxRnv2mOZPYVyxel3DiXuevuHpa8VL21HVY?size=600"
+                        },
+                        {
+                            "id": "8b73d9bcf3feb61b161c4790b3317fd6",
+                            "name": "孙燕姿 (Feat. 林俊杰)",
+                            "albumCount": 1,
+                            "coverArt": "ar-8b73d9bcf3feb61b161c4790b3317fd6_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLThiNzNkOWJjZjNmZWI2MWIxNjFjNDc5MGIzMzE3ZmQ2XzAiLCJpc3MiOiJORCJ9.zGIyJ_shYO7YAzD119P8imlhi1060LfQUcqa3dzxwz8?size=600"
+                        },
+                        {
+                            "id": "d2c90d72ef996ccc2fd7fb5017fec3d2",
+                            "name": "孙燕姿 (Feat. 蔡健雅)",
+                            "albumCount": 1,
+                            "coverArt": "ar-d2c90d72ef996ccc2fd7fb5017fec3d2_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLWQyYzkwZDcyZWY5OTZjY2MyZmQ3ZmI1MDE3ZmVjM2QyXzAiLCJpc3MiOiJORCJ9.PhlZlTZ8pkN-HHzOrFNBuznvBgrM-KBrYFSRthxGUzo?size=600"
+                        },
+                        {
+                            "id": "726523205fc1848d803824d2deca86ee",
+                            "name": "康康",
+                            "albumCount": 1,
+                            "coverArt": "ar-726523205fc1848d803824d2deca86ee_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLTcyNjUyMzIwNWZjMTg0OGQ4MDM4MjRkMmRlY2E4NmVlXzAiLCJpc3MiOiJORCJ9.bv5V1n4fJOktUFGnVPIj3-rx6GSm3W75ORYspBNOgR4?size=600"
+                        },
+                        {
+                            "id": "9e32e764158c2803ecf958ebb6e9cf2b",
+                            "name": "张惠妹",
+                            "albumCount": 1,
+                            "coverArt": "ar-9e32e764158c2803ecf958ebb6e9cf2b_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLTllMzJlNzY0MTU4YzI4MDNlY2Y5NThlYmI2ZTljZjJiXzAiLCJpc3MiOiJORCJ9.fePhAOqveJBUc_oaY2YQenShJoI-SsSso5tLQYnpnNU?size=600"
+                        },
+                        {
+                            "id": "ce1e98a9266da2362106cc18838fa2c2",
+                            "name": "早坂愛(CV:花守ゆみり)",
+                            "albumCount": 1,
+                            "coverArt": "ar-ce1e98a9266da2362106cc18838fa2c2_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLWNlMWU5OGE5MjY2ZGEyMzYyMTA2Y2MxODgzOGZhMmMyXzAiLCJpc3MiOiJORCJ9.a4Qp-i9iUw2pd_P-s6opUE2R81lpCBxYNBbwI2F462M?size=600"
+                        },
+                        {
+                            "id": "8f74ebf1a5cc4e57c74223bf5e1d8aec",
+                            "name": "暗杠",
+                            "albumCount": 1,
+                            "coverArt": "ar-8f74ebf1a5cc4e57c74223bf5e1d8aec_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLThmNzRlYmYxYTVjYzRlNTdjNzQyMjNiZjVlMWQ4YWVjXzAiLCJpc3MiOiJORCJ9.i15gj9MMc0FkN0jEJCE1lGgVQSxMZ9xzje7Z8zwTZQ4?size=600"
+                        },
+                        {
+                            "id": "08368100f986a98b3fd7b5b134dab736",
+                            "name": "李玟",
+                            "albumCount": 1,
+                            "coverArt": "ar-08368100f986a98b3fd7b5b134dab736_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLTA4MzY4MTAwZjk4NmE5OGIzZmQ3YjViMTM0ZGFiNzM2XzAiLCJpc3MiOiJORCJ9.4t4nTO8RHkNZRqXtVNE_LJwfp819OTCfEzEENDk0TBA?size=600"
+                        },
+                        {
+                            "id": "a610dc1f960d241061853f6f313b4c58",
+                            "name": "江蕙",
+                            "albumCount": 1,
+                            "coverArt": "ar-a610dc1f960d241061853f6f313b4c58_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLWE2MTBkYzFmOTYwZDI0MTA2MTg1M2Y2ZjMxM2I0YzU4XzAiLCJpc3MiOiJORCJ9.z9fZ5TAw8HZxH6HClCe1acPYa8Dz7-3dhsQ9S_Vff6Y?size=600"
+                        },
+                        {
+                            "id": "7e5dc013283ff017a919bd0c67d4b0d4",
+                            "name": "江語晨",
+                            "albumCount": 1,
+                            "coverArt": "ar-7e5dc013283ff017a919bd0c67d4b0d4_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLTdlNWRjMDEzMjgzZmYwMTdhOTE5YmQwYzY3ZDRiMGQ0XzAiLCJpc3MiOiJORCJ9.bzXrJXOK2jzt4BIzfif8wcYa2kA858OYKYcvTYuabvw?size=600"
+                        },
+                        {
+                            "id": "e7a21ac9b3c1e4ba335573d341e37a0d",
+                            "name": "派对间谍PartySpy",
+                            "albumCount": 1,
+                            "coverArt": "ar-e7a21ac9b3c1e4ba335573d341e37a0d_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLWU3YTIxYWM5YjNjMWU0YmEzMzU1NzNkMzQxZTM3YTBkXzAiLCJpc3MiOiJORCJ9.tg9UJh2QZWg8c9wxddfdNFCKz8RVUxoaNaOeHygKneE?size=600"
+                        },
+                        {
+                            "id": "b2098b0c368db6392e0146b870a25142",
+                            "name": "溫嵐",
+                            "albumCount": 1,
+                            "coverArt": "ar-b2098b0c368db6392e0146b870a25142_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLWIyMDk4YjBjMzY4ZGI2MzkyZTAxNDZiODcwYTI1MTQyXzAiLCJpc3MiOiJORCJ9.tPbObX6_xMp3uJdFYdnYoU5IPTHh5g5IysXk_fXerFw?size=600"
+                        },
+                        {
+                            "id": "73c540ff89ffe259de4dd7aaaaa4a881",
+                            "name": "爆青筋BCJ",
+                            "albumCount": 1,
+                            "coverArt": "ar-73c540ff89ffe259de4dd7aaaaa4a881_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLTczYzU0MGZmODlmZmUyNTlkZTRkZDdhYWFhYTRhODgxXzAiLCJpc3MiOiJORCJ9.nLHUUBqwL5rV2G8lxHMdf3BvrO7i511BymvMKj_IKpg?size=600"
+                        },
+                        {
+                            "id": "0274f159178d9b52ea9e527cebbffd04",
+                            "name": "許茹蕓",
+                            "albumCount": 1,
+                            "coverArt": "ar-0274f159178d9b52ea9e527cebbffd04_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLTAyNzRmMTU5MTc4ZDliNTJlYTllNTI3Y2ViYmZmZDA0XzAiLCJpc3MiOiJORCJ9.mB96FIdZQBRexe3hUuPHiAFOTk79SxMmiusWsXP5hnk?size=600"
+                        },
+                        {
+                            "id": "19b068488ae5a3a8a05698de2fe4b2db",
+                            "name": "黃俊郎",
+                            "albumCount": 1,
+                            "coverArt": "ar-19b068488ae5a3a8a05698de2fe4b2db_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLTE5YjA2ODQ4OGFlNWEzYThhMDU2OThkZTJmZTRiMmRiXzAiLCJpc3MiOiJORCJ9.l6RVSiAMzCOqjFbyMEaJbp9V27O0MpKAYVh9L13jNCQ?size=600"
+                        }
+                    ]
+                },
+                {
+                    "name": "Q",
+                    "artist": [
+                        {
+                            "id": "c71662031228f38c0b98ef71f4b9cbef",
+                            "name": "Queen Sea Big Shark",
+                            "albumCount": 1,
+                            "coverArt": "ar-c71662031228f38c0b98ef71f4b9cbef_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLWM3MTY2MjAzMTIyOGYzOGMwYjk4ZWY3MWY0YjljYmVmXzAiLCJpc3MiOiJORCJ9.b41KEz-bCKsogj5rHVhbqrZJLBrEmsRb_bdF19G0qb4?size=600"
+                        }
+                    ]
+                },
+                {
+                    "name": "X-Z",
+                    "artist": [
+                        {
+                            "id": "016a7eb3c7070024e0098312359fe70b",
+                            "name": "ZUTOMAYO",
+                            "albumCount": 4,
+                            "coverArt": "ar-016a7eb3c7070024e0098312359fe70b_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLTAxNmE3ZWIzYzcwNzAwMjRlMDA5ODMxMjM1OWZlNzBiXzAiLCJpc3MiOiJORCJ9.uxykWqRrzfUCsHt_MqXfViucY36GSzFsttz-5kKDFPI?size=600"
+                        }
+                    ]
+                }
+            ],
+            "lastModified": 1725524489002,
+            "ignoredArticles": "The El La Los Las Le Les Os As O A"
+        }
+    }
+}

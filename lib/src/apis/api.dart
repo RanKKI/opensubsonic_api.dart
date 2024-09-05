@@ -1,11 +1,11 @@
 import 'dart:typed_data';
 
-import 'package:dio/dio.dart';
+import 'package:dio/dio.dart' hide Headers;
+
 import 'package:retrofit/retrofit.dart';
 
-import '../models/components/album_with_songs_id3/album_with_songs_id3.model.dart';
+import '../../subsonic_api.dart';
 import '../models/components/artist_with_albums_id3/artist_with_albums_id3.model.dart';
-import '../models/components/artists_id3/artists_id3.model.dart';
 import '../models/components/genres/get_genres_result.model.dart';
 import '../models/components/indexes/indexes.model.dart';
 import '../models/components/license/license.model.dart';
@@ -90,7 +90,7 @@ abstract class SubsonicApiClient {
   ///
   /// - [albumId] The album ID.
   @GET('/rest/getAlbum')
-  Future<SubsonicResponse<AlbumWithSongsID3Model>> getAlbum(
+  Future<SubsonicResponse<AlbumID3Model>> getAlbum(
     @Query('id') String albumId,
   );
 
@@ -116,4 +116,38 @@ abstract class SubsonicApiClient {
   Future<SubsonicResponse<Uint8List?>> getAvatar(
     @Query('username') String username,
   );
+
+  /// Since 1.0.0
+  ///
+  /// Streams a given media file.
+  ///
+  /// - [id] A string which uniquely identifies the file to stream. Obtained by
+  /// calls to getMusicDirectory.
+  /// - [maxBitRate] (Since 1.2.0) If specified, the server will attempt to limit
+  /// the bitrate to this value, in kilobits per second. If set to zero, no limit is imposed.
+  /// - [format] (Since 1.6.0) Specifies the preferred target format (e.g., "mp3"
+  /// or "flv") in case there are multiple applicable transcodings. Starting with
+  /// 1.9.0 you can use the special value "raw" to disable transcoding.
+  /// - [timeOffset] Only applicable to video streaming. If specified, start
+  /// streaming at the given offset (in seconds) into the video. Typically used
+  /// to implement video skipping.
+  /// - [size] (Since 1.6.0) Only applicable to video streaming. Requested video
+  /// size specified as WxH, for instance "640x480".
+  /// - [estimateContentLength] (Since 1.8.0). If set to "true", the Content-Length
+  /// HTTP header will be set to an estimated value for transcoded or down-sampled media.
+  /// - [converted] (Since 1.14.0) Only applicable to video streaming. Subsonic
+  /// can optimize videos for streaming by converting them to MP4. If a conversion
+  /// exists for the video in question, then setting this parameter to "true" will
+  /// cause the converted video to be returned instead of the original.
+  @GET('/rest/stream')
+  @DioResponseType(ResponseType.stream)
+  Future<SubsonicResponse<Stream<Uint8List>?>> stream(
+    @Query('id') String id, {
+    @Query('maxBitRate') int? maxBitRate,
+    @Query('format') String? format,
+    @Query('timeOffset') int? timeOffset,
+    @Query('size') String? size,
+    @Query('estimateContentLength') bool estimateContentLength = false,
+    @Query('converted') bool converted = false,
+  });
 }
