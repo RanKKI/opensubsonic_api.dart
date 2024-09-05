@@ -6,99 +6,120 @@ part of 'api.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
 class _SubsonicApiClient implements SubsonicApiClient {
   _SubsonicApiClient(
     this._dio, {
     this.baseUrl,
+    this.errorLogger,
   });
 
   final Dio _dio;
 
   String? baseUrl;
 
+  final ParseErrorLogger? errorLogger;
+
   @override
   Future<SubsonicResponse<SubsonicNoData>> ping() async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<SubsonicResponse<SubsonicNoData>>(Options(
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<SubsonicResponse<SubsonicNoData>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/rest/ping',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = SubsonicResponse<SubsonicNoData>.fromJson(_result.data!);
-    return value;
+        .compose(
+          _dio.options,
+          '/rest/ping',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SubsonicResponse<SubsonicNoData> _value;
+    try {
+      _value = SubsonicResponse<SubsonicNoData>.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   @override
   Future<SubsonicResponse<License>> getLicense() async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<SubsonicResponse<License>>(Options(
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<SubsonicResponse<License>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/rest/getLicense',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = SubsonicResponse<License>.fromJson(_result.data!);
-    return value;
+        .compose(
+          _dio.options,
+          '/rest/getLicense',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SubsonicResponse<License> _value;
+    try {
+      _value = SubsonicResponse<License>.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   @override
   Future<SubsonicResponse<ArtistsID3Model>> getArtists(
       {String? musicFolderId}) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'musicFolderId': musicFolderId};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<SubsonicResponse<ArtistsID3Model>>(Options(
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<SubsonicResponse<ArtistsID3Model>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/rest/getArtists',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = SubsonicResponse<ArtistsID3Model>.fromJson(_result.data!);
-    return value;
+        .compose(
+          _dio.options,
+          '/rest/getArtists',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SubsonicResponse<ArtistsID3Model> _value;
+    try {
+      _value = SubsonicResponse<ArtistsID3Model>.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   @override
@@ -106,42 +127,48 @@ class _SubsonicApiClient implements SubsonicApiClient {
     String? musicFolderId,
     int? ifModifiedSince,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'musicFolderId': musicFolderId,
       r'ifModifiedSince': ifModifiedSince,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<SubsonicResponse<IndexesModel>>(Options(
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<SubsonicResponse<IndexesModel>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/rest/getIndexes',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = SubsonicResponse<IndexesModel>.fromJson(_result.data!);
-    return value;
+        .compose(
+          _dio.options,
+          '/rest/getIndexes',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SubsonicResponse<IndexesModel> _value;
+    try {
+      _value = SubsonicResponse<IndexesModel>.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   @override
   Future<SubsonicResponse<MusicFoldersModel>> getMusicFolders() async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<Map<String, dynamic>>(
+    const Map<String, dynamic>? _data = null;
+    final _options =
         _setStreamType<SubsonicResponse<MusicFoldersModel>>(Options(
       method: 'GET',
       headers: _headers,
@@ -157,46 +184,59 @@ class _SubsonicApiClient implements SubsonicApiClient {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ))));
-    final value = SubsonicResponse<MusicFoldersModel>.fromJson(_result.data!);
-    return value;
+            )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SubsonicResponse<MusicFoldersModel> _value;
+    try {
+      _value = SubsonicResponse<MusicFoldersModel>.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   @override
   Future<SubsonicResponse<GenresModel>> getGenres() async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<SubsonicResponse<GenresModel>>(Options(
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<SubsonicResponse<GenresModel>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/rest/getGenres',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = SubsonicResponse<GenresModel>.fromJson(_result.data!);
-    return value;
+        .compose(
+          _dio.options,
+          '/rest/getGenres',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SubsonicResponse<GenresModel> _value;
+    try {
+      _value = SubsonicResponse<GenresModel>.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   @override
   Future<SubsonicResponse<ArtistWithAlbumsID3Model>> getArtist(
       String artistId) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'id': artistId};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<Map<String, dynamic>>(
+    const Map<String, dynamic>? _data = null;
+    final _options =
         _setStreamType<SubsonicResponse<ArtistWithAlbumsID3Model>>(Options(
       method: 'GET',
       headers: _headers,
@@ -212,37 +252,50 @@ class _SubsonicApiClient implements SubsonicApiClient {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ))));
-    final value =
-        SubsonicResponse<ArtistWithAlbumsID3Model>.fromJson(_result.data!);
-    return value;
+            )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SubsonicResponse<ArtistWithAlbumsID3Model> _value;
+    try {
+      _value =
+          SubsonicResponse<ArtistWithAlbumsID3Model>.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   @override
   Future<SubsonicResponse<AlbumID3Model>> getAlbum(String albumId) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'id': albumId};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<SubsonicResponse<AlbumID3Model>>(Options(
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<SubsonicResponse<AlbumID3Model>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/rest/getAlbum',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = SubsonicResponse<AlbumID3Model>.fromJson(_result.data!);
-    return value;
+        .compose(
+          _dio.options,
+          '/rest/getAlbum',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SubsonicResponse<AlbumID3Model> _value;
+    try {
+      _value = SubsonicResponse<AlbumID3Model>.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   @override
@@ -250,61 +303,73 @@ class _SubsonicApiClient implements SubsonicApiClient {
     String id, {
     int? size,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'id': id,
       r'size': size,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<SubsonicResponse<Uint8List>>(Options(
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<SubsonicResponse<Uint8List?>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
       responseType: ResponseType.bytes,
     )
-            .compose(
-              _dio.options,
-              '/rest/getCoverArt',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = SubsonicResponse<Uint8List>.fromJson(_result.data!);
-    return value;
+        .compose(
+          _dio.options,
+          '/rest/getCoverArt',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SubsonicResponse<Uint8List?> _value;
+    try {
+      _value = SubsonicResponse<Uint8List?>.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   @override
   Future<SubsonicResponse<Uint8List?>> getAvatar(String username) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'username': username};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<SubsonicResponse<Uint8List>>(Options(
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<SubsonicResponse<Uint8List?>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/rest/getAvatar',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = SubsonicResponse<Uint8List>.fromJson(_result.data!);
-    return value;
+        .compose(
+          _dio.options,
+          '/rest/getAvatar',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SubsonicResponse<Uint8List?> _value;
+    try {
+      _value = SubsonicResponse<Uint8List?>.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   @override
@@ -317,7 +382,7 @@ class _SubsonicApiClient implements SubsonicApiClient {
     bool estimateContentLength = false,
     bool converted = false,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'id': id,
       r'maxBitRate': maxBitRate,
@@ -329,9 +394,9 @@ class _SubsonicApiClient implements SubsonicApiClient {
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<SubsonicResponse<Stream<Uint8List>>>(Options(
+    const Map<String, dynamic>? _data = null;
+    final _options =
+        _setStreamType<SubsonicResponse<Stream<Uint8List>?>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -347,9 +412,16 @@ class _SubsonicApiClient implements SubsonicApiClient {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ))));
-    final value = SubsonicResponse<Stream<Uint8List>>.fromJson(_result.data!);
-    return value;
+            )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SubsonicResponse<Stream<Uint8List>?> _value;
+    try {
+      _value = SubsonicResponse<Stream<Uint8List>?>.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
