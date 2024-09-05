@@ -7,7 +7,7 @@ export 'src/models/components/album/album_info.model.dart';
 export 'src/models/components/artist/artist.model.dart';
 export 'src/models/components/artist/artist_id3.model.dart';
 export 'src/models/components/artist/artist_info.model.dart';
-export 'src/models/components/artist_with_albums_id3/artist_with_albums_id3.model.dart';
+export 'src/models/components/artist/artist_with_albums_id3.model.dart';
 export 'src/models/components/artists_id3/artists_id3.model.dart';
 export 'src/models/components/enums/media_type.enum.dart';
 export 'src/models/components/enums/podcast_status.enum.dart';

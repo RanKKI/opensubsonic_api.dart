@@ -7,7 +7,7 @@ import 'package:retrofit/retrofit.dart';
 import '../models/components/album/album_id3.model.dart';
 import '../models/components/album/album_info.model.dart';
 import '../models/components/artist/artist_info.model.dart';
-import '../models/components/artist_with_albums_id3/artist_with_albums_id3.model.dart';
+import '../models/components/artist/artist_with_albums_id3.model.dart';
 import '../models/components/artists_id3/artists_id3.model.dart';
 import '../models/components/genres/genres.model.dart';
 import '../models/components/indexes/indexes.model.dart';
