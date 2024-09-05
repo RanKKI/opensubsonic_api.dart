@@ -94,6 +94,12 @@ abstract class SubsonicApiClient {
     @Query('id') String albumId,
   );
 
+  /// Since 1.0.0
+  ///
+  /// Returns a cover art image. null if no cover art is available.
+  ///
+  /// - [id] The ID of a song, album or artist.
+  /// - [size] If specified, scale image to this size.
   @GET('/rest/getCoverArt')
   @DioResponseType(ResponseType.bytes)
   Future<SubsonicResponse<Uint8List?>> getCoverArt(
@@ -103,9 +109,11 @@ abstract class SubsonicApiClient {
 
   /// Since 1.8.0
   ///
-  /// Returns the avatar (personal image) for a user.
+  /// Returns the avatar (personal image) for a user. null if no avatar is available.
   ///
   /// - [username] The user in question.
   @GET('/rest/getAvatar')
-  Future<HttpResponse<void>> getAvatar(@Query('username') String username);
+  Future<SubsonicResponse<Uint8List?>> getAvatar(
+    @Query('username') String username,
+  );
 }
