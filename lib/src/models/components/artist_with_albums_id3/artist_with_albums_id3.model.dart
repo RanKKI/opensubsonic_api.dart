@@ -2,7 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../convertors/date_time.convertor.dart';
 import '../../../extensions/types.extension.dart';
-import '../album_id3/album_id3.model.dart';
+import '../album/album_id3.model.dart';
 
 part 'artist_with_albums_id3.model.freezed.dart';
 part 'artist_with_albums_id3.model.g.dart';

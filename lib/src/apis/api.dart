@@ -4,7 +4,8 @@ import 'package:dio/dio.dart' hide Headers;
 
 import 'package:retrofit/retrofit.dart';
 
-import '../models/components/album_id3/album_id3.model.dart';
+import '../models/components/album/album_id3.model.dart';
+import '../models/components/album/album_info.model.dart';
 import '../models/components/artist/artist_info.model.dart';
 import '../models/components/artist_with_albums_id3/artist_with_albums_id3.model.dart';
 import '../models/components/artists_id3/artists_id3.model.dart';
@@ -191,4 +192,24 @@ abstract class SubsonicApiClient {
     @Query('count') int count = 20,
     @Query('includeNotPresent') bool includeNotPresent = false,
   });
+
+  /// Since 1.14.0
+  ///
+  /// Returns album notes, image URLs etc, using data from last.fm.
+  ///
+  /// - [id] 	The album or song ID.
+  @GET('/rest/getAlbumInfo')
+  Future<SubsonicResponse<AlbumInfoModel>> getAlbumInfo(
+    @Query('id') String id,
+  );
+
+  /// Since 1.14.0
+  ///
+  /// Similar to [getAlbumInfo], but organizes music according to ID3 tags.
+  ///
+  /// - [id] 	The album or song ID.
+  @GET('/rest/getAlbumInfo2')
+  Future<SubsonicResponse<AlbumInfoModel>> getAlbumInfo2(
+    @Query('id') String id,
+  );
 }

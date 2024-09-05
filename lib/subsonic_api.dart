@@ -2,7 +2,7 @@ library subsonic_api;
 
 export 'src/apis/api.dart';
 export 'src/models/auth/auth.model.dart';
-export 'src/models/components/album_id3/album_id3.model.dart';
+export 'src/models/components/album/album_id3.model.dart';
 export 'src/models/components/artist/artist.model.dart';
 export 'src/models/components/artist/artist_id3.model.dart';
 export 'src/models/components/artist/artist_info.model.dart';

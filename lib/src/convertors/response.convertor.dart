@@ -1,7 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../extensions/list.extension.dart';
-import '../models/components/album_id3/album_id3.model.dart';
+import '../models/components/album/album_id3.model.dart';
+import '../models/components/album/album_info.model.dart';
 import '../models/components/artist/artist_id3.model.dart';
 import '../models/components/artist/artist_info.model.dart';
 import '../models/components/artists_id3/artists_id3.model.dart';
@@ -26,6 +27,7 @@ class SubsonicResponseConvertor<T>
     'song': MediaModel.fromJson,
     'artistInfo': ArtistInfoModel.fromJson,
     'artistInfo2': ArtistInfo2Model.fromJson,
+    'albumInfo': AlbumInfoModel.fromJson,
   };
 
   @override
