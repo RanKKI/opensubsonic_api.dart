@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 
 import 'apis/api.dart';
 import 'interceptors/auth.interceptor.dart';
-import 'interceptors/error.interceptor.dart';
 import 'interceptors/json.interceptor.dart';
 import 'interceptors/logging.interceptor.dart';
 import 'models/auth/auth.model.dart';
@@ -27,7 +26,6 @@ class SubsonicApi {
         [
           AuthInterceptor(auth, debug: debug),
           JsonInterceptor(),
-          APIErrorInterceptor(),
           if (debug) LoggingInterceptor(),
         ],
       );

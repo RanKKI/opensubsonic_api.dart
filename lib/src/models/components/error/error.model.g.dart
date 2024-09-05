@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'error_response.model.dart';
+part of 'error.model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ErrorResponseModelImpl _$$ErrorResponseModelImplFromJson(
+_$SubsonicErrorModelImpl _$$SubsonicErrorModelImplFromJson(
         Map<String, dynamic> json) =>
-    _$ErrorResponseModelImpl(
+    _$SubsonicErrorModelImpl(
       code: (json['code'] as num).toInt(),
       message: json['message'] as String,
     );
 
-Map<String, dynamic> _$$ErrorResponseModelImplToJson(
-        _$ErrorResponseModelImpl instance) =>
+Map<String, dynamic> _$$SubsonicErrorModelImplToJson(
+        _$SubsonicErrorModelImpl instance) =>
     <String, dynamic>{
       'code': instance.code,
       'message': instance.message,
