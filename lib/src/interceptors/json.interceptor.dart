@@ -45,6 +45,8 @@ class JsonInterceptor extends InterceptorsWrapper {
       };
     }
 
+    response.data['response-headers'] = response.headers.map;
+
     // Handle coverArt return
     return handler.next(response);
   }

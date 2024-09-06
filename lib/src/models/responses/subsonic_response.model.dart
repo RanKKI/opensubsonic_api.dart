@@ -16,13 +16,16 @@ part 'subsonic_response.model.g.dart';
 /// Once this is fixed, we can use code generation for this class
 class SubsonicResponse<T> {
   const SubsonicResponse({
+    required this.headers,
     required this.response,
   });
 
+  final Map<String, List<String>> headers;
   final SubsonicResponseData<T> response;
 
   factory SubsonicResponse.fromJson(Map<String, dynamic> json) =>
       SubsonicResponse(
+        headers: json['response-headers'] as Map<String, List<String>>,
         response:
             SubsonicResponseConvertor<T>().fromJson(json['subsonic-response']),
       );
