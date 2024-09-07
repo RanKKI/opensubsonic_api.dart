@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-import '../../subsonic_api.dart';
+import '../../opensubsonic_api.dart';
 
 class AuthInterceptor extends InterceptorsWrapper {
   AuthInterceptor(
