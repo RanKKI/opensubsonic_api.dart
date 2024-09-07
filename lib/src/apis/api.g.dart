@@ -425,6 +425,57 @@ class _SubsonicApiClient implements SubsonicApiClient {
   }
 
   @override
+  Future<SubsonicResponse<void>> streamInfo(
+    String id, {
+    int? maxBitRate,
+    String? format,
+    int? timeOffset,
+    String? size,
+    bool estimateContentLength = false,
+    bool converted = false,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'id': id,
+      r'maxBitRate': maxBitRate,
+      r'format': format,
+      r'timeOffset': timeOffset,
+      r'size': size,
+      r'estimateContentLength': estimateContentLength,
+      r'converted': converted,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<SubsonicResponse<void>>(Options(
+      method: 'HEAD',
+      headers: _headers,
+      extra: _extra,
+      responseType: ResponseType.stream,
+    )
+        .compose(
+          _dio.options,
+          '/rest/stream',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SubsonicResponse<void> _value;
+    try {
+      _value = SubsonicResponse<void>.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
   Future<SubsonicResponse<MediaModel>> getSong(String songId) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'id': songId};

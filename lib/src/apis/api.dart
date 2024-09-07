@@ -155,6 +155,21 @@ abstract class SubsonicApiClient {
     @Query('converted') bool converted = false,
   });
 
+  /// Since 1.0.0
+  ///
+  /// Same as [stream], but returns response headers only, no body;
+  @HEAD('/rest/stream')
+  @DioResponseType(ResponseType.stream)
+  Future<SubsonicResponse<void>> streamInfo(
+    @Query('id') String id, {
+    @Query('maxBitRate') int? maxBitRate,
+    @Query('format') String? format,
+    @Query('timeOffset') int? timeOffset,
+    @Query('size') String? size,
+    @Query('estimateContentLength') bool estimateContentLength = false,
+    @Query('converted') bool converted = false,
+  });
+
   /// Since 1.8.0
   ///
   /// Returns details for a song.
