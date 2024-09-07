@@ -14,6 +14,8 @@ import '../models/components/indexes/indexes.model.dart';
 import '../models/components/license/license.model.dart';
 import '../models/components/media/media.model.dart';
 import '../models/components/music_folders/music_folders.model.dart';
+import '../models/components/playlist/playlist.model.dart';
+import '../models/components/playlist/playlists.model.dart';
 import '../models/responses/subsonic_empty_data.model.dart';
 import '../models/responses/subsonic_response.model.dart';
 
@@ -225,6 +227,27 @@ abstract class SubsonicApiClient {
   /// - [id] 	The album or song ID.
   @GET('/rest/getAlbumInfo2')
   Future<SubsonicResponse<AlbumInfoModel>> getAlbumInfo2(
+    @Query('id') String id,
+  );
+
+  /// Since 1.0.0
+  ///
+  /// Returns all playlists a user is allowed to play.
+  ///
+  /// - [username] (Since 1.8.0) If specified, return playlists for this user rather
+  /// than for the authenticated user. The authenticated user must have admin role if this parameter is used.
+  @GET('/rest/getPlaylists')
+  Future<SubsonicResponse<PlayListsModel>> getPlaylists({
+    @Query('username') String? username,
+  });
+
+  /// Since 1.0.0
+  ///
+  /// Returns all playlists a user is allowed to play.
+  ///
+  /// - [id] ID of the playlist to return, as obtained by [getPlaylists].
+  @GET('/rest/getPlaylist')
+  Future<SubsonicResponse<PlayListModel>> getPlaylist(
     @Query('id') String id,
   );
 }
