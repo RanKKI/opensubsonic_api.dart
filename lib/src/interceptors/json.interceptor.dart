@@ -4,7 +4,9 @@ import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
 
-const Set<String> hoistedVariables = {};
+import '../extensions/types.extension.dart';
+import '../models/responses/subsonic_response.model.dart';
+import '../utils/cast.util.dart';
 
 class JsonInterceptor extends InterceptorsWrapper {
   @override
@@ -21,33 +23,36 @@ class JsonInterceptor extends InterceptorsWrapper {
     ResponseInterceptorHandler handler,
   ) {
     final responseType = response.requestOptions.responseType;
+
+    final data = response.data;
+    JSONObject newResponse = safeCast<JSONObject>(data) ?? {};
+
     final contentType = response.headers.value(HttpHeaders.contentTypeHeader);
     if (responseType == ResponseType.bytes) {
       if (contentType == 'application/json') {
         print(
             '[Subsonic API] Expected bytes, but got json, thus error occurred, convert it to JSON');
-
-        final Uint8List data = response.data;
-        final byteString = String.fromCharCodes(data);
-        final json = jsonDecode(byteString) as Map<String, dynamic>;
-
-        response.data = json;
+        final byteString = String.fromCharCodes(data as Uint8List);
+        final json = jsonDecode(byteString) as JSONObject;
+        newResponse = json;
       } else {
-        final data = response.data;
-        response.data = {
-          "subsonic-response": {"status": "ok", "data": data}
+        newResponse[SubsonicResponse.subsonicResponse] = {
+          "status": "ok",
+          "data": data,
         };
       }
     } else if (responseType == ResponseType.stream) {
-      final data = response.data;
-      response.data = {
-        "subsonic-response": {"status": "ok", "data": data.stream}
+      newResponse[SubsonicResponse.subsonicResponse] = {
+        "status": "ok",
+        "data": data.stream,
       };
     }
 
-    response.data['response-headers'] = response.headers.map;
+    newResponse[SubsonicResponse.responseHeaders] = response.headers.map;
+    newResponse[SubsonicResponse.realURi] = response.realUri.toString();
 
-    // Handle coverArt return
+    response.data = newResponse;
+
     return handler.next(response);
   }
 }

@@ -16,23 +16,31 @@ part 'subsonic_response.model.g.dart';
 /// Once this is fixed, we can use code generation for this class
 class SubsonicResponse<T> {
   const SubsonicResponse({
+    required this.uri,
     required this.headers,
     required this.response,
   });
 
+  static const subsonicResponse = 'subsonic-response';
+  static const responseHeaders = 'response-headers';
+  static const realURi = 'real-uri';
+
+  final String uri;
   final Map<String, List<String>> headers;
   final SubsonicResponseData<T> response;
 
   factory SubsonicResponse.fromJson(Map<String, dynamic> json) =>
       SubsonicResponse(
-        headers: json['response-headers'] as Map<String, List<String>>,
-        response:
-            SubsonicResponseConvertor<T>().fromJson(json['subsonic-response']),
+        uri: json[realURi] as String,
+        headers: json[responseHeaders] as Map<String, List<String>>,
+        response: SubsonicResponseConvertor<T>().fromJson(
+          json[subsonicResponse],
+        ),
       );
 
   @override
   String toString() {
-    return 'SubsonicResponse(status: ${response.status})';
+    return 'SubsonicResponse(uri: $uri, status: ${response.status})';
   }
 }
 
