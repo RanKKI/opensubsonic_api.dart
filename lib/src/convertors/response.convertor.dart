@@ -3,8 +3,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import '../extensions/list.extension.dart';
 import '../models/components/album/album_id3.model.dart';
 import '../models/components/album/album_info.model.dart';
-import '../models/components/artist/artist_id3.model.dart';
 import '../models/components/artist/artist_info.model.dart';
+import '../models/components/artist/artist_with_albums_id3.model.dart';
 import '../models/components/artists_id3/artists_id3.model.dart';
 import '../models/components/indexes/indexes.model.dart';
 import '../models/components/license/license.model.dart';
@@ -23,7 +23,7 @@ class SubsonicResponseConvertor<T>
     'musicFolders': MusicFoldersModel.fromJson,
     'indexes': IndexesModel.fromJson,
     'artists': ArtistsID3Model.fromJson,
-    'artist': ArtistID3Model.fromJson,
+    'artist': ArtistWithAlbumsID3Model.fromJson,
     'song': MediaModel.fromJson,
     'artistInfo': ArtistInfoModel.fromJson,
     'artistInfo2': ArtistInfo2Model.fromJson,
