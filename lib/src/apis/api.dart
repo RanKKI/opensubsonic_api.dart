@@ -250,4 +250,50 @@ abstract class SubsonicApiClient {
   Future<SubsonicResponse<PlayListModel>> getPlaylist(
     @Query('id') String id,
   );
+
+  /// Since 1.2.0
+  ///
+  /// Creates (or updates) a playlist.
+  ///
+  /// - [playlistId] The playlist ID.
+  /// - [name] The human-readable name of the playlist.
+  /// - [songId] ID of a song in the playlist. Use one songId parameter for each song in the playlist.
+  ///
+  /// Since 1.14.0 the newly created/updated playlist is returned.
+  ///
+  /// Otherwise null is returned.
+  @GET('/rest/createPlaylist')
+  Future<SubsonicResponse<PlayListModel?>> createPlaylist({
+    @Query('name') String? name,
+    @Query('playlistId') String? playlistId,
+    @Query('songId') List<String>? songId,
+  });
+
+  /// Since 1.8.0
+  ///
+  /// Updates a playlist. Only the owner of a playlist is allowed to update it.
+  ///
+  /// - [playlistId] The playlist ID.
+  /// - [name] The human-readable name of the playlist.
+  /// - [comment] The playlist comment.
+  /// - [isPublic] true if the playlist should be visible to all users, false otherwise.
+  /// - [songIdToAdd] Add this song with this ID to the playlist. Multiple parameters allowed.
+  /// - [songIndexToRemove] Remove the song at this position in the playlist. Multiple parameters allowed.
+  @GET('/rest/updatePlaylist')
+  Future<SubsonicResponse<void>> updatePlaylist(
+    @Query('playlistId') String playlistId, {
+    @Query('name') String? name,
+    @Query('comment') String? comment,
+    @Query('public') bool? isPublic,
+    @Query('songIdToAdd') List<String>? songIdToAdd,
+    @Query('songIndexToRemove') List<int>? songIndexToRemove,
+  });
+
+  /// Since 1.2.0
+  ///
+  /// Deletes a saved playlist.
+  ///
+  /// - [playlistId] The playlist ID.
+  @GET('/rest/deletePlaylist')
+  Future<SubsonicResponse<void>> deletePlaylist(@Query('id') String playlistId);
 }
