@@ -2,7 +2,7 @@ library opensubsonic_api;
 
 export 'src/apis/api.dart';
 export 'src/models/auth/auth.model.dart';
-export 'src/models/components/album/album_id3.model.dart';
+export 'src/models/components/album/album.model.dart';
 export 'src/models/components/album/album_info.model.dart';
 export 'src/models/components/artist/artist.model.dart';
 export 'src/models/components/artist/artist_id3.model.dart';

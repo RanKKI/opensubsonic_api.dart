@@ -2,7 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../convertors/date_time.convertor.dart';
 import '../../../extensions/types.extension.dart';
-import '../album/album_id3.model.dart';
+import '../album/album.model.dart';
 
 part 'artist_with_albums_id3.model.freezed.dart';
 part 'artist_with_albums_id3.model.g.dart';
@@ -22,7 +22,7 @@ class ArtistWithAlbumsID3Model with _$ArtistWithAlbumsID3Model {
     UserRating? userRating,
     // Added in 1.13.0
     AverageRating? averageRating,
-    @Default([]) List<AlbumID3Model> album,
+    @Default([]) List<AlbumModel> album,
   }) = _ArtistWithAlbumsID3Model;
 
   factory ArtistWithAlbumsID3Model.fromJson(Map<String, dynamic> json) =>

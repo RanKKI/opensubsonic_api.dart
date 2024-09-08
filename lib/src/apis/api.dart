@@ -4,7 +4,7 @@ import 'package:dio/dio.dart' hide Headers;
 
 import 'package:retrofit/retrofit.dart';
 
-import '../models/components/album/album_id3.model.dart';
+import '../models/components/album/album.model.dart';
 import '../models/components/album/album_info.model.dart';
 import '../models/components/artist/artist_info.model.dart';
 import '../models/components/artist/artist_with_albums_id3.model.dart';
@@ -96,7 +96,7 @@ abstract class SubsonicApiClient {
   ///
   /// - [albumId] The album ID.
   @GET('/rest/getAlbum')
-  Future<SubsonicResponse<AlbumID3Model>> getAlbum(
+  Future<SubsonicResponse<AlbumModel>> getAlbum(
     @Query('id') String albumId,
   );
 

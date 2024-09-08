@@ -19,7 +19,7 @@ _$ArtistWithAlbumsID3ModelImpl _$$ArtistWithAlbumsID3ModelImplFromJson(
       userRating: (json['userRating'] as num?)?.toInt(),
       averageRating: (json['averageRating'] as num?)?.toDouble(),
       album: (json['album'] as List<dynamic>?)
-              ?.map((e) => AlbumID3Model.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => AlbumModel.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
     );

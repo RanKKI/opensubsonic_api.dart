@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'album_id3.model.dart';
+part of 'album.model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AlbumID3ModelImpl _$$AlbumID3ModelImplFromJson(Map<String, dynamic> json) =>
-    _$AlbumID3ModelImpl(
+_$AlbumModelImpl _$$AlbumModelImplFromJson(Map<String, dynamic> json) =>
+    _$AlbumModelImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       artist: json['artist'] as String?,
@@ -28,7 +28,7 @@ _$AlbumID3ModelImpl _$$AlbumID3ModelImplFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$$AlbumID3ModelImplToJson(_$AlbumID3ModelImpl instance) =>
+Map<String, dynamic> _$$AlbumModelImplToJson(_$AlbumModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

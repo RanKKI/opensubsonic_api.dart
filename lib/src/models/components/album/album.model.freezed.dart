@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'album_id3.model.dart';
+part of 'album.model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-AlbumID3Model _$AlbumID3ModelFromJson(Map<String, dynamic> json) {
-  return _AlbumID3Model.fromJson(json);
+AlbumModel _$AlbumModelFromJson(Map<String, dynamic> json) {
+  return _AlbumModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$AlbumID3Model {
+mixin _$AlbumModel {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String? get artist => throw _privateConstructorUsedError;
@@ -42,21 +42,21 @@ mixin _$AlbumID3Model {
   String? get genre => throw _privateConstructorUsedError;
   List<MediaModel> get song => throw _privateConstructorUsedError;
 
-  /// Serializes this AlbumID3Model to a JSON map.
+  /// Serializes this AlbumModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of AlbumID3Model
+  /// Create a copy of AlbumModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AlbumID3ModelCopyWith<AlbumID3Model> get copyWith =>
+  $AlbumModelCopyWith<AlbumModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AlbumID3ModelCopyWith<$Res> {
-  factory $AlbumID3ModelCopyWith(
-          AlbumID3Model value, $Res Function(AlbumID3Model) then) =
-      _$AlbumID3ModelCopyWithImpl<$Res, AlbumID3Model>;
+abstract class $AlbumModelCopyWith<$Res> {
+  factory $AlbumModelCopyWith(
+          AlbumModel value, $Res Function(AlbumModel) then) =
+      _$AlbumModelCopyWithImpl<$Res, AlbumModel>;
   @useResult
   $Res call(
       {String id,
@@ -75,16 +75,16 @@ abstract class $AlbumID3ModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AlbumID3ModelCopyWithImpl<$Res, $Val extends AlbumID3Model>
-    implements $AlbumID3ModelCopyWith<$Res> {
-  _$AlbumID3ModelCopyWithImpl(this._value, this._then);
+class _$AlbumModelCopyWithImpl<$Res, $Val extends AlbumModel>
+    implements $AlbumModelCopyWith<$Res> {
+  _$AlbumModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AlbumID3Model
+  /// Create a copy of AlbumModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -161,11 +161,11 @@ class _$AlbumID3ModelCopyWithImpl<$Res, $Val extends AlbumID3Model>
 }
 
 /// @nodoc
-abstract class _$$AlbumID3ModelImplCopyWith<$Res>
-    implements $AlbumID3ModelCopyWith<$Res> {
-  factory _$$AlbumID3ModelImplCopyWith(
-          _$AlbumID3ModelImpl value, $Res Function(_$AlbumID3ModelImpl) then) =
-      __$$AlbumID3ModelImplCopyWithImpl<$Res>;
+abstract class _$$AlbumModelImplCopyWith<$Res>
+    implements $AlbumModelCopyWith<$Res> {
+  factory _$$AlbumModelImplCopyWith(
+          _$AlbumModelImpl value, $Res Function(_$AlbumModelImpl) then) =
+      __$$AlbumModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -185,14 +185,14 @@ abstract class _$$AlbumID3ModelImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AlbumID3ModelImplCopyWithImpl<$Res>
-    extends _$AlbumID3ModelCopyWithImpl<$Res, _$AlbumID3ModelImpl>
-    implements _$$AlbumID3ModelImplCopyWith<$Res> {
-  __$$AlbumID3ModelImplCopyWithImpl(
-      _$AlbumID3ModelImpl _value, $Res Function(_$AlbumID3ModelImpl) _then)
+class __$$AlbumModelImplCopyWithImpl<$Res>
+    extends _$AlbumModelCopyWithImpl<$Res, _$AlbumModelImpl>
+    implements _$$AlbumModelImplCopyWith<$Res> {
+  __$$AlbumModelImplCopyWithImpl(
+      _$AlbumModelImpl _value, $Res Function(_$AlbumModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AlbumID3Model
+  /// Create a copy of AlbumModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -211,7 +211,7 @@ class __$$AlbumID3ModelImplCopyWithImpl<$Res>
     Object? genre = freezed,
     Object? song = null,
   }) {
-    return _then(_$AlbumID3ModelImpl(
+    return _then(_$AlbumModelImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -270,8 +270,8 @@ class __$$AlbumID3ModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AlbumID3ModelImpl implements _AlbumID3Model {
-  const _$AlbumID3ModelImpl(
+class _$AlbumModelImpl implements _AlbumModel {
+  const _$AlbumModelImpl(
       {required this.id,
       required this.name,
       this.artist,
@@ -287,8 +287,8 @@ class _$AlbumID3ModelImpl implements _AlbumID3Model {
       final List<MediaModel> song = const []})
       : _song = song;
 
-  factory _$AlbumID3ModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AlbumID3ModelImplFromJson(json);
+  factory _$AlbumModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AlbumModelImplFromJson(json);
 
   @override
   final String id;
@@ -333,14 +333,14 @@ class _$AlbumID3ModelImpl implements _AlbumID3Model {
 
   @override
   String toString() {
-    return 'AlbumID3Model(id: $id, name: $name, artist: $artist, artistId: $artistId, coverArt: $coverArt, songCount: $songCount, duration: $duration, playCount: $playCount, created: $created, starred: $starred, year: $year, genre: $genre, song: $song)';
+    return 'AlbumModel(id: $id, name: $name, artist: $artist, artistId: $artistId, coverArt: $coverArt, songCount: $songCount, duration: $duration, playCount: $playCount, created: $created, starred: $starred, year: $year, genre: $genre, song: $song)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AlbumID3ModelImpl &&
+            other is _$AlbumModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.artist, artist) || other.artist == artist) &&
@@ -379,24 +379,24 @@ class _$AlbumID3ModelImpl implements _AlbumID3Model {
       genre,
       const DeepCollectionEquality().hash(_song));
 
-  /// Create a copy of AlbumID3Model
+  /// Create a copy of AlbumModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$AlbumID3ModelImplCopyWith<_$AlbumID3ModelImpl> get copyWith =>
-      __$$AlbumID3ModelImplCopyWithImpl<_$AlbumID3ModelImpl>(this, _$identity);
+  _$$AlbumModelImplCopyWith<_$AlbumModelImpl> get copyWith =>
+      __$$AlbumModelImplCopyWithImpl<_$AlbumModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AlbumID3ModelImplToJson(
+    return _$$AlbumModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _AlbumID3Model implements AlbumID3Model {
-  const factory _AlbumID3Model(
+abstract class _AlbumModel implements AlbumModel {
+  const factory _AlbumModel(
       {required final String id,
       required final String name,
       final String? artist,
@@ -409,10 +409,10 @@ abstract class _AlbumID3Model implements AlbumID3Model {
       @DateTimeConvertor() final DateTime? starred,
       final int? year,
       final String? genre,
-      final List<MediaModel> song}) = _$AlbumID3ModelImpl;
+      final List<MediaModel> song}) = _$AlbumModelImpl;
 
-  factory _AlbumID3Model.fromJson(Map<String, dynamic> json) =
-      _$AlbumID3ModelImpl.fromJson;
+  factory _AlbumModel.fromJson(Map<String, dynamic> json) =
+      _$AlbumModelImpl.fromJson;
 
   @override
   String get id;
@@ -449,10 +449,10 @@ abstract class _AlbumID3Model implements AlbumID3Model {
   @override
   List<MediaModel> get song;
 
-  /// Create a copy of AlbumID3Model
+  /// Create a copy of AlbumModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AlbumID3ModelImplCopyWith<_$AlbumID3ModelImpl> get copyWith =>
+  _$$AlbumModelImplCopyWith<_$AlbumModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

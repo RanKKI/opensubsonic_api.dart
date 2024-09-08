@@ -266,12 +266,12 @@ class _SubsonicApiClient implements SubsonicApiClient {
   }
 
   @override
-  Future<SubsonicResponse<AlbumID3Model>> getAlbum(String albumId) async {
+  Future<SubsonicResponse<AlbumModel>> getAlbum(String albumId) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'id': albumId};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<SubsonicResponse<AlbumID3Model>>(Options(
+    final _options = _setStreamType<SubsonicResponse<AlbumModel>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -288,9 +288,9 @@ class _SubsonicApiClient implements SubsonicApiClient {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late SubsonicResponse<AlbumID3Model> _value;
+    late SubsonicResponse<AlbumModel> _value;
     try {
-      _value = SubsonicResponse<AlbumID3Model>.fromJson(_result.data!);
+      _value = SubsonicResponse<AlbumModel>.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

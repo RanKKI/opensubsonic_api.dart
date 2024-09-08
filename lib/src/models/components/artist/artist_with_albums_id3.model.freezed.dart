@@ -33,7 +33,7 @@ mixin _$ArtistWithAlbumsID3Model {
       throw _privateConstructorUsedError; // Added in 1.16.1
   int? get userRating => throw _privateConstructorUsedError; // Added in 1.13.0
   double? get averageRating => throw _privateConstructorUsedError;
-  List<AlbumID3Model> get album => throw _privateConstructorUsedError;
+  List<AlbumModel> get album => throw _privateConstructorUsedError;
 
   /// Serializes this ArtistWithAlbumsID3Model to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -60,7 +60,7 @@ abstract class $ArtistWithAlbumsID3ModelCopyWith<$Res> {
       @DateTimeConvertor() DateTime? starred,
       int? userRating,
       double? averageRating,
-      List<AlbumID3Model> album});
+      List<AlbumModel> album});
 }
 
 /// @nodoc
@@ -125,7 +125,7 @@ class _$ArtistWithAlbumsID3ModelCopyWithImpl<$Res,
       album: null == album
           ? _value.album
           : album // ignore: cast_nullable_to_non_nullable
-              as List<AlbumID3Model>,
+              as List<AlbumModel>,
     ) as $Val);
   }
 }
@@ -148,7 +148,7 @@ abstract class _$$ArtistWithAlbumsID3ModelImplCopyWith<$Res>
       @DateTimeConvertor() DateTime? starred,
       int? userRating,
       double? averageRating,
-      List<AlbumID3Model> album});
+      List<AlbumModel> album});
 }
 
 /// @nodoc
@@ -212,7 +212,7 @@ class __$$ArtistWithAlbumsID3ModelImplCopyWithImpl<$Res>
       album: null == album
           ? _value._album
           : album // ignore: cast_nullable_to_non_nullable
-              as List<AlbumID3Model>,
+              as List<AlbumModel>,
     ));
   }
 }
@@ -229,7 +229,7 @@ class _$ArtistWithAlbumsID3ModelImpl implements _ArtistWithAlbumsID3Model {
       @DateTimeConvertor() this.starred,
       this.userRating,
       this.averageRating,
-      final List<AlbumID3Model> album = const []})
+      final List<AlbumModel> album = const []})
       : _album = album;
 
   factory _$ArtistWithAlbumsID3ModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -256,10 +256,10 @@ class _$ArtistWithAlbumsID3ModelImpl implements _ArtistWithAlbumsID3Model {
 // Added in 1.13.0
   @override
   final double? averageRating;
-  final List<AlbumID3Model> _album;
+  final List<AlbumModel> _album;
   @override
   @JsonKey()
-  List<AlbumID3Model> get album {
+  List<AlbumModel> get album {
     if (_album is EqualUnmodifiableListView) return _album;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_album);
@@ -332,7 +332,7 @@ abstract class _ArtistWithAlbumsID3Model implements ArtistWithAlbumsID3Model {
       @DateTimeConvertor() final DateTime? starred,
       final int? userRating,
       final double? averageRating,
-      final List<AlbumID3Model> album}) = _$ArtistWithAlbumsID3ModelImpl;
+      final List<AlbumModel> album}) = _$ArtistWithAlbumsID3ModelImpl;
 
   factory _ArtistWithAlbumsID3Model.fromJson(Map<String, dynamic> json) =
       _$ArtistWithAlbumsID3ModelImpl.fromJson;
@@ -357,7 +357,7 @@ abstract class _ArtistWithAlbumsID3Model implements ArtistWithAlbumsID3Model {
   @override
   double? get averageRating;
   @override
-  List<AlbumID3Model> get album;
+  List<AlbumModel> get album;
 
   /// Create a copy of ArtistWithAlbumsID3Model
   /// with the given fields replaced by the non-null parameter values.

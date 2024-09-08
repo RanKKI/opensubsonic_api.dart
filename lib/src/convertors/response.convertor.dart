@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../extensions/list.extension.dart';
-import '../models/components/album/album_id3.model.dart';
+import '../models/components/album/album.model.dart';
 import '../models/components/album/album_info.model.dart';
 import '../models/components/artist/artist_id3.model.dart';
 import '../models/components/artist/artist_info.model.dart';
@@ -21,7 +21,7 @@ class SubsonicResponseConvertor<T>
 
   static const _mapper = {
     'license': License.fromJson,
-    'album': AlbumID3Model.fromJson,
+    'album': AlbumModel.fromJson,
     'musicFolders': MusicFoldersModel.fromJson,
     'indexes': IndexesModel.fromJson,
     'artists': ArtistsID3Model.fromJson,
