@@ -17,6 +17,7 @@ import '../models/components/music_folders/music_folders.model.dart';
 import '../models/components/playlist/playlist.model.dart';
 import '../models/components/playlist/playlists.model.dart';
 import '../models/components/songs/songs.model.dart';
+import '../models/components/starred/starred.model.dart';
 import '../models/responses/subsonic_empty_data.model.dart';
 import '../models/responses/subsonic_response.model.dart';
 
@@ -390,6 +391,65 @@ abstract class SubsonicApiClient {
     @Query('genre') String genre, {
     @Query('count') int count = 10,
     @Query('offset') int offset = 0,
+    @Query('musicFolderId') String? musicFolderId,
+  });
+
+  /// Since 1.11.0
+  ///
+  /// Returns a random collection of songs from the given artist and similar
+  /// artists, using data from last.fm. Typically used for artist radio features.
+  ///
+  /// - [id] 	The artist, album or song ID.
+  /// - [count] 	Max number of songs to return.
+  @GET('/rest/getSimilarSongs')
+  Future<SubsonicResponse<SongsModel>> getSimilarSongs(
+    @Query('id') String id, {
+    @Query('count') int count = 50,
+  });
+
+  /// Since 1.11.0
+  ///
+  /// Similar to [getSimilarSongs], but organizes music according to ID3 tags.
+  ///
+  /// - [id] 	The artist, album or song ID.
+  /// - [count] 	Max number of songs to return.
+  @GET('/rest/getSimilarSongs2')
+  Future<SubsonicResponse<SongsModel>> getSimilarSong2(
+    @Query('id') String id, {
+    @Query('count') int count = 50,
+  });
+
+  /// Since 1.13.0
+  ///
+  /// Returns top songs for the given artist, using data from last.fm.
+  ///
+  /// - [artist] The artist name.
+  /// - [count] Max number of songs to return.
+  @GET('/rest/getTopSongs')
+  Future<SubsonicResponse<SongsModel>> getTopSongs(
+    @Query('artist') String artist, {
+    @Query('count') int count = 50,
+  });
+
+  /// Since 1.8.0
+  ///
+  /// Returns starred songs, albums and artists.
+  ///
+  /// - [musicFolderId] (Since 1.12.0) Only return results from the music folder
+  /// with the given ID. See [getMusicFolders].
+  @GET('/rest/getStarred')
+  Future<SubsonicResponse<StarredModel>> getStarred({
+    @Query('musicFolderId') String? musicFolderId,
+  });
+
+  /// Since 1.8.0
+  ///
+  /// Similar to [getStarred], but organizes music according to ID3 tags.
+  ///
+  /// - [musicFolderId] (Since 1.12.0) Only return results from the music folder
+  /// with the given ID. See [getMusicFolders].
+  @GET('/rest/getStarred2')
+  Future<SubsonicResponse<StarredModel>> getStarred2({
     @Query('musicFolderId') String? musicFolderId,
   });
 }

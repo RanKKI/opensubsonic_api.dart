@@ -14,6 +14,7 @@ import '../models/components/music_folders/music_folders.model.dart';
 import '../models/components/playlist/playlist.model.dart';
 import '../models/components/playlist/playlists.model.dart';
 import '../models/components/songs/songs.model.dart';
+import '../models/components/starred/starred.model.dart';
 import '../models/responses/subsonic_empty_data.model.dart';
 import '../models/responses/subsonic_response.model.dart';
 
@@ -39,6 +40,11 @@ class SubsonicResponseConvertor<T>
     'randomSongs': SongsModel.fromJson,
     'songsByGenre': SongsModel.fromJson,
     'genres': GenresModel.fromJson,
+    'topSongs': SongsModel.fromJson,
+    'similarSongs': SongsModel.fromJson,
+    'similarSongs2': SongsModel.fromJson,
+    'starred': StarredModel.fromJson,
+    'starred2': StarredModel.fromJson,
   };
 
   @override
