@@ -13,6 +13,7 @@ import '../models/components/media/media.model.dart';
 import '../models/components/music_folders/music_folders.model.dart';
 import '../models/components/playlist/playlist.model.dart';
 import '../models/components/playlist/playlists.model.dart';
+import '../models/components/search/search_result.model.dart';
 import '../models/components/songs/songs.model.dart';
 import '../models/components/starred/starred.model.dart';
 import '../models/responses/subsonic_empty_data.model.dart';
@@ -45,6 +46,8 @@ class SubsonicResponseConvertor<T>
     'similarSongs2': SongsModel.fromJson,
     'starred': StarredModel.fromJson,
     'starred2': StarredModel.fromJson,
+    'searchResult2': SearchResultModel.fromJson,
+    'searchResult3': SearchResultModel.fromJson,
   };
 
   @override

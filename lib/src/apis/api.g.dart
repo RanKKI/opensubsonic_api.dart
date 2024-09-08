@@ -1221,6 +1221,145 @@ class _SubsonicApiClient implements SubsonicApiClient {
     return _value;
   }
 
+  @override
+  Future<SubsonicResponse<void>> search() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<SubsonicResponse<void>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/rest/search',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SubsonicResponse<void> _value;
+    try {
+      _value = SubsonicResponse<void>.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<SubsonicResponse<SearchResultModel>> search2(
+    String query, {
+    int artistCount = 20,
+    int artistOffset = 0,
+    int albumCount = 20,
+    int albumOffset = 0,
+    int songCount = 20,
+    int songOffset = 0,
+    String? musicFolderId,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'query': query,
+      r'artistCount': artistCount,
+      r'artistOffset': artistOffset,
+      r'albumCount': albumCount,
+      r'albumOffset': albumOffset,
+      r'songCount': songCount,
+      r'songOffset': songOffset,
+      r'musicFolderId': musicFolderId,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options =
+        _setStreamType<SubsonicResponse<SearchResultModel>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/rest/search2',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SubsonicResponse<SearchResultModel> _value;
+    try {
+      _value = SubsonicResponse<SearchResultModel>.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<SubsonicResponse<SearchResultModel>> search3(
+    String query, {
+    int artistCount = 20,
+    int artistOffset = 0,
+    int albumCount = 20,
+    int albumOffset = 0,
+    int songCount = 20,
+    int songOffset = 0,
+    String? musicFolderId,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'query': query,
+      r'artistCount': artistCount,
+      r'artistOffset': artistOffset,
+      r'albumCount': albumCount,
+      r'albumOffset': albumOffset,
+      r'songCount': songCount,
+      r'songOffset': songOffset,
+      r'musicFolderId': musicFolderId,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options =
+        _setStreamType<SubsonicResponse<SearchResultModel>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/rest/search3',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SubsonicResponse<SearchResultModel> _value;
+    try {
+      _value = SubsonicResponse<SearchResultModel>.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||

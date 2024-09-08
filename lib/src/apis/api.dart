@@ -16,6 +16,7 @@ import '../models/components/media/media.model.dart';
 import '../models/components/music_folders/music_folders.model.dart';
 import '../models/components/playlist/playlist.model.dart';
 import '../models/components/playlist/playlists.model.dart';
+import '../models/components/search/search_result.model.dart';
 import '../models/components/songs/songs.model.dart';
 import '../models/components/starred/starred.model.dart';
 import '../models/responses/subsonic_empty_data.model.dart';
@@ -450,6 +451,71 @@ abstract class SubsonicApiClient {
   /// with the given ID. See [getMusicFolders].
   @GET('/rest/getStarred2')
   Future<SubsonicResponse<StarredModel>> getStarred2({
+    @Query('musicFolderId') String? musicFolderId,
+  });
+
+  /// Since 1.0.0
+  ///
+  /// !!! DEPRECATED !!!
+  ///
+  /// NO IMPLEMENTATION
+  ///
+  /// Returns a listing of files matching the given search criteria. Supports paging through the result.
+  ///
+  /// - [musicFolderId] (Since 1.12.0) Only return results from the music folder
+  /// with the given ID. See [getMusicFolders].
+  @GET('/rest/search')
+  @Deprecated('Deprecated since 1.4.0, use search2 instead.')
+  Future<SubsonicResponse<void>> search();
+
+  /// Since 1.4.0
+  ///
+  /// Returns albums, artists and songs matching the given search criteria.
+  /// Supports paging through the result.
+  ///
+  /// - [query] Search query.
+  /// - [artistCount] Maximum number of artists to return.
+  /// - [artistOffset] Search result offset for artists. Used for paging.
+  /// - [albumCount] Maximum number of albums to return.
+  /// - [albumOffset] Search result offset for albums. Used for paging.
+  /// - [songCount] Maximum number of songs to return.
+  /// - [songOffset] Search result offset for songs. Used for paging.
+  /// - [musicFolderId] (Since 1.12.0) Only return results from the music folder
+  /// with the given ID. See [getMusicFolders].
+  @GET('/rest/search2')
+  Future<SubsonicResponse<SearchResultModel>> search2(
+    @Query('query') String query, {
+    @Query('artistCount') int artistCount = 20,
+    @Query('artistOffset') int artistOffset = 0,
+    @Query('albumCount') int albumCount = 20,
+    @Query('albumOffset') int albumOffset = 0,
+    @Query('songCount') int songCount = 20,
+    @Query('songOffset') int songOffset = 0,
+    @Query('musicFolderId') String? musicFolderId,
+  });
+
+  /// Since 1.8.0
+  ///
+  /// Similar to [search2], but organizes music according to ID3 tags.
+  ///
+  /// - [query] Search query.
+  /// - [artistCount] Maximum number of artists to return.
+  /// - [artistOffset] Search result offset for artists. Used for paging.
+  /// - [albumCount] Maximum number of albums to return.
+  /// - [albumOffset] Search result offset for albums. Used for paging.
+  /// - [songCount] Maximum number of songs to return.
+  /// - [songOffset] Search result offset for songs. Used for paging.
+  /// - [musicFolderId] (Since 1.12.0) Only return results from the music folder
+  /// with the given ID. See [getMusicFolders].
+  @GET('/rest/search3')
+  Future<SubsonicResponse<SearchResultModel>> search3(
+    @Query('query') String query, {
+    @Query('artistCount') int artistCount = 20,
+    @Query('artistOffset') int artistOffset = 0,
+    @Query('albumCount') int albumCount = 20,
+    @Query('albumOffset') int albumOffset = 0,
+    @Query('songCount') int songCount = 20,
+    @Query('songOffset') int songOffset = 0,
     @Query('musicFolderId') String? musicFolderId,
   });
 }
