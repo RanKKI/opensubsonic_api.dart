@@ -4,10 +4,10 @@ import '../extensions/list.extension.dart';
 import '../models/components/album/album.model.dart';
 import '../models/components/album/album_info.model.dart';
 import '../models/components/albums/albums.model.dart';
-import '../models/components/artist/artist_id3.model.dart';
+import '../models/components/artist/artist.model.dart';
 import '../models/components/artist/artist_info.model.dart';
-import '../models/components/artists_id3/artists_id3.model.dart';
-import '../models/components/indexes/indexes.model.dart';
+import '../models/components/artists/artists.model.dart';
+import '../models/components/genres/genres.model.dart';
 import '../models/components/license/license.model.dart';
 import '../models/components/media/media.model.dart';
 import '../models/components/music_folders/music_folders.model.dart';
@@ -25,12 +25,12 @@ class SubsonicResponseConvertor<T>
     'license': License.fromJson,
     'album': AlbumModel.fromJson,
     'musicFolders': MusicFoldersModel.fromJson,
-    'indexes': IndexesModel.fromJson,
-    'artists': ArtistsID3Model.fromJson,
-    'artist': ArtistID3Model.fromJson,
+    'indexes': ArtistsModel.fromJson,
+    'artists': ArtistsModel.fromJson,
+    'artist': ArtistModel.fromJson,
     'song': MediaModel.fromJson,
     'artistInfo': ArtistInfoModel.fromJson,
-    'artistInfo2': ArtistInfo2Model.fromJson,
+    'artistInfo2': ArtistInfoModel.fromJson,
     'albumInfo': AlbumInfoModel.fromJson,
     'playlists': PlayListsModel.fromJson,
     'playlist': PlayListModel.fromJson,
@@ -38,6 +38,7 @@ class SubsonicResponseConvertor<T>
     'albumList2': AlbumsModel.fromJson,
     'randomSongs': SongsModel.fromJson,
     'songsByGenre': SongsModel.fromJson,
+    'genres': GenresModel.fromJson,
   };
 
   @override

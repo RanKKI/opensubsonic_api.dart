@@ -7,11 +7,10 @@ import 'package:retrofit/retrofit.dart';
 import '../models/components/album/album.model.dart';
 import '../models/components/album/album_info.model.dart';
 import '../models/components/albums/albums.model.dart';
+import '../models/components/artist/artist.model.dart';
 import '../models/components/artist/artist_info.model.dart';
-import '../models/components/artist/artist_with_albums_id3.model.dart';
-import '../models/components/artists_id3/artists_id3.model.dart';
+import '../models/components/artists/artists.model.dart';
 import '../models/components/genres/genres.model.dart';
-import '../models/components/indexes/indexes.model.dart';
 import '../models/components/license/license.model.dart';
 import '../models/components/media/media.model.dart';
 import '../models/components/music_folders/music_folders.model.dart';
@@ -52,7 +51,7 @@ abstract class SubsonicApiClient {
   /// - [musicFolderId] If specified, only return artists in the music folder
   /// with the given ID. See [getMusicFolders].
   @GET('/rest/getArtists')
-  Future<SubsonicResponse<ArtistsID3Model>> getArtists({
+  Future<SubsonicResponse<ArtistsModel>> getArtists({
     @Query('musicFolderId') String? musicFolderId,
   });
 
@@ -65,7 +64,7 @@ abstract class SubsonicApiClient {
   /// - [ifModifiedSince] If specified, only return a result if the artist collection
   /// has changed since the given time (in milliseconds since 1 Jan 1970).
   @GET('/rest/getIndexes')
-  Future<SubsonicResponse<IndexesModel>> getIndexes({
+  Future<SubsonicResponse<ArtistsModel>> getIndexes({
     @Query('musicFolderId') String? musicFolderId,
     @Query('ifModifiedSince') int? ifModifiedSince,
   });
@@ -88,7 +87,7 @@ abstract class SubsonicApiClient {
   ///
   /// - [artistId] The artist ID.
   @GET('/rest/getArtist')
-  Future<SubsonicResponse<ArtistWithAlbumsID3Model>> getArtist(
+  Future<SubsonicResponse<ArtistModel>> getArtist(
     @Query('id') String artistId,
   );
 
@@ -206,7 +205,7 @@ abstract class SubsonicApiClient {
   /// - [count] Max number of similar artists to return.
   /// - [includeNotPresent] Whether to return artists that are not present in the media library.
   @GET('/rest/getArtistInfo2')
-  Future<SubsonicResponse<ArtistInfo2Model>> getArtistInfo2(
+  Future<SubsonicResponse<ArtistInfoModel>> getArtistInfo2(
     @Query('id') String id, {
     @Query('count') int count = 20,
     @Query('includeNotPresent') bool includeNotPresent = false,

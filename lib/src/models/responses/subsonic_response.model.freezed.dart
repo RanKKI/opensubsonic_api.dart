@@ -38,7 +38,7 @@ mixin _$SubsonicResponseData<T> {
   /// The server actual version. [Ex: 1.2.3 (beta)]
   String? get serverVersion => throw _privateConstructorUsedError;
   T? get data => throw _privateConstructorUsedError;
-  SubsonicErrorModel? get errors => throw _privateConstructorUsedError;
+  SubsonicErrorModel? get error => throw _privateConstructorUsedError;
 
   /// Serializes this SubsonicResponseData to a JSON map.
   Map<String, dynamic> toJson(Object? Function(T) toJsonT) =>
@@ -63,9 +63,9 @@ abstract class $SubsonicResponseDataCopyWith<T, $Res> {
       String? type,
       String? serverVersion,
       T? data,
-      SubsonicErrorModel? errors});
+      SubsonicErrorModel? error});
 
-  $SubsonicErrorModelCopyWith<$Res>? get errors;
+  $SubsonicErrorModelCopyWith<$Res>? get error;
 }
 
 /// @nodoc
@@ -89,7 +89,7 @@ class _$SubsonicResponseDataCopyWithImpl<T, $Res,
     Object? type = freezed,
     Object? serverVersion = freezed,
     Object? data = freezed,
-    Object? errors = freezed,
+    Object? error = freezed,
   }) {
     return _then(_value.copyWith(
       status: null == status
@@ -112,9 +112,9 @@ class _$SubsonicResponseDataCopyWithImpl<T, $Res,
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as T?,
-      errors: freezed == errors
-          ? _value.errors
-          : errors // ignore: cast_nullable_to_non_nullable
+      error: freezed == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
               as SubsonicErrorModel?,
     ) as $Val);
   }
@@ -123,13 +123,13 @@ class _$SubsonicResponseDataCopyWithImpl<T, $Res,
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $SubsonicErrorModelCopyWith<$Res>? get errors {
-    if (_value.errors == null) {
+  $SubsonicErrorModelCopyWith<$Res>? get error {
+    if (_value.error == null) {
       return null;
     }
 
-    return $SubsonicErrorModelCopyWith<$Res>(_value.errors!, (value) {
-      return _then(_value.copyWith(errors: value) as $Val);
+    return $SubsonicErrorModelCopyWith<$Res>(_value.error!, (value) {
+      return _then(_value.copyWith(error: value) as $Val);
     });
   }
 }
@@ -148,10 +148,10 @@ abstract class _$$SubsonicResponseImplCopyWith<T, $Res>
       String? type,
       String? serverVersion,
       T? data,
-      SubsonicErrorModel? errors});
+      SubsonicErrorModel? error});
 
   @override
-  $SubsonicErrorModelCopyWith<$Res>? get errors;
+  $SubsonicErrorModelCopyWith<$Res>? get error;
 }
 
 /// @nodoc
@@ -173,7 +173,7 @@ class __$$SubsonicResponseImplCopyWithImpl<T, $Res>
     Object? type = freezed,
     Object? serverVersion = freezed,
     Object? data = freezed,
-    Object? errors = freezed,
+    Object? error = freezed,
   }) {
     return _then(_$SubsonicResponseImpl<T>(
       status: null == status
@@ -196,9 +196,9 @@ class __$$SubsonicResponseImplCopyWithImpl<T, $Res>
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as T?,
-      errors: freezed == errors
-          ? _value.errors
-          : errors // ignore: cast_nullable_to_non_nullable
+      error: freezed == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
               as SubsonicErrorModel?,
     ));
   }
@@ -213,7 +213,7 @@ class _$SubsonicResponseImpl<T> implements _SubsonicResponse<T> {
       this.type,
       this.serverVersion,
       this.data = null,
-      this.errors});
+      this.error});
 
   factory _$SubsonicResponseImpl.fromJson(
           Map<String, dynamic> json, T Function(Object?) fromJsonT) =>
@@ -243,11 +243,11 @@ class _$SubsonicResponseImpl<T> implements _SubsonicResponse<T> {
   @JsonKey()
   final T? data;
   @override
-  final SubsonicErrorModel? errors;
+  final SubsonicErrorModel? error;
 
   @override
   String toString() {
-    return 'SubsonicResponseData<$T>(status: $status, version: $version, type: $type, serverVersion: $serverVersion, data: $data, errors: $errors)';
+    return 'SubsonicResponseData<$T>(status: $status, version: $version, type: $type, serverVersion: $serverVersion, data: $data, error: $error)';
   }
 
   @override
@@ -261,13 +261,13 @@ class _$SubsonicResponseImpl<T> implements _SubsonicResponse<T> {
             (identical(other.serverVersion, serverVersion) ||
                 other.serverVersion == serverVersion) &&
             const DeepCollectionEquality().equals(other.data, data) &&
-            (identical(other.errors, errors) || other.errors == errors));
+            (identical(other.error, error) || other.error == error));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, status, version, type,
-      serverVersion, const DeepCollectionEquality().hash(data), errors);
+      serverVersion, const DeepCollectionEquality().hash(data), error);
 
   /// Create a copy of SubsonicResponseData
   /// with the given fields replaced by the non-null parameter values.
@@ -291,7 +291,7 @@ abstract class _SubsonicResponse<T> implements SubsonicResponseData<T> {
       final String? type,
       final String? serverVersion,
       final T? data,
-      final SubsonicErrorModel? errors}) = _$SubsonicResponseImpl<T>;
+      final SubsonicErrorModel? error}) = _$SubsonicResponseImpl<T>;
 
   factory _SubsonicResponse.fromJson(
           Map<String, dynamic> json, T Function(Object?) fromJsonT) =
@@ -320,7 +320,7 @@ abstract class _SubsonicResponse<T> implements SubsonicResponseData<T> {
   @override
   T? get data;
   @override
-  SubsonicErrorModel? get errors;
+  SubsonicErrorModel? get error;
 
   /// Create a copy of SubsonicResponseData
   /// with the given fields replaced by the non-null parameter values.
