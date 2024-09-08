@@ -17,6 +17,7 @@ import '../models/components/media/media.model.dart';
 import '../models/components/music_folders/music_folders.model.dart';
 import '../models/components/playlist/playlist.model.dart';
 import '../models/components/playlist/playlists.model.dart';
+import '../models/components/songs/songs.model.dart';
 import '../models/responses/subsonic_empty_data.model.dart';
 import '../models/responses/subsonic_response.model.dart';
 
@@ -354,6 +355,42 @@ abstract class SubsonicApiClient {
     @Query('fromYear') int? fromYear,
     @Query('toYear') int? toYear,
     @Query('genre') String? genre,
+    @Query('musicFolderId') String? musicFolderId,
+  });
+
+  /// Since 1.2.0
+  ///
+  /// Returns random songs matching the given criteria.
+  ///
+  /// - [size] The maximum number of songs to return. Max 500.
+  /// - [genre] Only returns songs belonging to this genre.
+  /// - [fromYear] Only return songs published after or in this year.
+  /// - [toYear] Only return songs published before or in this year.
+  /// - [musicFolderId] Only return songs in the music folder with the
+  /// given ID. See [getMusicFolders].
+  @GET('/rest/getRandomSongs')
+  Future<SubsonicResponse<SongsModel>> getRandomSongs({
+    @Query('size') int size = 10,
+    @Query('genre') String? genre,
+    @Query('fromYear') int? fromYear,
+    @Query('toYear') int? toYear,
+    @Query('musicFolderId') String? musicFolderId,
+  });
+
+  /// Since 1.9.0
+  ///
+  /// Returns songs in a given genre.
+  ///
+  /// - [genre] The genre, as returned by [getGenres].
+  /// - [count] The maximum number of songs to return. Max 500.
+  /// - [offset] The offset. Useful if you want to page through the songs in a genre.
+  /// - [musicFolderId] (Since 1.12.0) Only return albums in the music folder
+  /// with the given ID. See [getMusicFolders].
+  @GET('/rest/getSongsByGenre')
+  Future<SubsonicResponse<SongsModel>> getSongsByGenre(
+    @Query('genre') String genre, {
+    @Query('count') int count = 10,
+    @Query('offset') int offset = 0,
     @Query('musicFolderId') String? musicFolderId,
   });
 }
