@@ -6,6 +6,7 @@ import 'package:retrofit/retrofit.dart';
 
 import '../models/components/album/album.model.dart';
 import '../models/components/album/album_info.model.dart';
+import '../models/components/albums/albums.model.dart';
 import '../models/components/artist/artist_info.model.dart';
 import '../models/components/artist/artist_with_albums_id3.model.dart';
 import '../models/components/artists_id3/artists_id3.model.dart';
@@ -296,4 +297,63 @@ abstract class SubsonicApiClient {
   /// - [playlistId] The playlist ID.
   @GET('/rest/deletePlaylist')
   Future<SubsonicResponse<void>> deletePlaylist(@Query('id') String playlistId);
+
+  /// Since 1.2.0
+  ///
+  /// Returns a list of random, newest, highest rated etc. albums. Similar to
+  /// the album lists on the home page of the Subsonic web interface.
+  ///
+  /// - [type] 	The list type. Must be one of the following:
+  /// random, newest, highest, frequent, recent.
+  /// Since 1.8.0 you can also use alphabeticalByName or alphabeticalByArtist to
+  /// page through all albums alphabetically, and starred to retrieve starred
+  /// albums. Since 1.10.1 you can use byYear and byGenre to list albums in a
+  /// given year range or genre.
+  /// - [size] The number of albums to return. Max 500.
+  /// - [offset] The list offset. Useful if you for example want to page through
+  /// the list of newest albums.
+  /// - [fromYear] The first year in the range. If fromYear > toYear a reverse
+  /// chronological list is returned.
+  /// - [toYear] The last year in the range.
+  /// - [genre] The name of the genre, e.g., "Rock".
+  /// - [musicFolderId] (Since 1.11.0) Only return albums in the music folder with the
+  /// given ID. See getMusicFolders.
+  @GET('/rest/getAlbumList')
+  Future<SubsonicResponse<AlbumsModel>> getAlbumList(
+    @Query('type') String type, {
+    @Query('size') int size = 10,
+    @Query('offset') int offset = 0,
+    @Query('fromYear') int? fromYear,
+    @Query('toYear') int? toYear,
+    @Query('genre') String? genre,
+    @Query('musicFolderId') String? musicFolderId,
+  });
+
+  /// Since 1.8.0
+  ///
+  /// Similar to [getAlbumList], but organizes music according to ID3 tags.
+  ///
+  /// - [type] The list type. Must be one of the following:
+  /// random, newest, frequent, recent, starred, alphabeticalByName or alphabeticalByArtist.
+  /// Since 1.10.1 you can use byYear and byGenre to list albums in a given year
+  /// range or genre.
+  /// - [size] The number of albums to return. Max 500.
+  /// - [offset] The list offset. Useful if you for example want to page through
+  /// the list of newest albums.
+  /// - [fromYear] The first year in the range. If fromYear > toYear a reverse
+  /// chronological list is returned.
+  /// - [toYear] The last year in the range.
+  /// - [genre] The name of the genre, e.g., "Rock".
+  /// - [musicFolderId] (Since 1.11.0) Only return albums in the music folder with the
+  /// given ID. See [getMusicFolders].
+  @GET('/rest/getAlbumList2')
+  Future<SubsonicResponse<AlbumsModel>> getAlbumList2(
+    @Query('type') String type, {
+    @Query('size') int size = 10,
+    @Query('offset') int offset = 0,
+    @Query('fromYear') int? fromYear,
+    @Query('toYear') int? toYear,
+    @Query('genre') String? genre,
+    @Query('musicFolderId') String? musicFolderId,
+  });
 }

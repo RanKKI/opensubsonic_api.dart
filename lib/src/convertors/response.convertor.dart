@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import '../extensions/list.extension.dart';
 import '../models/components/album/album.model.dart';
 import '../models/components/album/album_info.model.dart';
+import '../models/components/albums/albums.model.dart';
 import '../models/components/artist/artist_id3.model.dart';
 import '../models/components/artist/artist_info.model.dart';
 import '../models/components/artists_id3/artists_id3.model.dart';
@@ -31,7 +32,9 @@ class SubsonicResponseConvertor<T>
     'artistInfo2': ArtistInfo2Model.fromJson,
     'albumInfo': AlbumInfoModel.fromJson,
     'playlists': PlayListsModel.fromJson,
-    'playlist': PlayListModel.fromJson
+    'playlist': PlayListModel.fromJson,
+    'albumList': AlbumsModel.fromJson,
+    'albumList2': AlbumsModel.fromJson,
   };
 
   @override
