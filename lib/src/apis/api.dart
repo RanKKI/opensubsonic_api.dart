@@ -518,4 +518,49 @@ abstract class SubsonicApiClient {
     @Query('songOffset') int songOffset = 0,
     @Query('musicFolderId') String? musicFolderId,
   });
+
+  /// Since 1.8.0
+  ///
+  /// Attaches a star to a song, album or artist.
+  ///
+  /// - [id] The ID of the file (song) or folder (album/artist) to star. Multiple parameters allowed.
+  /// - [albumId] The ID of an album to star. Use this rather than id if the client accesses the media collection according to ID3 tags rather than file structure. Multiple parameters allowed.
+  /// - [artistId] The ID of an artist to star. Use this rather than id if the client accesses the media collection according to ID3 tags rather than file structure. Multiple parameters allowed.
+  @GET('/rest/star')
+  Future<SubsonicResponse<void>> star({
+    @Query('id') List<String>? id,
+    @Query('albumId') List<String>? albumId,
+    @Query('artistId') List<String>? artistId,
+  });
+
+  /// Since 1.8.0
+  ///
+  /// Removes the star from a song, album or artist.
+  ///
+  /// - [id] The ID of the file (song) or folder (album/artist) to unstar.
+  /// Multiple parameters allowed.
+  /// - [albumId] The ID of an album to unstar. Use this rather than id if the
+  /// client accesses the media collection according to ID3 tags rather than
+  /// file structure. Multiple parameters allowed.
+  /// - [artistId] The ID of an artist to unstar. Use this rather than id
+  /// if the client accesses the media collection according to ID3 tags
+  /// rather than file structure. Multiple parameters allowed.
+  @GET('/rest/unstar')
+  Future<SubsonicResponse<void>> unstar({
+    @Query('id') List<String>? id,
+    @Query('albumId') List<String>? albumId,
+    @Query('artistId') List<String>? artistId,
+  });
+
+  /// Since 1.6.0
+  ///
+  /// Sets the rating for a music file.
+  ///
+  /// - [id] The ID of the file (song) or folder (album/artist) to rate.
+  /// - [rating] The rating between 1 and 5 (inclusive), or 0 to remove the rating.
+  @GET('/rest/setRating')
+  Future<SubsonicResponse<void>> setRating(
+    @Query('id') String id,
+    @Query('rating') int rating,
+  );
 }
