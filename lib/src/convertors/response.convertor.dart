@@ -1,15 +1,21 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../extensions/list.extension.dart';
-import '../models/components/album/album_id3.model.dart';
+import '../models/components/album/album.model.dart';
 import '../models/components/album/album_info.model.dart';
+import '../models/components/albums/albums.model.dart';
+import '../models/components/artist/artist.model.dart';
 import '../models/components/artist/artist_info.model.dart';
-import '../models/components/artist/artist_with_albums_id3.model.dart';
-import '../models/components/artists_id3/artists_id3.model.dart';
-import '../models/components/indexes/indexes.model.dart';
+import '../models/components/artists/artists.model.dart';
+import '../models/components/genres/genres.model.dart';
 import '../models/components/license/license.model.dart';
 import '../models/components/media/media.model.dart';
 import '../models/components/music_folders/music_folders.model.dart';
+import '../models/components/playlist/playlist.model.dart';
+import '../models/components/playlist/playlists.model.dart';
+import '../models/components/search/search_result.model.dart';
+import '../models/components/songs/songs.model.dart';
+import '../models/components/starred/starred.model.dart';
 import '../models/responses/subsonic_empty_data.model.dart';
 import '../models/responses/subsonic_response.model.dart';
 
@@ -19,15 +25,29 @@ class SubsonicResponseConvertor<T>
 
   static const _mapper = {
     'license': License.fromJson,
-    'album': AlbumID3Model.fromJson,
+    'album': AlbumModel.fromJson,
     'musicFolders': MusicFoldersModel.fromJson,
-    'indexes': IndexesModel.fromJson,
-    'artists': ArtistsID3Model.fromJson,
-    'artist': ArtistWithAlbumsID3Model.fromJson,
+    'indexes': ArtistsModel.fromJson,
+    'artists': ArtistsModel.fromJson,
+    'artist': ArtistModel.fromJson,
     'song': MediaModel.fromJson,
     'artistInfo': ArtistInfoModel.fromJson,
-    'artistInfo2': ArtistInfo2Model.fromJson,
+    'artistInfo2': ArtistInfoModel.fromJson,
     'albumInfo': AlbumInfoModel.fromJson,
+    'playlists': PlayListsModel.fromJson,
+    'playlist': PlayListModel.fromJson,
+    'albumList': AlbumsModel.fromJson,
+    'albumList2': AlbumsModel.fromJson,
+    'randomSongs': SongsModel.fromJson,
+    'songsByGenre': SongsModel.fromJson,
+    'genres': GenresModel.fromJson,
+    'topSongs': SongsModel.fromJson,
+    'similarSongs': SongsModel.fromJson,
+    'similarSongs2': SongsModel.fromJson,
+    'starred': StarredModel.fromJson,
+    'starred2': StarredModel.fromJson,
+    'searchResult2': SearchResultModel.fromJson,
+    'searchResult3': SearchResultModel.fromJson,
   };
 
   @override

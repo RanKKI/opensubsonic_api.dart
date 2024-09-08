@@ -64,7 +64,7 @@ class SubsonicResponseData<T> with _$SubsonicResponseData<T> {
     /// The server actual version. [Ex: 1.2.3 (beta)]
     String? serverVersion,
     @Default(null) T? data,
-    SubsonicErrorModel? errors,
+    SubsonicErrorModel? error,
   }) = _SubsonicResponse;
 
   factory SubsonicResponseData.fromJson(

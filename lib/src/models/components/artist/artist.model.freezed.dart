@@ -22,6 +22,7 @@ ArtistModel _$ArtistModelFromJson(Map<String, dynamic> json) {
 mixin _$ArtistModel {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  String? get coverArt => throw _privateConstructorUsedError;
   String? get artistImageUrl =>
       throw _privateConstructorUsedError; // Added in 1.10.1
   @DateTimeConvertor()
@@ -29,6 +30,11 @@ mixin _$ArtistModel {
       throw _privateConstructorUsedError; // Added in 1.16.1
   int? get userRating => throw _privateConstructorUsedError; // Added in 1.13.0
   double? get averageRating => throw _privateConstructorUsedError;
+
+  /// Added in 1.16.1
+  int? get albumCount => throw _privateConstructorUsedError;
+  @JsonKey(name: 'album')
+  List<AlbumModel> get albums => throw _privateConstructorUsedError;
 
   /// Serializes this ArtistModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,10 +55,13 @@ abstract class $ArtistModelCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
+      String? coverArt,
       String? artistImageUrl,
       @DateTimeConvertor() DateTime? starred,
       int? userRating,
-      double? averageRating});
+      double? averageRating,
+      int? albumCount,
+      @JsonKey(name: 'album') List<AlbumModel> albums});
 }
 
 /// @nodoc
@@ -72,10 +81,13 @@ class _$ArtistModelCopyWithImpl<$Res, $Val extends ArtistModel>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? coverArt = freezed,
     Object? artistImageUrl = freezed,
     Object? starred = freezed,
     Object? userRating = freezed,
     Object? averageRating = freezed,
+    Object? albumCount = freezed,
+    Object? albums = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -86,6 +98,10 @@ class _$ArtistModelCopyWithImpl<$Res, $Val extends ArtistModel>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      coverArt: freezed == coverArt
+          ? _value.coverArt
+          : coverArt // ignore: cast_nullable_to_non_nullable
+              as String?,
       artistImageUrl: freezed == artistImageUrl
           ? _value.artistImageUrl
           : artistImageUrl // ignore: cast_nullable_to_non_nullable
@@ -102,6 +118,14 @@ class _$ArtistModelCopyWithImpl<$Res, $Val extends ArtistModel>
           ? _value.averageRating
           : averageRating // ignore: cast_nullable_to_non_nullable
               as double?,
+      albumCount: freezed == albumCount
+          ? _value.albumCount
+          : albumCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      albums: null == albums
+          ? _value.albums
+          : albums // ignore: cast_nullable_to_non_nullable
+              as List<AlbumModel>,
     ) as $Val);
   }
 }
@@ -117,10 +141,13 @@ abstract class _$$ArtistModelImplCopyWith<$Res>
   $Res call(
       {String id,
       String name,
+      String? coverArt,
       String? artistImageUrl,
       @DateTimeConvertor() DateTime? starred,
       int? userRating,
-      double? averageRating});
+      double? averageRating,
+      int? albumCount,
+      @JsonKey(name: 'album') List<AlbumModel> albums});
 }
 
 /// @nodoc
@@ -138,10 +165,13 @@ class __$$ArtistModelImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? coverArt = freezed,
     Object? artistImageUrl = freezed,
     Object? starred = freezed,
     Object? userRating = freezed,
     Object? averageRating = freezed,
+    Object? albumCount = freezed,
+    Object? albums = null,
   }) {
     return _then(_$ArtistModelImpl(
       id: null == id
@@ -152,6 +182,10 @@ class __$$ArtistModelImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      coverArt: freezed == coverArt
+          ? _value.coverArt
+          : coverArt // ignore: cast_nullable_to_non_nullable
+              as String?,
       artistImageUrl: freezed == artistImageUrl
           ? _value.artistImageUrl
           : artistImageUrl // ignore: cast_nullable_to_non_nullable
@@ -168,6 +202,14 @@ class __$$ArtistModelImplCopyWithImpl<$Res>
           ? _value.averageRating
           : averageRating // ignore: cast_nullable_to_non_nullable
               as double?,
+      albumCount: freezed == albumCount
+          ? _value.albumCount
+          : albumCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      albums: null == albums
+          ? _value._albums
+          : albums // ignore: cast_nullable_to_non_nullable
+              as List<AlbumModel>,
     ));
   }
 }
@@ -178,10 +220,14 @@ class _$ArtistModelImpl implements _ArtistModel {
   const _$ArtistModelImpl(
       {required this.id,
       required this.name,
+      this.coverArt,
       this.artistImageUrl,
       @DateTimeConvertor() this.starred,
       this.userRating,
-      this.averageRating});
+      this.averageRating,
+      this.albumCount,
+      @JsonKey(name: 'album') final List<AlbumModel> albums = const []})
+      : _albums = albums;
 
   factory _$ArtistModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ArtistModelImplFromJson(json);
@@ -190,6 +236,8 @@ class _$ArtistModelImpl implements _ArtistModel {
   final String id;
   @override
   final String name;
+  @override
+  final String? coverArt;
   @override
   final String? artistImageUrl;
 // Added in 1.10.1
@@ -203,9 +251,21 @@ class _$ArtistModelImpl implements _ArtistModel {
   @override
   final double? averageRating;
 
+  /// Added in 1.16.1
+  @override
+  final int? albumCount;
+  final List<AlbumModel> _albums;
+  @override
+  @JsonKey(name: 'album')
+  List<AlbumModel> get albums {
+    if (_albums is EqualUnmodifiableListView) return _albums;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_albums);
+  }
+
   @override
   String toString() {
-    return 'ArtistModel(id: $id, name: $name, artistImageUrl: $artistImageUrl, starred: $starred, userRating: $userRating, averageRating: $averageRating)';
+    return 'ArtistModel(id: $id, name: $name, coverArt: $coverArt, artistImageUrl: $artistImageUrl, starred: $starred, userRating: $userRating, averageRating: $averageRating, albumCount: $albumCount, albums: $albums)';
   }
 
   @override
@@ -215,19 +275,33 @@ class _$ArtistModelImpl implements _ArtistModel {
             other is _$ArtistModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.coverArt, coverArt) ||
+                other.coverArt == coverArt) &&
             (identical(other.artistImageUrl, artistImageUrl) ||
                 other.artistImageUrl == artistImageUrl) &&
             (identical(other.starred, starred) || other.starred == starred) &&
             (identical(other.userRating, userRating) ||
                 other.userRating == userRating) &&
             (identical(other.averageRating, averageRating) ||
-                other.averageRating == averageRating));
+                other.averageRating == averageRating) &&
+            (identical(other.albumCount, albumCount) ||
+                other.albumCount == albumCount) &&
+            const DeepCollectionEquality().equals(other._albums, _albums));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, artistImageUrl,
-      starred, userRating, averageRating);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      coverArt,
+      artistImageUrl,
+      starred,
+      userRating,
+      averageRating,
+      albumCount,
+      const DeepCollectionEquality().hash(_albums));
 
   /// Create a copy of ArtistModel
   /// with the given fields replaced by the non-null parameter values.
@@ -247,12 +321,16 @@ class _$ArtistModelImpl implements _ArtistModel {
 
 abstract class _ArtistModel implements ArtistModel {
   const factory _ArtistModel(
-      {required final String id,
-      required final String name,
-      final String? artistImageUrl,
-      @DateTimeConvertor() final DateTime? starred,
-      final int? userRating,
-      final double? averageRating}) = _$ArtistModelImpl;
+          {required final String id,
+          required final String name,
+          final String? coverArt,
+          final String? artistImageUrl,
+          @DateTimeConvertor() final DateTime? starred,
+          final int? userRating,
+          final double? averageRating,
+          final int? albumCount,
+          @JsonKey(name: 'album') final List<AlbumModel> albums}) =
+      _$ArtistModelImpl;
 
   factory _ArtistModel.fromJson(Map<String, dynamic> json) =
       _$ArtistModelImpl.fromJson;
@@ -262,6 +340,8 @@ abstract class _ArtistModel implements ArtistModel {
   @override
   String get name;
   @override
+  String? get coverArt;
+  @override
   String? get artistImageUrl; // Added in 1.10.1
   @override
   @DateTimeConvertor()
@@ -270,6 +350,13 @@ abstract class _ArtistModel implements ArtistModel {
   int? get userRating; // Added in 1.13.0
   @override
   double? get averageRating;
+
+  /// Added in 1.16.1
+  @override
+  int? get albumCount;
+  @override
+  @JsonKey(name: 'album')
+  List<AlbumModel> get albums;
 
   /// Create a copy of ArtistModel
   /// with the given fields replaced by the non-null parameter values.

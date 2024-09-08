@@ -1,0 +1,51 @@
+{
+    "subsonic-response": {
+        "status": "ok",
+        "version": "1.16.1",
+        "type": "navidrome",
+        "serverVersion": "0.52.5 (c5560888)",
+        "openSubsonic": true,
+        "indexes": {
+            "index": [
+                {
+                    "name": "#",
+                    "artist": [
+                        {
+                            "id": "19b068488ae5a3a8a05698de2fe4b2db",
+                            "name": "黃俊郎",
+                            "albumCount": 1,
+                            "coverArt": "ar-19b068488ae5a3a8a05698de2fe4b2db_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLTE5YjA2ODQ4OGFlNWEzYThhMDU2OThkZTJmZTRiMmRiXzAiLCJpc3MiOiJORCJ9.l6RVSiAMzCOqjFbyMEaJbp9V27O0MpKAYVh9L13jNCQ?size=600"
+                        }
+                    ]
+                },
+                {
+                    "name": "H",
+                    "artist": [
+                        {
+                            "id": "366f6987489c0ed34866b185f40295b6",
+                            "name": "Hikaru Utada",
+                            "albumCount": 1,
+                            "coverArt": "ar-366f6987489c0ed34866b185f40295b6_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLTM2NmY2OTg3NDg5YzBlZDM0ODY2YjE4NWY0MDI5NWI2XzAiLCJpc3MiOiJORCJ9.TCPk5Qo2dzZ408WYms_aOHI4ljD6MDJUaPjVEUP85L8?size=600"
+                        }
+                    ]
+                },
+                {
+                    "name": "Q",
+                    "artist": [
+                        {
+                            "id": "c71662031228f38c0b98ef71f4b9cbef",
+                            "name": "Queen Sea Big Shark",
+                            "albumCount": 1,
+                            "coverArt": "ar-c71662031228f38c0b98ef71f4b9cbef_0",
+                            "artistImageUrl": "https://music.internal.rankki.xyz/share/img/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFyLWM3MTY2MjAzMTIyOGYzOGMwYjk4ZWY3MWY0YjljYmVmXzAiLCJpc3MiOiJORCJ9.b41KEz-bCKsogj5rHVhbqrZJLBrEmsRb_bdF19G0qb4?size=600"
+                        }
+                    ]
+                }
+            ],
+            "lastModified": 1725762089012,
+            "ignoredArticles": "The El La Los Las Le Les Os As O A"
+        }
+    }
+}

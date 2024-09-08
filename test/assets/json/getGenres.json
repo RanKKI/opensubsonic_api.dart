@@ -1,0 +1,68 @@
+{
+    "subsonic-response": {
+        "status": "ok",
+        "version": "1.16.1",
+        "type": "navidrome",
+        "serverVersion": "0.52.5 (c5560888)",
+        "openSubsonic": true,
+        "genres": {
+            "genre": [
+                {
+                    "value": "华语流行音乐",
+                    "songCount": 416,
+                    "albumCount": 36
+                },
+                {
+                    "value": "pop",
+                    "songCount": 251,
+                    "albumCount": 35
+                },
+                {
+                    "value": "J-Music",
+                    "songCount": 63,
+                    "albumCount": 5
+                },
+                {
+                    "value": "JPop",
+                    "songCount": 51,
+                    "albumCount": 15
+                },
+                {
+                    "value": "R\u0026B",
+                    "songCount": 26,
+                    "albumCount": 2
+                },
+                {
+                    "value": "J-Pop",
+                    "songCount": 17,
+                    "albumCount": 4
+                },
+                {
+                    "value": "J-POP · ROCK",
+                    "songCount": 13,
+                    "albumCount": 1
+                },
+                {
+                    "value": "Jazz",
+                    "songCount": 4,
+                    "albumCount": 1
+                },
+                {
+                    "value": "Mandopop",
+                    "songCount": 3,
+                    "albumCount": 3
+                },
+                {
+                    "value": "Anime",
+                    "songCount": 1,
+                    "albumCount": 1
+                },
+                {
+                    "value": "Musicals",
+                    "songCount": 1,
+                    "albumCount": 1
+                }
+            ]
+        }
+    }
+}

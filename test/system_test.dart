@@ -9,4 +9,10 @@ void main() {
     final result = await api.ping();
     expect(result.response.status, ResponseStatus.ok);
   });
+
+  test('getLicense', () async {
+    final result = await api.getLicense();
+    expect(result.response.status, ResponseStatus.ok);
+    expect(result.response.data?.valid, true);
+  });
 }
