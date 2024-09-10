@@ -18,5 +18,7 @@ export 'src/models/components/license/license.model.dart';
 export 'src/models/components/media/media.model.dart';
 export 'src/models/components/music_folder/music_folder.model.dart';
 export 'src/models/components/music_folders/music_folders.model.dart';
+export 'src/models/components/playlist/playlist.model.dart';
+export 'src/models/components/playlist/playlists.model.dart';
 export 'src/models/responses/subsonic_response.model.dart';
 export 'src/opensubsonic_api.dart';
