@@ -1,3 +1,9 @@
+## 0.2.2
+
+- Fix typo
+- Fix export models
+
+
 ## 0.2.1
 
 - Fix pubspec version
