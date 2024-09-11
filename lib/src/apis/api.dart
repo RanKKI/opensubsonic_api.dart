@@ -240,7 +240,7 @@ abstract class SubsonicApiClient {
   /// - [username] (Since 1.8.0) If specified, return playlists for this user rather
   /// than for the authenticated user. The authenticated user must have admin role if this parameter is used.
   @GET('/rest/getPlaylists')
-  Future<SubsonicResponse<PlayListsModel>> getPlaylists({
+  Future<SubsonicResponse<PlaylistsModel>> getPlaylists({
     @Query('username') String? username,
   });
 
@@ -250,7 +250,7 @@ abstract class SubsonicApiClient {
   ///
   /// - [id] ID of the playlist to return, as obtained by [getPlaylists].
   @GET('/rest/getPlaylist')
-  Future<SubsonicResponse<PlayListModel>> getPlaylist(
+  Future<SubsonicResponse<PlaylistModel>> getPlaylist(
     @Query('id') String id,
   );
 
@@ -266,7 +266,7 @@ abstract class SubsonicApiClient {
   ///
   /// Otherwise null is returned.
   @GET('/rest/createPlaylist')
-  Future<SubsonicResponse<PlayListModel?>> createPlaylist({
+  Future<SubsonicResponse<PlaylistModel?>> createPlaylist({
     @Query('name') String? name,
     @Query('playlistId') String? playlistId,
     @Query('songId') List<String>? songId,

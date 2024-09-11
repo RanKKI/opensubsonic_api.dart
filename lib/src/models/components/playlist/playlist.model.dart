@@ -7,8 +7,8 @@ part 'playlist.model.freezed.dart';
 part 'playlist.model.g.dart';
 
 @freezed
-class PlayListModel with _$PlayListModel {
-  const factory PlayListModel({
+class PlaylistModel with _$PlaylistModel {
+  const factory PlaylistModel({
     /// <!-- Added in 1.8.0 -->
     @Default([]) List<String> allowedUser,
     required String id,
@@ -38,8 +38,8 @@ class PlayListModel with _$PlayListModel {
     /// <!-- Added in 1.11.0 -->
     String? coverArt,
     @JsonKey(name: 'entry') @Default([]) List<MediaModel> songs,
-  }) = _PlayListModel;
+  }) = _PlaylistModel;
 
-  factory PlayListModel.fromJson(Map<String, Object?> json) =>
-      _$PlayListModelFromJson(json);
+  factory PlaylistModel.fromJson(Map<String, Object?> json) =>
+      _$PlaylistModelFromJson(json);
 }

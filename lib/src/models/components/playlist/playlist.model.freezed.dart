@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-PlayListModel _$PlayListModelFromJson(Map<String, dynamic> json) {
-  return _PlayListModel.fromJson(json);
+PlaylistModel _$PlaylistModelFromJson(Map<String, dynamic> json) {
+  return _PlaylistModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$PlayListModel {
+mixin _$PlaylistModel {
   /// <!-- Added in 1.8.0 -->
   List<String> get allowedUser => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
@@ -53,21 +53,21 @@ mixin _$PlayListModel {
   @JsonKey(name: 'entry')
   List<MediaModel> get songs => throw _privateConstructorUsedError;
 
-  /// Serializes this PlayListModel to a JSON map.
+  /// Serializes this PlaylistModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of PlayListModel
+  /// Create a copy of PlaylistModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $PlayListModelCopyWith<PlayListModel> get copyWith =>
+  $PlaylistModelCopyWith<PlaylistModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PlayListModelCopyWith<$Res> {
-  factory $PlayListModelCopyWith(
-          PlayListModel value, $Res Function(PlayListModel) then) =
-      _$PlayListModelCopyWithImpl<$Res, PlayListModel>;
+abstract class $PlaylistModelCopyWith<$Res> {
+  factory $PlaylistModelCopyWith(
+          PlaylistModel value, $Res Function(PlaylistModel) then) =
+      _$PlaylistModelCopyWithImpl<$Res, PlaylistModel>;
   @useResult
   $Res call(
       {List<String> allowedUser,
@@ -85,16 +85,16 @@ abstract class $PlayListModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PlayListModelCopyWithImpl<$Res, $Val extends PlayListModel>
-    implements $PlayListModelCopyWith<$Res> {
-  _$PlayListModelCopyWithImpl(this._value, this._then);
+class _$PlaylistModelCopyWithImpl<$Res, $Val extends PlaylistModel>
+    implements $PlaylistModelCopyWith<$Res> {
+  _$PlaylistModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of PlayListModel
+  /// Create a copy of PlaylistModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -166,11 +166,11 @@ class _$PlayListModelCopyWithImpl<$Res, $Val extends PlayListModel>
 }
 
 /// @nodoc
-abstract class _$$PlayListModelImplCopyWith<$Res>
-    implements $PlayListModelCopyWith<$Res> {
-  factory _$$PlayListModelImplCopyWith(
-          _$PlayListModelImpl value, $Res Function(_$PlayListModelImpl) then) =
-      __$$PlayListModelImplCopyWithImpl<$Res>;
+abstract class _$$PlaylistModelImplCopyWith<$Res>
+    implements $PlaylistModelCopyWith<$Res> {
+  factory _$$PlaylistModelImplCopyWith(
+          _$PlaylistModelImpl value, $Res Function(_$PlaylistModelImpl) then) =
+      __$$PlaylistModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -189,14 +189,14 @@ abstract class _$$PlayListModelImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$PlayListModelImplCopyWithImpl<$Res>
-    extends _$PlayListModelCopyWithImpl<$Res, _$PlayListModelImpl>
-    implements _$$PlayListModelImplCopyWith<$Res> {
-  __$$PlayListModelImplCopyWithImpl(
-      _$PlayListModelImpl _value, $Res Function(_$PlayListModelImpl) _then)
+class __$$PlaylistModelImplCopyWithImpl<$Res>
+    extends _$PlaylistModelCopyWithImpl<$Res, _$PlaylistModelImpl>
+    implements _$$PlaylistModelImplCopyWith<$Res> {
+  __$$PlaylistModelImplCopyWithImpl(
+      _$PlaylistModelImpl _value, $Res Function(_$PlaylistModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of PlayListModel
+  /// Create a copy of PlaylistModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -214,7 +214,7 @@ class __$$PlayListModelImplCopyWithImpl<$Res>
     Object? coverArt = freezed,
     Object? songs = null,
   }) {
-    return _then(_$PlayListModelImpl(
+    return _then(_$PlaylistModelImpl(
       allowedUser: null == allowedUser
           ? _value._allowedUser
           : allowedUser // ignore: cast_nullable_to_non_nullable
@@ -269,8 +269,8 @@ class __$$PlayListModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PlayListModelImpl implements _PlayListModel {
-  const _$PlayListModelImpl(
+class _$PlaylistModelImpl implements _PlaylistModel {
+  const _$PlaylistModelImpl(
       {final List<String> allowedUser = const [],
       required this.id,
       required this.name,
@@ -286,8 +286,8 @@ class _$PlayListModelImpl implements _PlayListModel {
       : _allowedUser = allowedUser,
         _songs = songs;
 
-  factory _$PlayListModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PlayListModelImplFromJson(json);
+  factory _$PlaylistModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PlaylistModelImplFromJson(json);
 
   /// <!-- Added in 1.8.0 -->
   final List<String> _allowedUser;
@@ -350,14 +350,14 @@ class _$PlayListModelImpl implements _PlayListModel {
 
   @override
   String toString() {
-    return 'PlayListModel(allowedUser: $allowedUser, id: $id, name: $name, comment: $comment, owner: $owner, public: $public, songCount: $songCount, duration: $duration, created: $created, changed: $changed, coverArt: $coverArt, songs: $songs)';
+    return 'PlaylistModel(allowedUser: $allowedUser, id: $id, name: $name, comment: $comment, owner: $owner, public: $public, songCount: $songCount, duration: $duration, created: $created, changed: $changed, coverArt: $coverArt, songs: $songs)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PlayListModelImpl &&
+            other is _$PlaylistModelImpl &&
             const DeepCollectionEquality()
                 .equals(other._allowedUser, _allowedUser) &&
             (identical(other.id, id) || other.id == id) &&
@@ -393,24 +393,24 @@ class _$PlayListModelImpl implements _PlayListModel {
       coverArt,
       const DeepCollectionEquality().hash(_songs));
 
-  /// Create a copy of PlayListModel
+  /// Create a copy of PlaylistModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$PlayListModelImplCopyWith<_$PlayListModelImpl> get copyWith =>
-      __$$PlayListModelImplCopyWithImpl<_$PlayListModelImpl>(this, _$identity);
+  _$$PlaylistModelImplCopyWith<_$PlaylistModelImpl> get copyWith =>
+      __$$PlaylistModelImplCopyWithImpl<_$PlaylistModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$PlayListModelImplToJson(
+    return _$$PlaylistModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _PlayListModel implements PlayListModel {
-  const factory _PlayListModel(
+abstract class _PlaylistModel implements PlaylistModel {
+  const factory _PlaylistModel(
           {final List<String> allowedUser,
           required final String id,
           required final String name,
@@ -423,10 +423,10 @@ abstract class _PlayListModel implements PlayListModel {
           @DateTimeConvertor() final DateTime? changed,
           final String? coverArt,
           @JsonKey(name: 'entry') final List<MediaModel> songs}) =
-      _$PlayListModelImpl;
+      _$PlaylistModelImpl;
 
-  factory _PlayListModel.fromJson(Map<String, dynamic> json) =
-      _$PlayListModelImpl.fromJson;
+  factory _PlaylistModel.fromJson(Map<String, dynamic> json) =
+      _$PlaylistModelImpl.fromJson;
 
   /// <!-- Added in 1.8.0 -->
   @override
@@ -473,10 +473,10 @@ abstract class _PlayListModel implements PlayListModel {
   @JsonKey(name: 'entry')
   List<MediaModel> get songs;
 
-  /// Create a copy of PlayListModel
+  /// Create a copy of PlaylistModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PlayListModelImplCopyWith<_$PlayListModelImpl> get copyWith =>
+  _$$PlaylistModelImplCopyWith<_$PlaylistModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

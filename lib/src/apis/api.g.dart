@@ -654,14 +654,14 @@ class _SubsonicApiClient implements SubsonicApiClient {
   }
 
   @override
-  Future<SubsonicResponse<PlayListsModel>> getPlaylists(
+  Future<SubsonicResponse<PlaylistsModel>> getPlaylists(
       {String? username}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'username': username};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<SubsonicResponse<PlayListsModel>>(Options(
+    final _options = _setStreamType<SubsonicResponse<PlaylistsModel>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -678,9 +678,9 @@ class _SubsonicApiClient implements SubsonicApiClient {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late SubsonicResponse<PlayListsModel> _value;
+    late SubsonicResponse<PlaylistsModel> _value;
     try {
-      _value = SubsonicResponse<PlayListsModel>.fromJson(_result.data!);
+      _value = SubsonicResponse<PlaylistsModel>.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -689,12 +689,12 @@ class _SubsonicApiClient implements SubsonicApiClient {
   }
 
   @override
-  Future<SubsonicResponse<PlayListModel>> getPlaylist(String id) async {
+  Future<SubsonicResponse<PlaylistModel>> getPlaylist(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'id': id};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<SubsonicResponse<PlayListModel>>(Options(
+    final _options = _setStreamType<SubsonicResponse<PlaylistModel>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -711,9 +711,9 @@ class _SubsonicApiClient implements SubsonicApiClient {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late SubsonicResponse<PlayListModel> _value;
+    late SubsonicResponse<PlaylistModel> _value;
     try {
-      _value = SubsonicResponse<PlayListModel>.fromJson(_result.data!);
+      _value = SubsonicResponse<PlaylistModel>.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -722,7 +722,7 @@ class _SubsonicApiClient implements SubsonicApiClient {
   }
 
   @override
-  Future<SubsonicResponse<PlayListModel?>> createPlaylist({
+  Future<SubsonicResponse<PlaylistModel?>> createPlaylist({
     String? name,
     String? playlistId,
     List<String>? songId,
@@ -736,7 +736,7 @@ class _SubsonicApiClient implements SubsonicApiClient {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<SubsonicResponse<PlayListModel?>>(Options(
+    final _options = _setStreamType<SubsonicResponse<PlaylistModel?>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -753,9 +753,9 @@ class _SubsonicApiClient implements SubsonicApiClient {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late SubsonicResponse<PlayListModel?> _value;
+    late SubsonicResponse<PlaylistModel?> _value;
     try {
-      _value = SubsonicResponse<PlayListModel?>.fromJson(_result.data!);
+      _value = SubsonicResponse<PlaylistModel?>.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

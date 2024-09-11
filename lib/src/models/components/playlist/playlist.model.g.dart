@@ -6,8 +6,8 @@ part of 'playlist.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PlayListModelImpl _$$PlayListModelImplFromJson(Map<String, dynamic> json) =>
-    _$PlayListModelImpl(
+_$PlaylistModelImpl _$$PlaylistModelImplFromJson(Map<String, dynamic> json) =>
+    _$PlaylistModelImpl(
       allowedUser: (json['allowedUser'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
@@ -30,7 +30,7 @@ _$PlayListModelImpl _$$PlayListModelImplFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$$PlayListModelImplToJson(_$PlayListModelImpl instance) =>
+Map<String, dynamic> _$$PlaylistModelImplToJson(_$PlaylistModelImpl instance) =>
     <String, dynamic>{
       'allowedUser': instance.allowedUser,
       'id': instance.id,

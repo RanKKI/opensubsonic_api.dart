@@ -6,11 +6,11 @@ part 'playlists.model.freezed.dart';
 part 'playlists.model.g.dart';
 
 @freezed
-class PlayListsModel with _$PlayListsModel {
-  const factory PlayListsModel({
-    @JsonKey(name: 'playlist') @Default([]) List<PlayListModel> playlists,
-  }) = _PlayListsModel;
+class PlaylistsModel with _$PlaylistsModel {
+  const factory PlaylistsModel({
+    @JsonKey(name: 'playlist') @Default([]) List<PlaylistModel> playlists,
+  }) = _PlaylistsModel;
 
-  factory PlayListsModel.fromJson(Map<String, Object?> json) =>
-      _$PlayListsModelFromJson(json);
+  factory PlaylistsModel.fromJson(Map<String, Object?> json) =>
+      _$PlaylistsModelFromJson(json);
 }

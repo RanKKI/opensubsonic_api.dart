@@ -6,16 +6,16 @@ part of 'playlists.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PlayListsModelImpl _$$PlayListsModelImplFromJson(Map<String, dynamic> json) =>
-    _$PlayListsModelImpl(
+_$PlaylistsModelImpl _$$PlaylistsModelImplFromJson(Map<String, dynamic> json) =>
+    _$PlaylistsModelImpl(
       playlists: (json['playlist'] as List<dynamic>?)
-              ?.map((e) => PlayListModel.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => PlaylistModel.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
     );
 
-Map<String, dynamic> _$$PlayListsModelImplToJson(
-        _$PlayListsModelImpl instance) =>
+Map<String, dynamic> _$$PlaylistsModelImplToJson(
+        _$PlaylistsModelImpl instance) =>
     <String, dynamic>{
       'playlist': instance.playlists,
     };
