@@ -12,6 +12,7 @@ import '../models/components/artist/artist_info.model.dart';
 import '../models/components/artists/artists.model.dart';
 import '../models/components/genres/genres.model.dart';
 import '../models/components/license/license.model.dart';
+import '../models/components/lyrics/lyrics.model.dart';
 import '../models/components/media/media.model.dart';
 import '../models/components/music_folders/music_folders.model.dart';
 import '../models/components/playlist/playlist.model.dart';
@@ -562,5 +563,17 @@ abstract class SubsonicApiClient {
   Future<SubsonicResponse<void>> setRating(
     @Query('id') String id,
     @Query('rating') int rating,
+  );
+
+  /// OpenSubsonic version: 1
+  ///
+  /// Retrieves all structured lyrics from the server for a given song.
+  /// The lyrics can come from embedded tags (SYLT/USLT), LRC file/text
+  /// file, or any other external source.
+  ///
+  /// - [id] The ID of the file (song) or folder (album/artist) to rate.
+  @GET('/rest/getLyricsBySongId')
+  Future<SubsonicResponse<StructuredLyricsModel>> getLyricsBySongId(
+    @Query('id') String id,
   );
 }

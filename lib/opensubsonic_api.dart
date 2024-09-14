@@ -15,6 +15,7 @@ export 'src/models/components/genre/genre.model.dart';
 export 'src/models/components/genres/genres.model.dart';
 export 'src/models/components/index/index.model.dart';
 export 'src/models/components/license/license.model.dart';
+export 'src/models/components/lyrics/lyrics.model.dart';
 export 'src/models/components/media/media.model.dart';
 export 'src/models/components/music_folder/music_folder.model.dart';
 export 'src/models/components/music_folders/music_folders.model.dart';

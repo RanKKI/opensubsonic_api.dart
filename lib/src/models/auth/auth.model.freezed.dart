@@ -24,6 +24,7 @@ mixin _$SubsonicAuthModel {
   String get username => throw _privateConstructorUsedError;
   @JsonKey(name: 'p')
   String get password => throw _privateConstructorUsedError;
+  bool get debug => throw _privateConstructorUsedError;
 
   /// Serializes this SubsonicAuthModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -43,7 +44,8 @@ abstract class $SubsonicAuthModelCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'u') String username,
-      @JsonKey(name: 'p') String password});
+      @JsonKey(name: 'p') String password,
+      bool debug});
 }
 
 /// @nodoc
@@ -63,6 +65,7 @@ class _$SubsonicAuthModelCopyWithImpl<$Res, $Val extends SubsonicAuthModel>
   $Res call({
     Object? username = null,
     Object? password = null,
+    Object? debug = null,
   }) {
     return _then(_value.copyWith(
       username: null == username
@@ -73,6 +76,10 @@ class _$SubsonicAuthModelCopyWithImpl<$Res, $Val extends SubsonicAuthModel>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
+      debug: null == debug
+          ? _value.debug
+          : debug // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -87,7 +94,8 @@ abstract class _$$SubsonicAuthModelImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'u') String username,
-      @JsonKey(name: 'p') String password});
+      @JsonKey(name: 'p') String password,
+      bool debug});
 }
 
 /// @nodoc
@@ -105,6 +113,7 @@ class __$$SubsonicAuthModelImplCopyWithImpl<$Res>
   $Res call({
     Object? username = null,
     Object? password = null,
+    Object? debug = null,
   }) {
     return _then(_$SubsonicAuthModelImpl(
       username: null == username
@@ -115,6 +124,10 @@ class __$$SubsonicAuthModelImplCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
+      debug: null == debug
+          ? _value.debug
+          : debug // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -124,7 +137,8 @@ class __$$SubsonicAuthModelImplCopyWithImpl<$Res>
 class _$SubsonicAuthModelImpl extends _SubsonicAuthModel {
   const _$SubsonicAuthModelImpl(
       {@JsonKey(name: 'u') required this.username,
-      @JsonKey(name: 'p') required this.password})
+      @JsonKey(name: 'p') required this.password,
+      this.debug = false})
       : super._();
 
   factory _$SubsonicAuthModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -136,10 +150,13 @@ class _$SubsonicAuthModelImpl extends _SubsonicAuthModel {
   @override
   @JsonKey(name: 'p')
   final String password;
+  @override
+  @JsonKey()
+  final bool debug;
 
   @override
   String toString() {
-    return 'SubsonicAuthModel(username: $username, password: $password)';
+    return 'SubsonicAuthModel(username: $username, password: $password, debug: $debug)';
   }
 
   @override
@@ -150,12 +167,13 @@ class _$SubsonicAuthModelImpl extends _SubsonicAuthModel {
             (identical(other.username, username) ||
                 other.username == username) &&
             (identical(other.password, password) ||
-                other.password == password));
+                other.password == password) &&
+            (identical(other.debug, debug) || other.debug == debug));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, username, password);
+  int get hashCode => Object.hash(runtimeType, username, password, debug);
 
   /// Create a copy of SubsonicAuthModel
   /// with the given fields replaced by the non-null parameter values.
@@ -176,9 +194,9 @@ class _$SubsonicAuthModelImpl extends _SubsonicAuthModel {
 
 abstract class _SubsonicAuthModel extends SubsonicAuthModel {
   const factory _SubsonicAuthModel(
-          {@JsonKey(name: 'u') required final String username,
-          @JsonKey(name: 'p') required final String password}) =
-      _$SubsonicAuthModelImpl;
+      {@JsonKey(name: 'u') required final String username,
+      @JsonKey(name: 'p') required final String password,
+      final bool debug}) = _$SubsonicAuthModelImpl;
   const _SubsonicAuthModel._() : super._();
 
   factory _SubsonicAuthModel.fromJson(Map<String, dynamic> json) =
@@ -190,6 +208,8 @@ abstract class _SubsonicAuthModel extends SubsonicAuthModel {
   @override
   @JsonKey(name: 'p')
   String get password;
+  @override
+  bool get debug;
 
   /// Create a copy of SubsonicAuthModel
   /// with the given fields replaced by the non-null parameter values.

@@ -3,17 +3,13 @@ import 'package:dio/dio.dart';
 import '../../opensubsonic_api.dart';
 
 class AuthInterceptor extends InterceptorsWrapper {
-  AuthInterceptor(
-    this.auth, {
-    this.debug = false,
-  });
+  AuthInterceptor(this.auth);
 
   final SubsonicAuthModel auth;
-  final bool debug;
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    options.queryParameters.addAll(auth.toUrlParams(debug));
+    options.queryParameters.addAll(auth.toUrlParams());
     return handler.next(options);
   }
 }
