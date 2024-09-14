@@ -13,13 +13,14 @@ class SubsonicAuthModel with _$SubsonicAuthModel, UrlParamsObject {
   const factory SubsonicAuthModel({
     @JsonKey(name: 'u') required String username,
     @JsonKey(name: 'p') required String password,
+    @Default(false) bool debug,
   }) = _SubsonicAuthModel;
 
   factory SubsonicAuthModel.fromJson(Map<String, dynamic> json) =>
       _$SubsonicAuthModelFromJson(json);
 
   @override
-  Map<String, String> toUrlParams([bool debug = false]) {
+  Map<String, String> toUrlParams() {
     if (debug) {
       return {'u': username, 'p': password};
     }

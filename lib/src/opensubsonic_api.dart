@@ -8,23 +8,24 @@ import 'models/auth/auth.model.dart';
 
 class SubsonicApi {
   SubsonicApi({
-    required this.auth,
-    required String baseUrl,
-    String apiVersion = '1.16.1',
-    String clientId = 'rankki-subsonic-api',
-    bool debug = false,
+    required SubsonicAuthModel auth,
+    required this.baseUrl,
+    this.version = '1.16.1',
+    this.clientId = 'rankki-subsonic-api',
+    this.debug = false,
   }) {
-    final dio = Dio(
+    this.auth = auth.copyWith(debug: debug);
+    dio = Dio(
       BaseOptions(
         baseUrl: baseUrl,
         queryParameters: {
-          'v': apiVersion,
+          'v': version,
           'c': clientId,
         },
       ),
     )..interceptors.addAll(
         [
-          AuthInterceptor(auth, debug: debug),
+          AuthInterceptor(this.auth),
           JsonInterceptor(),
           if (debug) LoggingInterceptor(),
         ],
@@ -32,6 +33,11 @@ class SubsonicApi {
     api = SubsonicApiClient(dio, baseUrl: baseUrl);
   }
 
-  final SubsonicAuthModel auth;
+  late final SubsonicAuthModel auth;
+  final String baseUrl;
+  final String version;
+  final String clientId;
+  final bool debug;
+  late final Dio dio;
   late final SubsonicApiClient api;
 }

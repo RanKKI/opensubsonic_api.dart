@@ -11,6 +11,7 @@ _$SubsonicAuthModelImpl _$$SubsonicAuthModelImplFromJson(
     _$SubsonicAuthModelImpl(
       username: json['u'] as String,
       password: json['p'] as String,
+      debug: json['debug'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$SubsonicAuthModelImplToJson(
@@ -18,4 +19,5 @@ Map<String, dynamic> _$$SubsonicAuthModelImplToJson(
     <String, dynamic>{
       'u': instance.username,
       'p': instance.password,
+      'debug': instance.debug,
     };

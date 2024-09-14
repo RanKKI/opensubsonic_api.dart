@@ -9,6 +9,7 @@ import '../models/components/artist/artist_info.model.dart';
 import '../models/components/artists/artists.model.dart';
 import '../models/components/genres/genres.model.dart';
 import '../models/components/license/license.model.dart';
+import '../models/components/lyrics/lyrics.model.dart';
 import '../models/components/media/media.model.dart';
 import '../models/components/music_folders/music_folders.model.dart';
 import '../models/components/playlist/playlist.model.dart';
@@ -48,6 +49,7 @@ class SubsonicResponseConvertor<T>
     'starred2': StarredModel.fromJson,
     'searchResult2': SearchResultModel.fromJson,
     'searchResult3': SearchResultModel.fromJson,
+    'lyricsList': StructuredLyricsModel.fromJson,
   };
 
   @override
