@@ -1,6 +1,7 @@
 library opensubsonic_api;
 
 export 'src/apis/api.dart';
+export 'src/mixins/request_logging.mixin.dart';
 export 'src/models/auth/auth.model.dart';
 export 'src/models/components/album/album.model.dart';
 export 'src/models/components/album/album_info.model.dart';

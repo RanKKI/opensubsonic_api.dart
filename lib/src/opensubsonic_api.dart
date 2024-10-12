@@ -2,8 +2,10 @@ import 'package:dio/dio.dart';
 
 import 'apis/api.dart';
 import 'interceptors/auth.interceptor.dart';
+import 'interceptors/external_logging.interceptor.dart';
 import 'interceptors/json.interceptor.dart';
 import 'interceptors/logging.interceptor.dart';
+import 'mixins/request_logging.mixin.dart';
 import 'models/auth/auth.model.dart';
 
 class SubsonicApi {
@@ -13,6 +15,7 @@ class SubsonicApi {
     this.version = '1.16.1',
     this.clientId = 'rankki-subsonic-api',
     this.debug = false,
+    RequestLoggingMixin? logger,
   }) {
     this.auth = auth.copyWith(debug: debug);
     dio = Dio(
@@ -28,6 +31,7 @@ class SubsonicApi {
           AuthInterceptor(this.auth),
           JsonInterceptor(),
           if (debug) LoggingInterceptor(),
+          if (logger != null) ExternalLoggingInterceptor(logger),
         ],
       );
     api = SubsonicApiClient(dio, baseUrl: baseUrl);
