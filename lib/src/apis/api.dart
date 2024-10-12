@@ -17,6 +17,7 @@ import '../models/components/media/media.model.dart';
 import '../models/components/music_folders/music_folders.model.dart';
 import '../models/components/playlist/playlist.model.dart';
 import '../models/components/playlist/playlists.model.dart';
+import '../models/components/scan_status/scan_status.model.dart';
 import '../models/components/search/search_result.model.dart';
 import '../models/components/songs/songs.model.dart';
 import '../models/components/starred/starred.model.dart';
@@ -576,4 +577,16 @@ abstract class SubsonicApiClient {
   Future<SubsonicResponse<StructuredLyricsModel>> getLyricsBySongId(
     @Query('id') String id,
   );
+
+  /// Since 1.15.0
+  ///
+  /// Returns the current status for media library scanning. Takes no extra parameters.
+  @GET('/rest/getScanStatus')
+  Future<SubsonicResponse<ScanStatusModel>> getScanStatus();
+
+  /// Since 1.15.0
+  ///
+  /// Initiates a rescan of the media libraries. Takes no extra parameters.
+  @GET('/rest/startScan')
+  Future<SubsonicResponse<ScanStatusModel>> startScan();
 }

@@ -14,6 +14,7 @@ import '../models/components/media/media.model.dart';
 import '../models/components/music_folders/music_folders.model.dart';
 import '../models/components/playlist/playlist.model.dart';
 import '../models/components/playlist/playlists.model.dart';
+import '../models/components/scan_status/scan_status.model.dart';
 import '../models/components/search/search_result.model.dart';
 import '../models/components/songs/songs.model.dart';
 import '../models/components/starred/starred.model.dart';
@@ -50,6 +51,7 @@ class SubsonicResponseConvertor<T>
     'searchResult2': SearchResultModel.fromJson,
     'searchResult3': SearchResultModel.fromJson,
     'lyricsList': StructuredLyricsModel.fromJson,
+    'scanStatus': ScanStatusModel.fromJson,
   };
 
   @override

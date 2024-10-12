@@ -21,5 +21,8 @@ export 'src/models/components/music_folder/music_folder.model.dart';
 export 'src/models/components/music_folders/music_folders.model.dart';
 export 'src/models/components/playlist/playlist.model.dart';
 export 'src/models/components/playlist/playlists.model.dart';
+export 'src/models/components/scan_status/scan_status.model.dart';
+export 'src/models/components/search/search_result.model.dart';
+export 'src/models/components/starred/starred.model.dart';
 export 'src/models/responses/subsonic_response.model.dart';
 export 'src/opensubsonic_api.dart';

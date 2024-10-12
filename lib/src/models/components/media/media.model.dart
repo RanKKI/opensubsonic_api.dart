@@ -61,7 +61,6 @@ class MediaModel with _$MediaModel {
     MediaType? type,
 
     ///  Added in 1.10.1
-
     @DurationInMsConvertor() Duration? bookmarkPosition,
 
     /// Added in 1.13.0
