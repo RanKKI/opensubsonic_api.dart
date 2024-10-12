@@ -1,12 +1,17 @@
 import 'dart:convert';
 import 'dart:math';
+import 'dart:typed_data';
 
 import 'package:crypto/crypto.dart';
 
-String generateSalt() {
+String generateSalt([int length = 32]) {
+  final buffer = Uint8List(length);
   final rng = Random.secure();
-  final bytes = List<int>.generate(16, (_) => rng.nextInt(256));
-  return base64.encode(bytes);
+  for (var i = 0; i < length; i++) {
+    buffer[i] = rng.nextInt(256);
+  }
+  const encoder = Base64Encoder();
+  return encoder.convert(buffer);
 }
 
 String generateToken({
@@ -14,5 +19,5 @@ String generateToken({
   required String password,
   required String salt,
 }) {
-  return md5.convert(utf8.encode('$salt$password')).toString();
+  return md5.convert(utf8.encode('$password$salt')).toString();
 }

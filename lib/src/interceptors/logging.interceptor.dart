@@ -1,19 +1,20 @@
 import 'package:dio/dio.dart';
 
+import '../mixins/request_logging.mixin.dart';
+
 class LoggingInterceptor extends InterceptorsWrapper {
+  LoggingInterceptor(this._logger);
+
+  final RequestLoggingMixin _logger;
+
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    print(
-      '[Subsonic API] Request: ${options.method} ${options.uri.toString()}',
-    );
+    _logger.onRequest(options.uri);
     return handler.next(options);
   }
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
-    // print(
-    //   '[Subsonic API] Response: ${response.statusCode} ${response.realUri.toString()}',
-    // );
     return handler.next(response);
   }
 }

@@ -14,20 +14,47 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-SubsonicAuthModel _$SubsonicAuthModelFromJson(Map<String, dynamic> json) {
-  return _SubsonicAuthModel.fromJson(json);
-}
-
 /// @nodoc
 mixin _$SubsonicAuthModel {
-  @JsonKey(name: 'u')
   String get username => throw _privateConstructorUsedError;
-  @JsonKey(name: 'p')
-  String get password => throw _privateConstructorUsedError;
-  bool get debug => throw _privateConstructorUsedError;
-
-  /// Serializes this SubsonicAuthModel to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String username, String password) password,
+    required TResult Function(String username, String token, String salt) token,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String username, String password)? password,
+    TResult? Function(String username, String token, String salt)? token,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String username, String password)? password,
+    TResult Function(String username, String token, String salt)? token,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SubsonicAuthWithPassword value) password,
+    required TResult Function(_SubsonicAuthWithToken value) token,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SubsonicAuthWithPassword value)? password,
+    TResult? Function(_SubsonicAuthWithToken value)? token,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SubsonicAuthWithPassword value)? password,
+    TResult Function(_SubsonicAuthWithToken value)? token,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 
   /// Create a copy of SubsonicAuthModel
   /// with the given fields replaced by the non-null parameter values.
@@ -42,10 +69,7 @@ abstract class $SubsonicAuthModelCopyWith<$Res> {
           SubsonicAuthModel value, $Res Function(SubsonicAuthModel) then) =
       _$SubsonicAuthModelCopyWithImpl<$Res, SubsonicAuthModel>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'u') String username,
-      @JsonKey(name: 'p') String password,
-      bool debug});
+  $Res call({String username});
 }
 
 /// @nodoc
@@ -64,46 +88,36 @@ class _$SubsonicAuthModelCopyWithImpl<$Res, $Val extends SubsonicAuthModel>
   @override
   $Res call({
     Object? username = null,
-    Object? password = null,
-    Object? debug = null,
   }) {
     return _then(_value.copyWith(
       username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-      debug: null == debug
-          ? _value.debug
-          : debug // ignore: cast_nullable_to_non_nullable
-              as bool,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$SubsonicAuthModelImplCopyWith<$Res>
+abstract class _$$SubsonicAuthWithPasswordImplCopyWith<$Res>
     implements $SubsonicAuthModelCopyWith<$Res> {
-  factory _$$SubsonicAuthModelImplCopyWith(_$SubsonicAuthModelImpl value,
-          $Res Function(_$SubsonicAuthModelImpl) then) =
-      __$$SubsonicAuthModelImplCopyWithImpl<$Res>;
+  factory _$$SubsonicAuthWithPasswordImplCopyWith(
+          _$SubsonicAuthWithPasswordImpl value,
+          $Res Function(_$SubsonicAuthWithPasswordImpl) then) =
+      __$$SubsonicAuthWithPasswordImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'u') String username,
-      @JsonKey(name: 'p') String password,
-      bool debug});
+  $Res call({String username, String password});
 }
 
 /// @nodoc
-class __$$SubsonicAuthModelImplCopyWithImpl<$Res>
-    extends _$SubsonicAuthModelCopyWithImpl<$Res, _$SubsonicAuthModelImpl>
-    implements _$$SubsonicAuthModelImplCopyWith<$Res> {
-  __$$SubsonicAuthModelImplCopyWithImpl(_$SubsonicAuthModelImpl _value,
-      $Res Function(_$SubsonicAuthModelImpl) _then)
+class __$$SubsonicAuthWithPasswordImplCopyWithImpl<$Res>
+    extends _$SubsonicAuthModelCopyWithImpl<$Res,
+        _$SubsonicAuthWithPasswordImpl>
+    implements _$$SubsonicAuthWithPasswordImplCopyWith<$Res> {
+  __$$SubsonicAuthWithPasswordImplCopyWithImpl(
+      _$SubsonicAuthWithPasswordImpl _value,
+      $Res Function(_$SubsonicAuthWithPasswordImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of SubsonicAuthModel
@@ -113,108 +127,305 @@ class __$$SubsonicAuthModelImplCopyWithImpl<$Res>
   $Res call({
     Object? username = null,
     Object? password = null,
-    Object? debug = null,
   }) {
-    return _then(_$SubsonicAuthModelImpl(
-      username: null == username
+    return _then(_$SubsonicAuthWithPasswordImpl(
+      null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-      password: null == password
+      null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      debug: null == debug
-          ? _value.debug
-          : debug // ignore: cast_nullable_to_non_nullable
-              as bool,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$SubsonicAuthModelImpl extends _SubsonicAuthModel {
-  const _$SubsonicAuthModelImpl(
-      {@JsonKey(name: 'u') required this.username,
-      @JsonKey(name: 'p') required this.password,
-      this.debug = false})
+
+class _$SubsonicAuthWithPasswordImpl extends _SubsonicAuthWithPassword {
+  const _$SubsonicAuthWithPasswordImpl(this.username, this.password)
       : super._();
 
-  factory _$SubsonicAuthModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SubsonicAuthModelImplFromJson(json);
-
   @override
-  @JsonKey(name: 'u')
   final String username;
   @override
-  @JsonKey(name: 'p')
   final String password;
-  @override
-  @JsonKey()
-  final bool debug;
 
   @override
   String toString() {
-    return 'SubsonicAuthModel(username: $username, password: $password, debug: $debug)';
+    return 'SubsonicAuthModel.password(username: $username, password: $password)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SubsonicAuthModelImpl &&
+            other is _$SubsonicAuthWithPasswordImpl &&
             (identical(other.username, username) ||
                 other.username == username) &&
             (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.debug, debug) || other.debug == debug));
+                other.password == password));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, username, password, debug);
+  int get hashCode => Object.hash(runtimeType, username, password);
 
   /// Create a copy of SubsonicAuthModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SubsonicAuthModelImplCopyWith<_$SubsonicAuthModelImpl> get copyWith =>
-      __$$SubsonicAuthModelImplCopyWithImpl<_$SubsonicAuthModelImpl>(
-          this, _$identity);
+  _$$SubsonicAuthWithPasswordImplCopyWith<_$SubsonicAuthWithPasswordImpl>
+      get copyWith => __$$SubsonicAuthWithPasswordImplCopyWithImpl<
+          _$SubsonicAuthWithPasswordImpl>(this, _$identity);
 
   @override
-  Map<String, dynamic> toJson() {
-    return _$$SubsonicAuthModelImplToJson(
-      this,
-    );
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String username, String password) password,
+    required TResult Function(String username, String token, String salt) token,
+  }) {
+    return password(username, this.password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String username, String password)? password,
+    TResult? Function(String username, String token, String salt)? token,
+  }) {
+    return password?.call(username, this.password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String username, String password)? password,
+    TResult Function(String username, String token, String salt)? token,
+    required TResult orElse(),
+  }) {
+    if (password != null) {
+      return password(username, this.password);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SubsonicAuthWithPassword value) password,
+    required TResult Function(_SubsonicAuthWithToken value) token,
+  }) {
+    return password(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SubsonicAuthWithPassword value)? password,
+    TResult? Function(_SubsonicAuthWithToken value)? token,
+  }) {
+    return password?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SubsonicAuthWithPassword value)? password,
+    TResult Function(_SubsonicAuthWithToken value)? token,
+    required TResult orElse(),
+  }) {
+    if (password != null) {
+      return password(this);
+    }
+    return orElse();
   }
 }
 
-abstract class _SubsonicAuthModel extends SubsonicAuthModel {
-  const factory _SubsonicAuthModel(
-      {@JsonKey(name: 'u') required final String username,
-      @JsonKey(name: 'p') required final String password,
-      final bool debug}) = _$SubsonicAuthModelImpl;
-  const _SubsonicAuthModel._() : super._();
-
-  factory _SubsonicAuthModel.fromJson(Map<String, dynamic> json) =
-      _$SubsonicAuthModelImpl.fromJson;
+abstract class _SubsonicAuthWithPassword extends SubsonicAuthModel {
+  const factory _SubsonicAuthWithPassword(
+          final String username, final String password) =
+      _$SubsonicAuthWithPasswordImpl;
+  const _SubsonicAuthWithPassword._() : super._();
 
   @override
-  @JsonKey(name: 'u')
   String get username;
-  @override
-  @JsonKey(name: 'p')
   String get password;
-  @override
-  bool get debug;
 
   /// Create a copy of SubsonicAuthModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SubsonicAuthModelImplCopyWith<_$SubsonicAuthModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SubsonicAuthWithPasswordImplCopyWith<_$SubsonicAuthWithPasswordImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SubsonicAuthWithTokenImplCopyWith<$Res>
+    implements $SubsonicAuthModelCopyWith<$Res> {
+  factory _$$SubsonicAuthWithTokenImplCopyWith(
+          _$SubsonicAuthWithTokenImpl value,
+          $Res Function(_$SubsonicAuthWithTokenImpl) then) =
+      __$$SubsonicAuthWithTokenImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String username, String token, String salt});
+}
+
+/// @nodoc
+class __$$SubsonicAuthWithTokenImplCopyWithImpl<$Res>
+    extends _$SubsonicAuthModelCopyWithImpl<$Res, _$SubsonicAuthWithTokenImpl>
+    implements _$$SubsonicAuthWithTokenImplCopyWith<$Res> {
+  __$$SubsonicAuthWithTokenImplCopyWithImpl(_$SubsonicAuthWithTokenImpl _value,
+      $Res Function(_$SubsonicAuthWithTokenImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SubsonicAuthModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? username = null,
+    Object? token = null,
+    Object? salt = null,
+  }) {
+    return _then(_$SubsonicAuthWithTokenImpl(
+      null == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == salt
+          ? _value.salt
+          : salt // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SubsonicAuthWithTokenImpl extends _SubsonicAuthWithToken {
+  const _$SubsonicAuthWithTokenImpl(this.username, this.token, this.salt)
+      : super._();
+
+  @override
+  final String username;
+  @override
+  final String token;
+  @override
+  final String salt;
+
+  @override
+  String toString() {
+    return 'SubsonicAuthModel.token(username: $username, token: $token, salt: $salt)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SubsonicAuthWithTokenImpl &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.token, token) || other.token == token) &&
+            (identical(other.salt, salt) || other.salt == salt));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, username, token, salt);
+
+  /// Create a copy of SubsonicAuthModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SubsonicAuthWithTokenImplCopyWith<_$SubsonicAuthWithTokenImpl>
+      get copyWith => __$$SubsonicAuthWithTokenImplCopyWithImpl<
+          _$SubsonicAuthWithTokenImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String username, String password) password,
+    required TResult Function(String username, String token, String salt) token,
+  }) {
+    return token(username, this.token, salt);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String username, String password)? password,
+    TResult? Function(String username, String token, String salt)? token,
+  }) {
+    return token?.call(username, this.token, salt);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String username, String password)? password,
+    TResult Function(String username, String token, String salt)? token,
+    required TResult orElse(),
+  }) {
+    if (token != null) {
+      return token(username, this.token, salt);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SubsonicAuthWithPassword value) password,
+    required TResult Function(_SubsonicAuthWithToken value) token,
+  }) {
+    return token(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SubsonicAuthWithPassword value)? password,
+    TResult? Function(_SubsonicAuthWithToken value)? token,
+  }) {
+    return token?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SubsonicAuthWithPassword value)? password,
+    TResult Function(_SubsonicAuthWithToken value)? token,
+    required TResult orElse(),
+  }) {
+    if (token != null) {
+      return token(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SubsonicAuthWithToken extends SubsonicAuthModel {
+  const factory _SubsonicAuthWithToken(
+          final String username, final String token, final String salt) =
+      _$SubsonicAuthWithTokenImpl;
+  const _SubsonicAuthWithToken._() : super._();
+
+  @override
+  String get username;
+  String get token;
+  String get salt;
+
+  /// Create a copy of SubsonicAuthModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SubsonicAuthWithTokenImplCopyWith<_$SubsonicAuthWithTokenImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

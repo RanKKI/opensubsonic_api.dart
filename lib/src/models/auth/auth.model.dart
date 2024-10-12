@@ -1,35 +1,52 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../mixins/url_params.mixin.dart';
 import '../../utils/auth.util.dart';
 
 part 'auth.model.freezed.dart';
-part 'auth.model.g.dart';
 
 @freezed
-class SubsonicAuthModel with _$SubsonicAuthModel, UrlParamsObject {
+sealed class SubsonicAuthModel with _$SubsonicAuthModel {
   const SubsonicAuthModel._();
 
-  const factory SubsonicAuthModel({
-    @JsonKey(name: 'u') required String username,
-    @JsonKey(name: 'p') required String password,
-    @Default(false) bool debug,
-  }) = _SubsonicAuthModel;
+  const factory SubsonicAuthModel.password(
+    String username,
+    String password,
+  ) = _SubsonicAuthWithPassword;
 
-  factory SubsonicAuthModel.fromJson(Map<String, dynamic> json) =>
-      _$SubsonicAuthModelFromJson(json);
+  const factory SubsonicAuthModel.token(
+    String username,
+    String token,
+    String salt,
+  ) = _SubsonicAuthWithToken;
 
-  @override
-  Map<String, String> toUrlParams() {
-    if (debug) {
-      return {'u': username, 'p': password};
-    }
-    final salt = generateSalt();
+  factory SubsonicAuthModel.salt(
+    String username,
+    String password,
+    String salt,
+  ) {
     final token = generateToken(
       username: username,
       password: password,
       salt: salt,
     );
-    return {'u': username, 's': salt, 't': token};
+    return SubsonicAuthModel.token(username, token, salt);
+  }
+
+  factory SubsonicAuthModel.randomSalt(String username, String password) {
+    return SubsonicAuthModel.salt(username, password, generateSalt());
+  }
+
+  Map<String, String> toUrlParams() {
+    return switch (this) {
+      _SubsonicAuthWithPassword(:final username, :final password) => {
+          'u': username,
+          'p': password,
+        },
+      _SubsonicAuthWithToken(:final username, :final token, :final salt) => {
+          'u': username,
+          's': salt,
+          't': token,
+        },
+    };
   }
 }
