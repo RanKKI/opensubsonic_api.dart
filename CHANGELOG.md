@@ -1,3 +1,10 @@
+## 0.2.3
+
+- get lyrics by song id
+- logging
+- scan & scan status
+
+
 ## 0.2.2
 
 - Fix typo
