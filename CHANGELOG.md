@@ -1,3 +1,8 @@
+## 0.3.0
+
+- Refactored int duration to Duration type
+
+
 ## 0.2.3
 
 - get lyrics by song id
