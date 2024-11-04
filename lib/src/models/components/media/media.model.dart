@@ -26,7 +26,7 @@ class MediaModel with _$MediaModel {
     String? suffix,
     String? transcodedContentType,
     String? transcodedSuffix,
-    int? duration,
+    @DurationConvertor() Duration? duration,
     int? bitRate,
     String? path,
 
@@ -61,7 +61,7 @@ class MediaModel with _$MediaModel {
     MediaType? type,
 
     ///  Added in 1.10.1
-    @DurationInMsConvertor() Duration? bookmarkPosition,
+    @DurationConvertor() Duration? bookmarkPosition,
 
     /// Added in 1.13.0
     int? originalWidth,

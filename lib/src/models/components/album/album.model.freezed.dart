@@ -26,7 +26,8 @@ mixin _$AlbumModel {
   String? get artistId => throw _privateConstructorUsedError;
   String? get coverArt => throw _privateConstructorUsedError;
   int get songCount => throw _privateConstructorUsedError;
-  int get duration => throw _privateConstructorUsedError;
+  @DurationConvertor()
+  Duration get duration => throw _privateConstructorUsedError;
   int? get playCount => throw _privateConstructorUsedError;
 
   /// Added in 1.14.0
@@ -65,7 +66,7 @@ abstract class $AlbumModelCopyWith<$Res> {
       String? artistId,
       String? coverArt,
       int songCount,
-      int duration,
+      @DurationConvertor() Duration duration,
       int? playCount,
       @DateTimeConvertor() DateTime? created,
       @DateTimeConvertor() DateTime? starred,
@@ -131,7 +132,7 @@ class _$AlbumModelCopyWithImpl<$Res, $Val extends AlbumModel>
       duration: null == duration
           ? _value.duration
           : duration // ignore: cast_nullable_to_non_nullable
-              as int,
+              as Duration,
       playCount: freezed == playCount
           ? _value.playCount
           : playCount // ignore: cast_nullable_to_non_nullable
@@ -175,7 +176,7 @@ abstract class _$$AlbumModelImplCopyWith<$Res>
       String? artistId,
       String? coverArt,
       int songCount,
-      int duration,
+      @DurationConvertor() Duration duration,
       int? playCount,
       @DateTimeConvertor() DateTime? created,
       @DateTimeConvertor() DateTime? starred,
@@ -239,7 +240,7 @@ class __$$AlbumModelImplCopyWithImpl<$Res>
       duration: null == duration
           ? _value.duration
           : duration // ignore: cast_nullable_to_non_nullable
-              as int,
+              as Duration,
       playCount: freezed == playCount
           ? _value.playCount
           : playCount // ignore: cast_nullable_to_non_nullable
@@ -278,7 +279,7 @@ class _$AlbumModelImpl implements _AlbumModel {
       this.artistId,
       this.coverArt,
       required this.songCount,
-      required this.duration,
+      @DurationConvertor() required this.duration,
       this.playCount,
       @DateTimeConvertor() this.created,
       @DateTimeConvertor() this.starred,
@@ -303,7 +304,8 @@ class _$AlbumModelImpl implements _AlbumModel {
   @override
   final int songCount;
   @override
-  final int duration;
+  @DurationConvertor()
+  final Duration duration;
   @override
   final int? playCount;
 
@@ -403,7 +405,7 @@ abstract class _AlbumModel implements AlbumModel {
       final String? artistId,
       final String? coverArt,
       required final int songCount,
-      required final int duration,
+      @DurationConvertor() required final Duration duration,
       final int? playCount,
       @DateTimeConvertor() final DateTime? created,
       @DateTimeConvertor() final DateTime? starred,
@@ -427,7 +429,8 @@ abstract class _AlbumModel implements AlbumModel {
   @override
   int get songCount;
   @override
-  int get duration;
+  @DurationConvertor()
+  Duration get duration;
   @override
   int? get playCount;
 

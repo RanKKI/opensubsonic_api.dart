@@ -18,7 +18,8 @@ _$PlaylistModelImpl _$$PlaylistModelImplFromJson(Map<String, dynamic> json) =>
       owner: json['owner'] as String?,
       public: json['public'] as bool?,
       songCount: (json['songCount'] as num).toInt(),
-      duration: (json['duration'] as num).toInt(),
+      duration:
+          const DurationConvertor().fromJson((json['duration'] as num).toInt()),
       created: _$JsonConverterFromJson<String, DateTime>(
           json['created'], const DateTimeConvertor().fromJson),
       changed: _$JsonConverterFromJson<String, DateTime>(
@@ -39,7 +40,7 @@ Map<String, dynamic> _$$PlaylistModelImplToJson(_$PlaylistModelImpl instance) =>
       'owner': instance.owner,
       'public': instance.public,
       'songCount': instance.songCount,
-      'duration': instance.duration,
+      'duration': const DurationConvertor().toJson(instance.duration),
       'created': _$JsonConverterToJson<String, DateTime>(
           instance.created, const DateTimeConvertor().toJson),
       'changed': _$JsonConverterToJson<String, DateTime>(

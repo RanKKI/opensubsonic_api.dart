@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../convertors/date_time.convertor.dart';
+import '../../../convertors/duration.convertor.dart';
 import '../media/media.model.dart';
 
 part 'album.model.freezed.dart';
@@ -15,7 +16,7 @@ class AlbumModel with _$AlbumModel {
     String? artistId,
     String? coverArt,
     required int songCount,
-    required int duration,
+    @DurationConvertor() required Duration duration,
     int? playCount,
 
     /// Added in 1.14.0

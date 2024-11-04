@@ -1,4 +1,4 @@
-library opensubsonic_api;
+library;
 
 export 'src/apis/api.dart';
 export 'src/mixins/request_logging.mixin.dart';

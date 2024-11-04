@@ -35,7 +35,8 @@ mixin _$MediaModel {
   String? get suffix => throw _privateConstructorUsedError;
   String? get transcodedContentType => throw _privateConstructorUsedError;
   String? get transcodedSuffix => throw _privateConstructorUsedError;
-  int? get duration => throw _privateConstructorUsedError;
+  @DurationConvertor()
+  Duration? get duration => throw _privateConstructorUsedError;
   int? get bitRate => throw _privateConstructorUsedError;
   String? get path => throw _privateConstructorUsedError;
 
@@ -72,7 +73,7 @@ mixin _$MediaModel {
   MediaType? get type => throw _privateConstructorUsedError;
 
   ///  Added in 1.10.1
-  @DurationInMsConvertor()
+  @DurationConvertor()
   Duration? get bookmarkPosition => throw _privateConstructorUsedError;
 
   /// Added in 1.13.0
@@ -113,7 +114,7 @@ abstract class $MediaModelCopyWith<$Res> {
       String? suffix,
       String? transcodedContentType,
       String? transcodedSuffix,
-      int? duration,
+      @DurationConvertor() Duration? duration,
       int? bitRate,
       String? path,
       bool? isVideo,
@@ -126,7 +127,7 @@ abstract class $MediaModelCopyWith<$Res> {
       String? albumId,
       String? artistId,
       MediaType? type,
-      @DurationInMsConvertor() Duration? bookmarkPosition,
+      @DurationConvertor() Duration? bookmarkPosition,
       int? originalWidth,
       int? originalHeight});
 }
@@ -242,7 +243,7 @@ class _$MediaModelCopyWithImpl<$Res, $Val extends MediaModel>
       duration: freezed == duration
           ? _value.duration
           : duration // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as Duration?,
       bitRate: freezed == bitRate
           ? _value.bitRate
           : bitRate // ignore: cast_nullable_to_non_nullable
@@ -331,7 +332,7 @@ abstract class _$$MediaModelImplCopyWith<$Res>
       String? suffix,
       String? transcodedContentType,
       String? transcodedSuffix,
-      int? duration,
+      @DurationConvertor() Duration? duration,
       int? bitRate,
       String? path,
       bool? isVideo,
@@ -344,7 +345,7 @@ abstract class _$$MediaModelImplCopyWith<$Res>
       String? albumId,
       String? artistId,
       MediaType? type,
-      @DurationInMsConvertor() Duration? bookmarkPosition,
+      @DurationConvertor() Duration? bookmarkPosition,
       int? originalWidth,
       int? originalHeight});
 }
@@ -458,7 +459,7 @@ class __$$MediaModelImplCopyWithImpl<$Res>
       duration: freezed == duration
           ? _value.duration
           : duration // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as Duration?,
       bitRate: freezed == bitRate
           ? _value.bitRate
           : bitRate // ignore: cast_nullable_to_non_nullable
@@ -542,7 +543,7 @@ class _$MediaModelImpl implements _MediaModel {
       this.suffix,
       this.transcodedContentType,
       this.transcodedSuffix,
-      this.duration,
+      @DurationConvertor() this.duration,
       this.bitRate,
       this.path,
       this.isVideo,
@@ -555,7 +556,7 @@ class _$MediaModelImpl implements _MediaModel {
       this.albumId,
       this.artistId,
       this.type,
-      @DurationInMsConvertor() this.bookmarkPosition,
+      @DurationConvertor() this.bookmarkPosition,
       this.originalWidth,
       this.originalHeight});
 
@@ -593,7 +594,8 @@ class _$MediaModelImpl implements _MediaModel {
   @override
   final String? transcodedSuffix;
   @override
-  final int? duration;
+  @DurationConvertor()
+  final Duration? duration;
   @override
   final int? bitRate;
   @override
@@ -643,7 +645,7 @@ class _$MediaModelImpl implements _MediaModel {
 
   ///  Added in 1.10.1
   @override
-  @DurationInMsConvertor()
+  @DurationConvertor()
   final Duration? bookmarkPosition;
 
   /// Added in 1.13.0
@@ -780,7 +782,7 @@ abstract class _MediaModel implements MediaModel {
       final String? suffix,
       final String? transcodedContentType,
       final String? transcodedSuffix,
-      final int? duration,
+      @DurationConvertor() final Duration? duration,
       final int? bitRate,
       final String? path,
       final bool? isVideo,
@@ -793,7 +795,7 @@ abstract class _MediaModel implements MediaModel {
       final String? albumId,
       final String? artistId,
       final MediaType? type,
-      @DurationInMsConvertor() final Duration? bookmarkPosition,
+      @DurationConvertor() final Duration? bookmarkPosition,
       final int? originalWidth,
       final int? originalHeight}) = _$MediaModelImpl;
 
@@ -831,7 +833,8 @@ abstract class _MediaModel implements MediaModel {
   @override
   String? get transcodedSuffix;
   @override
-  int? get duration;
+  @DurationConvertor()
+  Duration? get duration;
   @override
   int? get bitRate;
   @override
@@ -881,7 +884,7 @@ abstract class _MediaModel implements MediaModel {
 
   ///  Added in 1.10.1
   @override
-  @DurationInMsConvertor()
+  @DurationConvertor()
   Duration? get bookmarkPosition;
 
   /// Added in 1.13.0

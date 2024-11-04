@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../opensubsonic_api.dart';
 import '../../../convertors/date_time.convertor.dart';
+import '../../../convertors/duration.convertor.dart';
 
 part 'playlist.model.freezed.dart';
 part 'playlist.model.g.dart';
@@ -27,7 +28,7 @@ class PlaylistModel with _$PlaylistModel {
     required int songCount,
 
     /// <!-- Added in 1.8.0 -->
-    required int duration,
+    @DurationConvertor() required Duration duration,
 
     /// <!-- Added in 1.8.0 -->
     @DateTimeConvertor() DateTime? created,

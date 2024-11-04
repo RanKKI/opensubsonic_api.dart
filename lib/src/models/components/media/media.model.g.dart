@@ -23,7 +23,8 @@ _$MediaModelImpl _$$MediaModelImplFromJson(Map<String, dynamic> json) =>
       suffix: json['suffix'] as String?,
       transcodedContentType: json['transcodedContentType'] as String?,
       transcodedSuffix: json['transcodedSuffix'] as String?,
-      duration: (json['duration'] as num?)?.toInt(),
+      duration: _$JsonConverterFromJson<int, Duration>(
+          json['duration'], const DurationConvertor().fromJson),
       bitRate: (json['bitRate'] as num?)?.toInt(),
       path: json['path'] as String?,
       isVideo: json['isVideo'] as bool?,
@@ -39,7 +40,7 @@ _$MediaModelImpl _$$MediaModelImplFromJson(Map<String, dynamic> json) =>
       artistId: json['artistId'] as String?,
       type: $enumDecodeNullable(_$MediaTypeEnumMap, json['type']),
       bookmarkPosition: _$JsonConverterFromJson<int, Duration>(
-          json['bookmarkPosition'], const DurationInMsConvertor().fromJson),
+          json['bookmarkPosition'], const DurationConvertor().fromJson),
       originalWidth: (json['originalWidth'] as num?)?.toInt(),
       originalHeight: (json['originalHeight'] as num?)?.toInt(),
     );
@@ -61,7 +62,8 @@ Map<String, dynamic> _$$MediaModelImplToJson(_$MediaModelImpl instance) =>
       'suffix': instance.suffix,
       'transcodedContentType': instance.transcodedContentType,
       'transcodedSuffix': instance.transcodedSuffix,
-      'duration': instance.duration,
+      'duration': _$JsonConverterToJson<int, Duration>(
+          instance.duration, const DurationConvertor().toJson),
       'bitRate': instance.bitRate,
       'path': instance.path,
       'isVideo': instance.isVideo,
@@ -77,7 +79,7 @@ Map<String, dynamic> _$$MediaModelImplToJson(_$MediaModelImpl instance) =>
       'artistId': instance.artistId,
       'type': _$MediaTypeEnumMap[instance.type],
       'bookmarkPosition': _$JsonConverterToJson<int, Duration>(
-          instance.bookmarkPosition, const DurationInMsConvertor().toJson),
+          instance.bookmarkPosition, const DurationConvertor().toJson),
       'originalWidth': instance.originalWidth,
       'originalHeight': instance.originalHeight,
     };

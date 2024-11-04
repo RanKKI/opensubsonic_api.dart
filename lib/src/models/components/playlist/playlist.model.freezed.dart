@@ -38,7 +38,8 @@ mixin _$PlaylistModel {
   int get songCount => throw _privateConstructorUsedError;
 
   /// <!-- Added in 1.8.0 -->
-  int get duration => throw _privateConstructorUsedError;
+  @DurationConvertor()
+  Duration get duration => throw _privateConstructorUsedError;
 
   /// <!-- Added in 1.8.0 -->
   @DateTimeConvertor()
@@ -77,7 +78,7 @@ abstract class $PlaylistModelCopyWith<$Res> {
       String? owner,
       bool? public,
       int songCount,
-      int duration,
+      @DurationConvertor() Duration duration,
       @DateTimeConvertor() DateTime? created,
       @DateTimeConvertor() DateTime? changed,
       String? coverArt,
@@ -144,7 +145,7 @@ class _$PlaylistModelCopyWithImpl<$Res, $Val extends PlaylistModel>
       duration: null == duration
           ? _value.duration
           : duration // ignore: cast_nullable_to_non_nullable
-              as int,
+              as Duration,
       created: freezed == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
@@ -181,7 +182,7 @@ abstract class _$$PlaylistModelImplCopyWith<$Res>
       String? owner,
       bool? public,
       int songCount,
-      int duration,
+      @DurationConvertor() Duration duration,
       @DateTimeConvertor() DateTime? created,
       @DateTimeConvertor() DateTime? changed,
       String? coverArt,
@@ -246,7 +247,7 @@ class __$$PlaylistModelImplCopyWithImpl<$Res>
       duration: null == duration
           ? _value.duration
           : duration // ignore: cast_nullable_to_non_nullable
-              as int,
+              as Duration,
       created: freezed == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
@@ -278,7 +279,7 @@ class _$PlaylistModelImpl implements _PlaylistModel {
       this.owner,
       this.public,
       required this.songCount,
-      required this.duration,
+      @DurationConvertor() required this.duration,
       @DateTimeConvertor() this.created,
       @DateTimeConvertor() this.changed,
       this.coverArt,
@@ -324,7 +325,8 @@ class _$PlaylistModelImpl implements _PlaylistModel {
 
   /// <!-- Added in 1.8.0 -->
   @override
-  final int duration;
+  @DurationConvertor()
+  final Duration duration;
 
   /// <!-- Added in 1.8.0 -->
   @override
@@ -418,7 +420,7 @@ abstract class _PlaylistModel implements PlaylistModel {
           final String? owner,
           final bool? public,
           required final int songCount,
-          required final int duration,
+          @DurationConvertor() required final Duration duration,
           @DateTimeConvertor() final DateTime? created,
           @DateTimeConvertor() final DateTime? changed,
           final String? coverArt,
@@ -454,7 +456,8 @@ abstract class _PlaylistModel implements PlaylistModel {
 
   /// <!-- Added in 1.8.0 -->
   @override
-  int get duration;
+  @DurationConvertor()
+  Duration get duration;
 
   /// <!-- Added in 1.8.0 -->
   @override
